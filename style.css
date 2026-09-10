@@ -240,21 +240,38 @@ body.dark-theme .app-header {
   color: var(--text-muted);
 }
 
-/* Main Navigation Bar */
+/* Main Navigation Bar (6 Tabs) */
 .main-nav {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 6px;
+  padding: 4px;
   margin-bottom: 18px;
   position: sticky;
   top: 10px;
   z-index: 100;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+@media (max-width: 520px) {
+  .main-nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-btn {
+    min-width: 68px;
+    flex: 0 0 auto;
+    padding: 6px 4px;
+    font-size: 0.65rem;
+  }
 }
 
 body.dark-theme .main-nav {
@@ -552,6 +569,8 @@ body.dark-theme .day-overview-card {
 .tag-plateau { background: #f3e8ff; color: #7e22ce; }
 .tag-alert { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
 .tag-stay { background: #fef3c7; color: #b45309; }
+.tag-halal { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.tag-salah { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
 
 .step-desc {
   font-size: 0.85rem;

@@ -1,6 +1,7 @@
 /**
  * Karavali & Malenadu Epic Loop - Road Trip Companion App
- * Designed for 3 Bachelor Software Engineers (1 Driver Petrol Car)
+ * Designed for 3 Muslim Bachelor Software Engineers (1 Driver Petrol Car)
+ * Includes Halal & Beef Dining, Mosques (Masjids), and Safar Qasr/Jam' Prayers
  */
 
 // ITINERARY DATA
@@ -11,14 +12,14 @@ const ITINERARY_DATA = {
     distance: "~280 km",
     duration: "5.5 – 6 hrs",
     mapUrl: "https://www.google.com/maps/dir/Bengaluru,+Karnataka/Shivamogga,+Karnataka",
-    desc: "Beat the Friday evening techie exodus, clear the Nelamangala choke-point, and cruise smooth highways to your night halt at Shimoga bypass.",
+    desc: "Beat the Friday evening techie exodus, clear the Nelamangala choke-point, stop for Maghrib/Isha Jam' and halal dinner, then cruise to your night halt at Shimoga bypass.",
     steps: [
       {
         time: "03:45 PM",
-        title: "Assemble & Final Car Check",
-        desc: "Meet at designated pickup point. Set tyre pressures to 32-33 PSI, check wiper fluid with shampoo, zero trip odometer.",
-        type: ["drive"],
-        tip: "Single driver rule: Fill up full tank in Bangalore before entering highway jams.",
+        title: "Assemble, Wudu & Final Car Check",
+        desc: "Meet at designated pickup point. Offer Asr (or intend Jam' Taqdim with Dhuhr before departure). Set tyre pressures to 32-33 PSI, ensure 2L Wudu water bottle and Janamaz are in the boot.",
+        type: ["drive", "salah"],
+        tip: "Single driver rule: Fill up full petrol tank in Bangalore before entering highway jams.",
         mapQuery: "Bengaluru, Karnataka"
       },
       {
@@ -39,17 +40,17 @@ const ITINERARY_DATA = {
       },
       {
         time: "08:30 PM",
-        title: "Highway Dhaba Dinner (Kadur / Birur Bypass)",
-        desc: "Hot roti, dal, or South Indian meals. Keep meals light so the driver does not feel drowsy during the final 1.5-hr stretch.",
-        type: ["drive"],
-        tip: "Avoid heavy carb overload for the driver.",
-        mapQuery: "Kadur,+Karnataka"
+        title: "Kadur / Birur: Maghrib & Isha (Qasr Jam') + Halal Dinner",
+        desc: "Pull over at Jamia Masjid Kadur / Birur on NH69 for clean wudu and combined Maghrib (3 rak'ahs) & Isha (2 rak'ahs Qasr). Have a hot, fresh halal dinner at nearby dhabas.",
+        type: ["drive", "salah", "halal"],
+        tip: "Keep dinner light and avoid carb-heavy overeating for the single driver.",
+        mapQuery: "Jamia+Masjid+Kadur"
       },
       {
         time: "10:30 PM",
-        title: "Check-in at Shimoga Sagar Road Bypass",
-        desc: "Bypass Shimoga city traffic. Pull into a highway lodge on the Sagar exit (NH69). Gated car parking, unpack overnight bags only.",
-        type: ["stay"],
+        title: "Check-in at Shimoga Outskirts + Optional Beef Kebabs",
+        desc: "Bypass Shimoga city traffic. Pull into a highway lodge on the Sagar exit (NH69). Gated car parking. Optional late-night takeaway of Shimoga's famous charcoal beef seekh kebabs from Tank Mohalla.",
+        type: ["stay", "halal"],
         tip: "Target offline tariff: ₹1,000 – ₹1,300 for 3 pax. Early checkout scheduled for 6:30 AM.",
         mapQuery: "Sagara+Road+Shivamogga"
       }
@@ -58,18 +59,18 @@ const ITINERARY_DATA = {
 
   day2: {
     title: "Day 2: Saturday, 12th September",
-    route: "Shimoga ➔ Jog Falls ➔ Honnavar ➔ Gokarna (Night 2 Kumta)",
+    route: "Shimoga ➔ Jog Falls ➔ Honnavar & Bhatkal ➔ Gokarna (Night 2 Kumta)",
     distance: "~240 km",
     duration: "6 hrs drive + sightseeing",
-    mapUrl: "https://www.google.com/maps/dir/Shivamogga/Jog+Falls/Honnavar/Gokarna/Kumta",
-    desc: "From the 830-ft roar of Jog Falls down through misty Gerosoppa Ghats to mangrove backwaters and sunset on the Arabian Sea.",
+    mapUrl: "https://www.google.com/maps/dir/Shivamogga/Jog+Falls/Honnavar/Bhatkal/Gokarna/Kumta",
+    desc: "From the 830-ft roar of Jog Falls down through misty Gerosoppa Ghats to legendary Bhatkali Beef Biryani, beach cliffs, and sunset on the Arabian Sea.",
     steps: [
       {
-        time: "06:30 AM",
-        title: "Early Roll Out on NH69 towards Jog Falls",
-        desc: "Early morning drive through lush Malenadu pine and teak forests. Fresh post-monsoon morning air.",
-        type: ["drive"],
-        tip: "Leaving before 7 AM ensures you arrive before Bangalore tourist buses crowd the viewpoints.",
+        time: "06:15 AM",
+        title: "Fajr Prayer & Early Roll Out on NH69",
+        desc: "Offer Fajr prayer (2 rak'ahs) and start the fresh morning drive through lush Malenadu pine and teak forests towards Jog Falls.",
+        type: ["drive", "salah"],
+        tip: "Leaving before 7 AM ensures you arrive before Bangalore tour buses crowd the viewpoints.",
         mapQuery: "Jog+Falls"
       },
       {
@@ -90,11 +91,11 @@ const ITINERARY_DATA = {
       },
       {
         time: "01:30 PM",
-        title: "Honnavar Sharavathi Mangrove Boating & Lunch",
-        desc: "Walk the wooden Kandla Mangrove boardwalk or hire a wooden motorboat through the serene backwater canals. Authentic coastal seafood/veg lunch in Honnavar.",
-        type: ["scenic"],
-        tip: "The 30-min boat ride through narrow mangrove tunnels is serene and crowd-free.",
-        mapQuery: "Sharavathi+Kandla+Mangrove+Walkway"
+        title: "Honnavar / Bhatkal: Dhuhr & Asr (Qasr Jam') + Famous Bhatkali Beef Biryani",
+        desc: "Head to Kwality Hotel or City Light on the Bhatkal / Honnavar corridor for world-renowned authentic Bhatkali Beef Dum Biryani & coastal beef sukka. Offer combined Dhuhr (2) & Asr (2) at Jamia Masjid Honnavar or Bhatkal.",
+        type: ["halal", "salah", "scenic"],
+        tip: "Bhatkali Biryani uses distinct white scented rice with rich caramelized onion gravy and tender beef — absolute culinary highlight.",
+        mapQuery: "Kwality+Hotel+Bhatkal"
       },
       {
         time: "03:30 PM",
@@ -114,11 +115,11 @@ const ITINERARY_DATA = {
       },
       {
         time: "08:30 PM",
-        title: "Check-in at Kumta / Sanikatta Outskirts",
-        desc: "Drive 20 mins south to Kumta bypass. Avoid the ₹3,500+ long-weekend Gokarna beach hut pricing and get a clean roadside room for ₹1,200 – ₹1,500.",
-        type: ["stay"],
-        tip: "Dinner: Try authentic Uttara Kannada seafood curry meals or Mangalorean buns at Kumta bypass.",
-        mapQuery: "Kumta,+Karnataka"
+        title: "Kumta Outskirts: Maghrib & Isha (Qasr Jam') + Beef Parotta Dinner",
+        desc: "Drive 20 mins south to Kumta bypass. Pray combined Maghrib (3) & Isha (2) at Jamia Masjid Kumta. Head to Hotel Shalimar / Al-Madeena for spicy beef fry, beef chilli, and layered Malabar parottas.",
+        type: ["stay", "halal", "salah"],
+        tip: "Kumta outskirts lodge costs only ₹1,200 – ₹1,500, avoiding Gokarna's ₹3,500 long-weekend pricing.",
+        mapQuery: "Jamia+Masjid+Kumta"
       }
     ]
   },
@@ -157,11 +158,11 @@ const ITINERARY_DATA = {
       },
       {
         time: "02:00 PM",
-        title: "Coastal Lunch on NH66",
-        desc: "Descend back to the highway. Hot South Indian thali / Karavali fish curry meal.",
-        type: ["drive"],
-        tip: "Co-pilot: Verify offline Google Maps for Maravanthe and Hebri are ready.",
-        mapQuery: "Bhatkal,+Karnataka"
+        title: "Coastal Halal Lunch & Dhuhr + Asr (Qasr Jam')",
+        desc: "Descend back to NH66 corridor. Stop at Jamia Masjid Kundapura for clean wudu and combined Dhuhr (2) & Asr (2). Enjoy fresh halal seafood / beef curry meals at Hotel Al-Bake Kundapura.",
+        type: ["drive", "halal", "salah"],
+        tip: "Kundapura Jamia Masjid is right off the highway with easy car parking.",
+        mapQuery: "Jamia+Masjid+Kundapura"
       },
       {
         time: "04:30 PM",
@@ -173,28 +174,28 @@ const ITINERARY_DATA = {
       },
       {
         time: "08:00 PM",
-        title: "Check-in at Hebri / Brahmavar Outskirts",
-        desc: "Stay near Hebri at the base of Agumbe Ghats. Bypasses all festival pilgrim traffic in Udupi town and sets you up for the Monday morning ghat climb.",
-        type: ["stay"],
-        tip: "Clean transit lodges available for ₹1,000 – ₹1,400. Quiet, cool country air.",
-        mapQuery: "Hebri,+Karnataka"
+        title: "Hebri Outskirts Stay: Maghrib & Isha (Qasr Jam') + Malabar Dinner",
+        desc: "Check in at Hebri/Brahmavar at the base of Agumbe Ghats. Pray Maghrib (3) & Isha (2) at Jamia Masjid Hebri. Have dinner at Hotel Al-Falah / Malabar family diner (porotta & beef roast).",
+        type: ["stay", "halal", "salah"],
+        tip: "Bypasses all Udupi temple festival crowds and puts you 20 mins from Agumbe Ghat.",
+        mapQuery: "Jamia+Masjid+Hebri"
       }
     ]
   },
 
   day4: {
     title: "Day 4: Monday, 14th September (Ganesh Chaturthi)",
-    route: "Hebri ➔ Agumbe 14 Hairpins ➔ Mullayanagiri High Plateau ➔ Bangalore Return",
+    route: "Hebri ➔ Agumbe 14 Hairpins ➔ Mullayanagiri High Plateau ➔ Chikmagalur ➔ Bangalore",
     distance: "~360 km",
     duration: "7 hrs drive + mountain stops",
-    mapUrl: "https://www.google.com/maps/dir/Hebri/Agumbe+Sunset+Point/Mullayanagiri+Peak/Hassan/Bengaluru",
-    desc: "Ascend the legendary 14 hairpin turns of Agumbe into the rainforest canopy, conquer the rolling grasslands of Mullayanagiri, and return to Bangalore.",
+    mapUrl: "https://www.google.com/maps/dir/Hebri/Agumbe+Sunset+Point/Mullayanagiri+Peak/Chikmagalur/Hassan/Bengaluru",
+    desc: "Ascend the legendary 14 hairpin turns of Agumbe into the clouds, conquer Mullayanagiri plateau, feast on Malnad beef chops in Chikmagalur, and cruise back to Bangalore.",
     steps: [
       {
-        time: "06:30 AM",
-        title: "Climb the Agumbe 14 Hairpin Curves",
-        desc: "Exciting drive ascending from sea level into the clouds. Known as the 'Cherrapunji of the South', lush dense jungle canopy with mountain streams.",
-        type: ["drive", "plateau"],
+        time: "06:15 AM",
+        title: "Fajr & Climb the Agumbe 14 Hairpin Curves",
+        desc: "Offer Fajr prayer and begin the exhilarating climb from sea level into the rainforest canopy. Lush dense jungle with cascading roadside streams.",
+        type: ["drive", "plateau", "salah"],
         tip: "Keep windows down to enjoy the crisp rainforest scent and birdsong. Watch for early morning mist.",
         mapQuery: "Agumbe+Ghat+Viewpoint"
       },
@@ -215,20 +216,28 @@ const ITINERARY_DATA = {
         mapQuery: "Mullayanagiri+Peak"
       },
       {
-        time: "02:30 PM",
-        title: "Chikmagalur Town Lunch & Estate Coffee",
-        desc: "Authentic Malnad thali or biryani followed by freshly brewed Chikmagalur peaberry filter coffee to re-energize the driver.",
-        type: ["drive"],
-        tip: "Buy 500g of fresh roasted coffee beans/powder as a trip souvenir.",
-        mapQuery: "Chikmagalur,+Karnataka"
+        time: "02:00 PM",
+        title: "Chikmagalur: Dhuhr & Asr (Qasr Jam') + Celebrated Malnad Beef Chops",
+        desc: "Head to New Taj Hotel or Khansama Restaurant in Chikmagalur for world-famous spicy Malnad beef chops, beef pepper fry, ghee rice, and biryani. Pray combined Dhuhr (2) & Asr (2) at Jamia Masjid Chikmagalur on Market Road.",
+        type: ["halal", "salah", "drive"],
+        tip: "Don't miss the freshly brewed Chikmagalur peaberry filter coffee after lunch.",
+        mapQuery: "New+Taj+Hotel+Chikmagalur"
       },
       {
         time: "04:30 PM",
         title: "Return Cruise on 4-Lane NH75 (Chikmagalur to Bangalore)",
-        desc: "Route: Chikmagalur ➔ Belur ➔ Hassan ➔ Kunigal ➔ Nelamangala. Smooth, wide 4-lane expressway with steady speed.",
+        desc: "Route: Chikmagalur ➔ Belur ➔ Hassan ➔ Kunigal ➔ Nelamangala. Smooth, wide 4-lane expressway with steady cruising speed.",
         type: ["drive"],
-        tip: "Option A: Drive straight to Bangalore (reach ~10:30 PM). Option B: Halt at Hassan bypass (Channarayapatna) for a 5 AM sprint on Tuesday.",
+        tip: "Option A: Drive straight to Bangalore (reach ~10:30 PM). Option B: Halt at Hassan bypass for a 5 AM sprint on Tuesday.",
         mapQuery: "Hassan+Karnataka+to+Bengaluru"
+      },
+      {
+        time: "07:30 PM",
+        title: "Hassan Bypass: Maghrib & Isha (Qasr Jam') + Tea Break",
+        desc: "Pull over near Hassan bypass for combined Maghrib (3) & Isha (2) at Masjid-e-Azam Hassan. Quick chai and snacks for the driver before the final 2-hour expressway sprint.",
+        type: ["drive", "salah"],
+        tip: "Ensure windshield is clean and driver is refreshed for the final night stretch.",
+        mapQuery: "Masjid+e+Azam+Hassan"
       },
       {
         time: "10:30 PM",
@@ -281,6 +290,7 @@ const CHECKLIST_DATA = {
     "Aux cable / Bluetooth paired & 20+ hrs offline playlist downloaded"
   ],
   gear: [
+    "Clean prayer mat (Janamaz) & 2L Wudu water bottle in car boot",
     "1 pair waterproof sandals (sturdy rubber grip for Yana/falls)",
     "1 dry pair of sneakers / driving shoes",
     "Light rain jacket / windcheater & mini umbrella",
@@ -290,6 +300,7 @@ const CHECKLIST_DATA = {
     "Microfiber quick-dry towels"
   ],
   tech: [
+    "Qibla compass & prayer times offline app (e.g. Muslim Pro / Qibla Connect)",
     "Driving License, Car RC, Insurance & PUC hard copies / Digilocker",
     "Google Maps offline areas downloaded (Shimoga, Gokarna, Chikmagalur)",
     "Car phone mount (essential for co-pilot navigation)",
@@ -406,6 +417,7 @@ function renderTimeline(dayKey) {
   // Filter steps if needed
   const filteredSteps = data.steps.filter(step => {
     if (currentFilter === "all") return true;
+    if (currentFilter === "halal" && (step.type.includes("halal") || step.type.includes("salah"))) return true;
     if (currentFilter === "scenic" && (step.type.includes("beach") || step.type.includes("scenic"))) return true;
     if (currentFilter === "falls" && step.type.includes("falls")) return true;
     if (currentFilter === "plateau" && step.type.includes("plateau")) return true;
@@ -451,6 +463,8 @@ function renderTimeline(dayKey) {
         if (t === "alert") { tagClass = "tag-alert"; label = "⚠️ DRIVER ALERT"; }
         if (t === "stay") { tagClass = "tag-stay"; label = "🏨 OUTSKIRTS STAY"; }
         if (t === "scenic") { tagClass = "tag-beach"; label = "📸 SCENIC"; }
+        if (t === "halal") { tagClass = "tag-halal"; label = "🥩 HALAL & BEEF"; }
+        if (t === "salah") { tagClass = "tag-salah"; label = "🕌 SALAH (QASR)"; }
         return `<span class="tag-badge ${tagClass}">${label}</span>`;
       }).join("");
 
@@ -482,7 +496,7 @@ function renderTimeline(dayKey) {
             <div class="step-actions">
               <a href="${mapUrl}" target="_blank" class="btn-nav-map">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Navigate to Spot
+                Navigate to Spot / Masjid
               </a>
             </div>
           </div>

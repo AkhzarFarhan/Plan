@@ -74,17 +74,21 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <span>Itinerary</span>
       </button>
+      <button class="nav-btn" data-tab="halal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9z"/><circle cx="12" cy="11" r="3"/></svg>
+        <span>Halal & Salah</span>
+      </button>
       <button class="nav-btn" data-tab="stays">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span>Outskirts Stays</span>
+        <span>Stays</span>
       </button>
       <button class="nav-btn" data-tab="alerts">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <span>Hazards & Tips</span>
+        <span>Alerts</span>
       </button>
       <button class="nav-btn" data-tab="budget">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span>Budget Split</span>
+        <span>Budget</span>
       </button>
       <button class="nav-btn" data-tab="checklist">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
@@ -121,6 +125,7 @@
       <!-- Filter Chips -->
       <div class="filter-scroll">
         <button class="filter-chip active" data-filter="all">All Steps</button>
+        <button class="filter-chip" data-filter="halal">🕌 Halal & Salah</button>
         <button class="filter-chip" data-filter="scenic">🌊 Beaches & Monoliths</button>
         <button class="filter-chip" data-filter="falls">💦 Waterfalls</button>
         <button class="filter-chip" data-filter="plateau">🏔️ High Plateau</button>
@@ -133,7 +138,172 @@
       </div>
     </main>
 
-    <!-- TAB 2: OUTSKIRTS STAYS (OFFLINE STRATEGY) -->
+    <!-- TAB 2: HALAL DINING & SALAH COMPANION -->
+    <section id="tab-halal" class="tab-pane">
+      <!-- Safar & Salah Rules Card -->
+      <div class="card alert-box info">
+        <div class="alert-icon">🕌</div>
+        <div>
+          <h4>Safar (Travel) Salah Guide: Qasr & Jam'</h4>
+          <p>Since your trip distance exceeds ~78 km (Shar'i Safar threshold), you are travelers (Musaafir):</p>
+          <ul style="padding-left: 18px; margin-top: 6px; font-size: 0.82rem; color: var(--text-secondary);">
+            <li><strong>Qasr (Shortened):</strong> 4-rak'ah Fardh prayers (Dhuhr, Asr, Isha) are shortened to <strong>2 Rak'ahs</strong>. Fajr (2) and Maghrib (3) are prayed as usual.</li>
+            <li><strong>Jam' (Combined):</strong> You may combine <strong>Dhuhr + Asr</strong> (either at Dhuhr time [Taqdim] or Asr time [Ta'khir]) and <strong>Maghrib + Isha</strong> (either at Maghrib or Isha time).</li>
+            <li><strong>Road Tip:</strong> Keep a 2L mineral water bottle in the car boot specifically for quick Wudu on highway scenic pull-overs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Halal Food & Beef Spots Section -->
+      <div class="section-title">
+        <h3>🥩 Top Halal & Beef Eateries (Value for Money)</h3>
+        <p>Curated spots along the route known for authentic taste, clean prep, and budget pricing</p>
+      </div>
+
+      <div class="stays-grid">
+        <!-- Spot 1: Shimoga -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#e0f2fe; color:#0284c7;">Night 1 • Shimoga</span>
+            <span class="stay-price">₹100 – ₹180 / person</span>
+          </div>
+          <h4>New Taj Hotel / Hotel Al-Rehman (Shimoga)</h4>
+          <p class="stay-desc">Shimoga has a rich Muslim food culture. Famous for hot charcoal beef seekh kebabs, beef pepper fry, tender beef biryani, and crispy parottas.</p>
+          <ul class="stay-perks">
+            <li>🥩 <strong>Specialty:</strong> Beef Seekh Kebab, Beef Fry, Khushka-Kebab combo</li>
+            <li>📍 <strong>Location:</strong> Near Tank Mohalla / Sagar Road Bypass</li>
+            <li>⭐ 100% Halal, packed with locals, fast service</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/halal+beef+restaurants+in+Shivamogga" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Find Halal Food in Shimoga
+          </a>
+        </div>
+
+        <!-- Spot 2: Bhatkal / Honnavar -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#dcfce7; color:#166534;">Day 2 • Bhatkal / Honnavar</span>
+            <span class="stay-price">₹140 – ₹220 / person</span>
+          </div>
+          <h4>Kwality Hotel / City Light (Bhatkal Bypass)</h4>
+          <p class="stay-desc">Bhatkal is world-renowned for its authentic Navayathi Muslim cuisine. Their white-rice Bhatkali Dum Biryani cooked with fragrant green chillies, caramelized onions, and tender beef/mutton is legendary.</p>
+          <ul class="stay-perks">
+            <li>🥩 <strong>Specialty:</strong> Authentic Bhatkali Beef Dum Biryani, Coastal Beef Sukka</li>
+            <li>📍 <strong>Location:</strong> NH66 Highway Bypass (easy parking)</li>
+            <li>⭐ Must-visit culinary highlight of the entire trip</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/Kwality+Hotel+Bhatkal" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Navigate to Kwality Hotel Bhatkal
+          </a>
+        </div>
+
+        <!-- Spot 3: Kumta Outskirts -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#fef3c7; color:#b45309;">Night 2 • Kumta</span>
+            <span class="stay-price">₹90 – ₹150 / person</span>
+          </div>
+          <h4>Hotel Shalimar / Al-Madeena (Kumta NH66)</h4>
+          <p class="stay-desc">Casual local halal diner right on NH66. Perfect after an evening at Gokarna beach. Super value for money.</p>
+          <ul class="stay-perks">
+            <li>🥩 <strong>Specialty:</strong> Beef Chilli, Beef Dry Fry, Malabar Parotta, Chicken Kebab</li>
+            <li>📍 <strong>Location:</strong> Kumta Highway Junction</li>
+            <li>⭐ Open late till 11 PM, swift takeaway or dine-in</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/halal+restaurants+in+Kumta" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Find Halal Diners in Kumta
+          </a>
+        </div>
+
+        <!-- Spot 4: Chikmagalur -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#f3e8ff; color:#7e22ce;">Day 4 • Chikmagalur</span>
+            <span class="stay-price">₹150 – ₹240 / person</span>
+          </div>
+          <h4>New Taj Hotel / Khansama (Chikmagalur)</h4>
+          <p class="stay-desc">Chikmagalur has a historic Muslim heritage and celebrated Malnad cuisine. Famous for flavorful spicy beef chops, beef roast with pathiri, and ghee rice.</p>
+          <ul class="stay-perks">
+            <li>🥩 <strong>Specialty:</strong> Beef Chops, Beef Sukka, Ghee Rice & Mutton Korma</li>
+            <li>📍 <strong>Location:</strong> Market Road / Indira Gandhi Road, Chikmagalur</li>
+            <li>⭐ Excellent taste, great portions for 3 hungry techies</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/New+Taj+Hotel+Chikmagalur" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Navigate to New Taj Chikmagalur
+          </a>
+        </div>
+      </div>
+
+      <!-- Highway Mosques (Masjids) Directory -->
+      <div class="section-title mt-4">
+        <h3>🕌 Strategic Highway Mosques (Masjids)</h3>
+        <p>Selected for convenient car parking, clean ablution (Wudu) areas, and quick highway access</p>
+      </div>
+
+      <div class="stays-grid">
+        <!-- Masjid 1 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#e0f2fe; color:#0284c7;">NH69 • Kadur / Shimoga</span>
+            <span class="stay-price">Maghrib & Isha (Day 1)</span>
+          </div>
+          <h4>Jamia Masjid Shimoga (or Jamia Masjid Kadur)</h4>
+          <p class="stay-desc">Spacious district mosques with running tap water, clean wudu stations, and ample room for car parking.</p>
+          <a href="https://www.google.com/maps/search/Jamia+Masjid+Shivamogga" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Navigate to Jamia Masjid Shimoga
+          </a>
+        </div>
+
+        <!-- Masjid 2 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#dcfce7; color:#166534;">Coast • Honnavar & Bhatkal</span>
+            <span class="stay-price">Dhuhr & Asr (Day 2)</span>
+          </div>
+          <h4>Jamia Masjid Bhatkal (or Jamia Masjid Honnavar)</h4>
+          <p class="stay-desc">Bhatkal's historic mosques feature grand coastal coastal architecture, large prayer halls, and excellent wudu facilities. Very peaceful atmosphere.</p>
+          <a href="https://www.google.com/maps/search/Jamia+Masjid+Bhatkal" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Navigate to Jamia Masjid Bhatkal
+          </a>
+        </div>
+
+        <!-- Masjid 3 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#fef3c7; color:#b45309;">NH66 • Kumta & Kundapura</span>
+            <span class="stay-price">Maghrib / Isha (Day 2 / 3)</span>
+          </div>
+          <h4>Jamia Masjid Kumta / Jamia Masjid Kundapura</h4>
+          <p class="stay-desc">Conveniently located near the highway corridor. Quick pull-over to combine Maghrib & Isha before heading to your outskirts lodge.</p>
+          <a href="https://www.google.com/maps/search/Jamia+Masjid+Kumta" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Navigate to Jamia Masjid Kumta
+          </a>
+        </div>
+
+        <!-- Masjid 4 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge" style="background:#f3e8ff; color:#7e22ce;">Ghats • Hebri & Chikmagalur</span>
+            <span class="stay-price">Dhuhr & Asr (Day 4)</span>
+          </div>
+          <h4>Jamia Masjid Hebri / Jamia Masjid Chikmagalur</h4>
+          <p class="stay-desc">Hebri mosque is right at the junction before ascending Agumbe Ghats. Chikmagalur Jamia Masjid on Market Road offers a serene mountain backdrop.</p>
+          <a href="https://www.google.com/maps/search/Jamia+Masjid+Chikmagalur" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Navigate to Jamia Masjid Chikmagalur
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: OUTSKIRTS STAYS (OFFLINE STRATEGY) -->
     <section id="tab-stays" class="tab-pane">
       <div class="card alert-box warning">
         <div class="alert-icon">💡</div>

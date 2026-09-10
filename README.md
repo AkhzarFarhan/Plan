@@ -8,11 +8,20 @@ A lightweight, mobile-optimized, offline-first web companion built for **3 bache
 
 1. **Step-by-Step Interactive Itinerary (Day 1 to Day 5):**
    - Timestamped timeline with driving hours, rest stops, scenic spots, and offline outskirts night halts.
-   - One-tap **"Navigate to Spot"** buttons opening Google Maps directly with destination queries.
-   - Filter chips to quickly isolate **Waterfalls**, **Beaches & Monoliths**, **High Plateaus**, and **Driver Alerts**.
+   - One-tap **"Navigate to Spot / Masjid"** buttons opening Google Maps directly.
+   - Filter chips to quickly isolate **🕌 Halal & Salah**, **Waterfalls**, **Beaches & Monoliths**, **High Plateaus**, and **Driver Alerts**.
    - Interactive **"Mark Done"** buttons to track progress as you cover each leg.
 
-2. **Outskirts & Buffer Stays Hub (Offline Strategy):**
+2. **🕌 Halal Dining, Beef Specialties & Safar Salah Companion:**
+   - **Safar Salah Guide:** Clear breakdown of **Qasr** (shortening 4-rak'ah prayers to 2) and **Jam'** (combining Dhuhr+Asr and Maghrib+Isha) during travel.
+   - **Curated Value-for-Money Halal & Beef Spots:**
+     - *Shimoga (Night 1):* Hot charcoal beef seekh kebabs, khushka & beef fry (New Taj / Al-Rehman).
+     - *Bhatkal / Honnavar (Day 2):* World-famous authentic **Bhatkali Beef Dum Biryani** & Coastal Beef Sukka (Kwality Hotel / City Light).
+     - *Kumta (Night 2):* Kerala layered parotta, beef chilli, and beef fry (Hotel Shalimar / Al-Madeena).
+     - *Chikmagalur (Day 4):* Celebrated Malnad spicy beef chops, beef pepper roast & biryani (New Taj / Khansama).
+   - **Highway Mosques (Masjids) Directory:** Handpicked Masjids with clean wudu facilities and easy car parking right along the highway (Jamia Masjid Kadur, Shimoga, Honnavar, Bhatkal, Kumta, Kundapura, Hebri, Chikmagalur, and Hassan).
+
+3. **Outskirts & Buffer Stays Hub (Offline Strategy):**
    - Specific highway bypasses for cheap offline walk-in rooms (₹1,000 – ₹1,500/night for 3 people):
      - *Night 1 (Fri):* **Shimoga Sagar Road Bypass (NH69)**
      - *Night 2 (Sat):* **Kumta / Sanikatta (South of Gokarna)**
