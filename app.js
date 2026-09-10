@@ -1,57 +1,54 @@
 /**
  * Karavali & Malenadu Epic Loop - Road Trip Companion App
- * Designed for 3 Muslim Bachelor Software Engineers (1 Driver Petrol Car)
- * Includes Halal & Beef Dining, Mosques (Masjids), and Safar Qasr/Jam' Prayers
+ * Clean, Glanceable & Action-Oriented
  */
 
-// ITINERARY DATA
+// ITINERARY DATA (Punchy & Glanceable)
 const ITINERARY_DATA = {
   day1: {
     title: "Day 1: Friday, 11th September",
-    route: "Bangalore ➔ Tumkur ➔ Kadur ➔ Shimoga Outskirts",
-    distance: "~280 km",
-    duration: "5.5 – 6 hrs",
-    mapUrl: "https://www.google.com/maps/dir/Bengaluru,+Karnataka/Shivamogga,+Karnataka",
-    desc: "Beat the Friday evening techie exodus, clear the Nelamangala choke-point, stop for Maghrib/Isha Jam' and halal dinner, then cruise to your night halt at Shimoga bypass.",
+    route: "Bangalore ➔ Kadur ➔ Shimoga Outskirts",
+    distance: "280 km • 5.5 hrs",
+    mapUrl: "https://www.google.com/maps/dir/Bengaluru/Shivamogga",
     steps: [
       {
         time: "03:45 PM",
-        title: "Assemble, Wudu & Final Car Check",
-        desc: "Meet at designated pickup point. Offer Asr (or intend Jam' Taqdim with Dhuhr before departure). Set tyre pressures to 32-33 PSI, ensure 2L Wudu water bottle and Janamaz are in the boot.",
+        title: "Assemble & Final Car Check",
+        desc: "Meet up. Tyre pressure 33 PSI, Wudu water bottle & prayer mat in boot.",
         type: ["drive", "salah"],
-        tip: "Single driver rule: Fill up full petrol tank in Bangalore before entering highway jams.",
+        tip: "Single driver rule: Fill up full tank in Bangalore before highway jams.",
         mapQuery: "Bengaluru, Karnataka"
       },
       {
         time: "04:00 PM",
-        title: "Highway Exit: Beat the Nelamangala Choke",
-        desc: "Navigate onto NICE Road or take the Magadi-Solur bypass to avoid 8th Mile gridlock. Thousands of cars leaving for the Ganesh Chaturthi 4-day weekend will crowd the toll.",
+        title: "Highway Exit: Beat Nelamangala Toll",
+        desc: "Take NICE Road / Magadi-Solur bypass to avoid 4-day weekend getaway jam.",
         type: ["drive", "alert"],
-        tip: "Co-pilot alert: Keep watch on Google Maps live traffic colors to divert around Nelamangala toll if blocked.",
+        tip: "Co-pilot: Keep watch on Google Maps live traffic colors.",
         mapQuery: "Nelamangala+Toll+Plaza"
       },
       {
         time: "06:30 PM",
-        title: "Kunigal / Bellur Cross Tea & Stretch Break",
-        desc: "Compulsory 15-min break. Hot chai and snacks. Driver does light calf & neck stretches.",
+        title: "Kunigal / Bellur Cross Tea Break",
+        desc: "15-min tea stop. Driver calf & neck stretch.",
         type: ["drive"],
-        tip: "Hydrate moderately; do not skip driver stretch breaks.",
+        tip: "Compulsory stretch every 2 hours.",
         mapQuery: "Kunigal,+Karnataka"
       },
       {
         time: "08:30 PM",
-        title: "Kadur / Birur: Maghrib & Isha (Qasr Jam') + Halal Dinner",
-        desc: "Pull over at Jamia Masjid Kadur / Birur on NH69 for clean wudu and combined Maghrib (3 rak'ahs) & Isha (2 rak'ahs Qasr). Have a hot, fresh halal dinner at nearby dhabas.",
-        type: ["drive", "salah", "halal"],
-        tip: "Keep dinner light and avoid carb-heavy overeating for the single driver.",
+        title: "Kadur: Maghrib + Isha (Jam' 3+2) & Dinner",
+        desc: "Clean wudu & prayer at Jamia Masjid Kadur. Hot halal dinner at nearby dhabas.",
+        type: ["salah", "halal"],
+        tip: "Keep dinner light for the single driver.",
         mapQuery: "Jamia+Masjid+Kadur"
       },
       {
         time: "10:30 PM",
-        title: "Check-in at Shimoga Outskirts + Optional Beef Kebabs",
-        desc: "Bypass Shimoga city traffic. Pull into a highway lodge on the Sagar exit (NH69). Gated car parking. Optional late-night takeaway of Shimoga's famous charcoal beef seekh kebabs from Tank Mohalla.",
+        title: "Shimoga Sagar Bypass Check-in",
+        desc: "Check into highway lodge (~₹1,100 for 3). Optional late beef kebabs in Tank Mohalla.",
         type: ["stay", "halal"],
-        tip: "Target offline tariff: ₹1,000 – ₹1,300 for 3 pax. Early checkout scheduled for 6:30 AM.",
+        tip: "Early checkout at 6:30 AM.",
         mapQuery: "Sagara+Road+Shivamogga"
       }
     ]
@@ -59,66 +56,56 @@ const ITINERARY_DATA = {
 
   day2: {
     title: "Day 2: Saturday, 12th September",
-    route: "Shimoga ➔ Jog Falls ➔ Honnavar & Bhatkal ➔ Gokarna (Night 2 Kumta)",
-    distance: "~240 km",
-    duration: "6 hrs drive + sightseeing",
-    mapUrl: "https://www.google.com/maps/dir/Shivamogga/Jog+Falls/Honnavar/Bhatkal/Gokarna/Kumta",
-    desc: "From the 830-ft roar of Jog Falls down through misty Gerosoppa Ghats to legendary Bhatkali Beef Biryani, beach cliffs, and sunset on the Arabian Sea.",
+    route: "Shimoga ➔ Jog Falls ➔ Bhatkal ➔ Gokarna ➔ Kumta",
+    distance: "240 km • Full Day",
+    mapUrl: "https://www.google.com/maps/dir/Shivamogga/Jog+Falls/Bhatkal/Gokarna/Kumta",
     steps: [
       {
         time: "06:15 AM",
-        title: "Fajr Prayer & Early Roll Out on NH69",
-        desc: "Offer Fajr prayer (2 rak'ahs) and start the fresh morning drive through lush Malenadu pine and teak forests towards Jog Falls.",
+        title: "Fajr Prayer & Early Departure",
+        desc: "Morning drive on NH69 through green pine & teak forests.",
         type: ["drive", "salah"],
-        tip: "Leaving before 7 AM ensures you arrive before Bangalore tour buses crowd the viewpoints.",
+        tip: "Early start beats the tourist bus crowd.",
         mapQuery: "Jog+Falls"
       },
       {
         time: "08:30 AM",
-        title: "Jog Falls in Full September Roar",
-        desc: "Witness the Sharavathi River plunge down Raja, Roarer, Rocket, and Rani. September brings 100% water volume with rainbow mist.",
+        title: "Jog Falls (Full September Roar)",
+        desc: "Mighty 830-ft plunge at peak volume. Hot breakfast at KSTDC Mayura.",
         type: ["falls"],
-        tip: "Have hot Neer Dosa & Tatte Idli at KSTDC Mayura restaurant inside the complex.",
+        tip: "Try local Tatte Idli & Neer Dosa.",
         mapQuery: "Jog+Falls+Karnataka"
       },
       {
         time: "11:30 AM",
-        title: "Gerosoppa Ghat Descent to Honnavar",
-        desc: "Descend the winding Western Ghats through Sharavathi Wildlife Sanctuary down to sea level.",
+        title: "Gerosoppa Ghat Descent to Coast",
+        desc: "Winding downhill curves through dense wildlife sanctuary.",
         type: ["drive", "alert"],
-        tip: "Driver Alert: Use 2nd & 3rd gear engine braking down slopes. Damp roads from morning mist require smooth steering.",
+        tip: "Driver Alert: Use 2nd & 3rd gear engine braking.",
         mapQuery: "Gerosoppa+Ghat"
       },
       {
         time: "01:30 PM",
-        title: "Honnavar / Bhatkal: Dhuhr & Asr (Qasr Jam') + Famous Bhatkali Beef Biryani",
-        desc: "Head to Kwality Hotel or City Light on the Bhatkal / Honnavar corridor for world-renowned authentic Bhatkali Beef Dum Biryani & coastal beef sukka. Offer combined Dhuhr (2) & Asr (2) at Jamia Masjid Honnavar or Bhatkal.",
-        type: ["halal", "salah", "scenic"],
-        tip: "Bhatkali Biryani uses distinct white scented rice with rich caramelized onion gravy and tender beef — absolute culinary highlight.",
+        title: "Bhatkal: Famous Beef Biryani & Salah",
+        desc: "Authentic Bhatkali Beef Dum Biryani at Kwality Hotel. Dhuhr+Asr (2+2) at Jamia Masjid Bhatkal.",
+        type: ["halal", "salah"],
+        tip: "World-famous white-rice dum biryani — top culinary stop.",
         mapQuery: "Kwality+Hotel+Bhatkal"
       },
       {
-        time: "03:30 PM",
-        title: "Coastal Cruise to Gokarna (NH66)",
-        desc: "45 km drive on the 4-lane coastal expressway with glimpses of the Arabian sea on your left.",
-        type: ["drive", "beach"],
-        tip: "Bypass Gokarna town temple traffic; head straight towards the beach hills.",
-        mapQuery: "Gokarna,+Karnataka"
-      },
-      {
-        time: "05:00 PM",
-        title: "Kudle Beach & Om Beach Cliff Walk (Sunset)",
-        desc: "Park at Kudle hilltop. Take the scenic cliff trail down to Kudle or Om Beach. Relax at beach cafes with cold drinks and watch the orange sunset over the sea.",
+        time: "04:30 PM",
+        title: "Gokarna: Kudle & Om Beach Sunset",
+        desc: "Cliff walk between Kudle and Om Beach. Relax at beach cafes during sunset.",
         type: ["beach", "scenic"],
-        tip: "Do NOT swim deep into the sea. Post-monsoon high tide undertows are treacherous.",
+        tip: "No deep swimming; post-monsoon undertows are rough.",
         mapQuery: "Om+Beach+Gokarna"
       },
       {
         time: "08:30 PM",
-        title: "Kumta Outskirts: Maghrib & Isha (Qasr Jam') + Beef Parotta Dinner",
-        desc: "Drive 20 mins south to Kumta bypass. Pray combined Maghrib (3) & Isha (2) at Jamia Masjid Kumta. Head to Hotel Shalimar / Al-Madeena for spicy beef fry, beef chilli, and layered Malabar parottas.",
+        title: "Kumta Outskirts: Maghrib+Isha & Dinner",
+        desc: "Maghrib+Isha (3+2) at Jamia Masjid Kumta. Beef fry & parotta at Hotel Shalimar. Lodge ~₹1,300.",
         type: ["stay", "halal", "salah"],
-        tip: "Kumta outskirts lodge costs only ₹1,200 – ₹1,500, avoiding Gokarna's ₹3,500 long-weekend pricing.",
+        tip: "Saves ₹2,500 compared to overcrowded Gokarna beach huts.",
         mapQuery: "Jamia+Masjid+Kumta"
       }
     ]
@@ -126,125 +113,121 @@ const ITINERARY_DATA = {
 
   day3: {
     title: "Day 3: Sunday, 13th September",
-    route: "Kumta ➔ Mirjan ➔ Yana Plateau ➔ Vibhooti Falls ➔ Maravanthe ➔ Hebri",
-    distance: "~210 km",
-    duration: "5 hrs drive + treks",
+    route: "Kumta ➔ Yana Monoliths ➔ Vibhooti Falls ➔ Maravanthe ➔ Hebri",
+    distance: "210 km • Full Day",
     mapUrl: "https://www.google.com/maps/dir/Kumta/Mirjan+Fort/Yana+Caves/Vibhooti+Falls/Maravanthe+Beach/Hebri",
-    desc: "Karst monoliths rising out of evergreen rainforest, turquoise jungle plunge pools, and the legendary Maravanthe ocean highway sunset.",
     steps: [
       {
         time: "07:30 AM",
         title: "Mirjan Fort Photo Stop",
-        desc: "Historic 16th-century laterite fort completely carpeted with bright green monsoon moss and surrounded by circular watchtowers.",
+        desc: "Moss-covered 16th-century laterite fort with circular watchtowers.",
         type: ["scenic"],
-        tip: "Takes only 30-40 mins. Great backdrop for bachelor squad group photos.",
+        tip: "Quick 30-min photo session.",
         mapQuery: "Mirjan+Fort"
       },
       {
         time: "09:30 AM",
-        title: "Yana Rocks (Karst High Monoliths & Plateau)",
-        desc: "Drive into dense Sahyadri rainforest. 1.5 km canopy walk leading to two massive 300-ft solid black crystalline karst monoliths (Bhairaveshwara & Mohini Shikhara).",
+        title: "Yana Karst Monoliths & Plateau",
+        desc: "Jungle canopy walk to two 300-ft black limestone spires and caves.",
         type: ["plateau", "scenic"],
-        tip: "Wear rubber-grip trekking sandals. Rocks inside the cave passages are damp and slippery.",
+        tip: "Wear rubber-grip trekking sandals; cave path is damp.",
         mapQuery: "Yana+Caves+Karnataka"
       },
       {
         time: "12:00 PM",
         title: "Vibhooti Falls (Jungle Plunge Pool)",
-        desc: "Located 8 km from Yana. A hidden 3-tier cascade sheltered by towering bamboo groves. Clear, fresh turquoise water.",
+        desc: "Hidden multi-tier cascade inside bamboo forest with clear turquoise pool.",
         type: ["falls"],
-        tip: "Step into the shallow natural pool to soothe leg muscles after the Yana hike.",
+        tip: "Dip feet in natural pool to relax legs after Yana hike.",
         mapQuery: "Vibhooti+Falls"
       },
       {
         time: "02:00 PM",
-        title: "Coastal Halal Lunch & Dhuhr + Asr (Qasr Jam')",
-        desc: "Descend back to NH66 corridor. Stop at Jamia Masjid Kundapura for clean wudu and combined Dhuhr (2) & Asr (2). Enjoy fresh halal seafood / beef curry meals at Hotel Al-Bake Kundapura.",
-        type: ["drive", "halal", "salah"],
-        tip: "Kundapura Jamia Masjid is right off the highway with easy car parking.",
+        title: "Kundapura: Halal Coastal Lunch & Salah",
+        desc: "Fresh seafood or beef curry meals on NH66. Dhuhr+Asr (2+2) at Jamia Masjid Kundapura.",
+        type: ["halal", "salah", "drive"],
+        tip: "Mosque is right off highway with easy parking.",
         mapQuery: "Jamia+Masjid+Kundapura"
       },
       {
         time: "04:30 PM",
-        title: "The Iconic Maravanthe Highway & Sunset",
-        desc: "Drive along NH66 where the roaring Arabian Sea is right against your car on the right, and the calm Souparnika River flows on the left.",
-        type: ["beach", "scenic", "drive"],
-        tip: "Park safely at the designated bay. Sit on the rocky promenade to watch the golden hour sunset.",
+        title: "Maravanthe Ocean Highway & Sunset",
+        desc: "Drive on NH66 with Arabian Sea on the right and Souparnika River on the left.",
+        type: ["beach", "scenic"],
+        tip: "Park at promenade bay for golden hour sunset.",
         mapQuery: "Maravanthe+Beach"
       },
       {
         time: "08:00 PM",
-        title: "Hebri Outskirts Stay: Maghrib & Isha (Qasr Jam') + Malabar Dinner",
-        desc: "Check in at Hebri/Brahmavar at the base of Agumbe Ghats. Pray Maghrib (3) & Isha (2) at Jamia Masjid Hebri. Have dinner at Hotel Al-Falah / Malabar family diner (porotta & beef roast).",
+        title: "Hebri Outskirts: Maghrib+Isha & Stay",
+        desc: "Base of Agumbe Ghats. Maghrib+Isha (3+2) at Jamia Masjid Hebri. Malabar dinner. Lodge ~₹1,100.",
         type: ["stay", "halal", "salah"],
-        tip: "Bypasses all Udupi temple festival crowds and puts you 20 mins from Agumbe Ghat.",
+        tip: "Skips all Udupi festival rush and sets up morning ghat climb.",
         mapQuery: "Jamia+Masjid+Hebri"
       }
     ]
   },
 
   day4: {
-    title: "Day 4: Monday, 14th September (Ganesh Chaturthi)",
-    route: "Hebri ➔ Agumbe 14 Hairpins ➔ Mullayanagiri High Plateau ➔ Chikmagalur ➔ Bangalore",
-    distance: "~360 km",
-    duration: "7 hrs drive + mountain stops",
-    mapUrl: "https://www.google.com/maps/dir/Hebri/Agumbe+Sunset+Point/Mullayanagiri+Peak/Chikmagalur/Hassan/Bengaluru",
-    desc: "Ascend the legendary 14 hairpin turns of Agumbe into the clouds, conquer Mullayanagiri plateau, feast on Malnad beef chops in Chikmagalur, and cruise back to Bangalore.",
+    title: "Day 4: Monday, 14th September (Holiday)",
+    route: "Hebri ➔ Agumbe Hairpins ➔ Mullayanagiri Peak ➔ Bangalore",
+    distance: "360 km • 7 hrs drive + spots",
+    mapUrl: "https://www.google.com/maps/dir/Hebri/Agumbe+Sunset+Point/Mullayanagiri+Peak/Chikmagalur/Bengaluru",
     steps: [
       {
         time: "06:15 AM",
-        title: "Fajr & Climb the Agumbe 14 Hairpin Curves",
-        desc: "Offer Fajr prayer and begin the exhilarating climb from sea level into the rainforest canopy. Lush dense jungle with cascading roadside streams.",
+        title: "Fajr & Climb Agumbe 14 Hairpin Curves",
+        desc: "Drive from sea level up through rainforest into the clouds.",
         type: ["drive", "plateau", "salah"],
-        tip: "Keep windows down to enjoy the crisp rainforest scent and birdsong. Watch for early morning mist.",
+        tip: "Keep windows down for fresh mountain air and waterfall sounds.",
         mapQuery: "Agumbe+Ghat+Viewpoint"
       },
       {
         time: "07:30 AM",
         title: "Agumbe Valley Viewpoint",
-        desc: "Stand atop the cliff edge and watch the sea of white clouds floating across the Someshwara valley below.",
+        desc: "Cliff-edge view over the sea of white clouds. Hot tea & idli.",
         type: ["plateau", "scenic"],
-        tip: "Grab hot tea and steamed idli with spiced coconut chutney at Agumbe junction.",
+        tip: "Known as the Cherrapunji of the South.",
         mapQuery: "Agumbe+Sunset+Point"
       },
       {
         time: "10:30 AM",
-        title: "Mullayanagiri Peak & High Grassland Plateau",
-        desc: "Highest peak in Karnataka (1,930 m). Dramatic rolling mountain grasslands, cool mountain breeze (16°C – 18°C), and panoramic 360-degree plateau vistas.",
+        title: "Mullayanagiri Peak (Highest in Karnataka)",
+        desc: "1,930 m high. Cool mountain breeze (17°C) and rolling grassland plateau.",
         type: ["plateau", "scenic"],
-        tip: "Wear light windcheaters/hoodies. Wind speed on the peak can be intense.",
+        tip: "Wear light windcheater; winds are strong at the top.",
         mapQuery: "Mullayanagiri+Peak"
       },
       {
         time: "02:00 PM",
-        title: "Chikmagalur: Dhuhr & Asr (Qasr Jam') + Celebrated Malnad Beef Chops",
-        desc: "Head to New Taj Hotel or Khansama Restaurant in Chikmagalur for world-famous spicy Malnad beef chops, beef pepper fry, ghee rice, and biryani. Pray combined Dhuhr (2) & Asr (2) at Jamia Masjid Chikmagalur on Market Road.",
-        type: ["halal", "salah", "drive"],
-        tip: "Don't miss the freshly brewed Chikmagalur peaberry filter coffee after lunch.",
+        title: "Chikmagalur: Malnad Beef Chops & Salah",
+        desc: "Spicy beef chops & biryani at New Taj Hotel. Dhuhr+Asr (2+2) at Jamia Masjid Chikmagalur.",
+        type: ["halal", "salah"],
+        tip: "Grab fresh Chikmagalur filter coffee before hitting highway.",
         mapQuery: "New+Taj+Hotel+Chikmagalur"
       },
       {
         time: "04:30 PM",
-        title: "Return Cruise on 4-Lane NH75 (Chikmagalur to Bangalore)",
-        desc: "Route: Chikmagalur ➔ Belur ➔ Hassan ➔ Kunigal ➔ Nelamangala. Smooth, wide 4-lane expressway with steady cruising speed.",
+        title: "4-Lane NH75 Return Cruise",
+        desc: "Smooth cruising via Belur, Hassan, Kunigal & Nelamangala.",
         type: ["drive"],
-        tip: "Option A: Drive straight to Bangalore (reach ~10:30 PM). Option B: Halt at Hassan bypass for a 5 AM sprint on Tuesday.",
+        tip: "Steady pace on 4-lane expressway.",
         mapQuery: "Hassan+Karnataka+to+Bengaluru"
       },
       {
         time: "07:30 PM",
-        title: "Hassan Bypass: Maghrib & Isha (Qasr Jam') + Tea Break",
-        desc: "Pull over near Hassan bypass for combined Maghrib (3) & Isha (2) at Masjid-e-Azam Hassan. Quick chai and snacks for the driver before the final 2-hour expressway sprint.",
-        type: ["drive", "salah"],
-        tip: "Ensure windshield is clean and driver is refreshed for the final night stretch.",
+        title: "Hassan Bypass: Maghrib+Isha & Tea",
+        desc: "Maghrib+Isha (3+2) at Masjid-e-Azam Hassan. Chai break for driver.",
+        type: ["salah", "drive"],
+        tip: "Final 2 hours into Bangalore.",
         mapQuery: "Masjid+e+Azam+Hassan"
       },
       {
         time: "10:30 PM",
-        title: "Arrive in Bangalore (Recommended Option A)",
-        desc: "Enter Bangalore via Nelamangala flyover before late-night truck jams. Reach home, unpack, and get 8 hours of deep sleep!",
+        title: "Arrive in Bangalore Home",
+        desc: "Reach home before midnight truck rush. 8 hours of deep sleep!",
         type: ["drive"],
-        tip: "The single driver sleeps in his own bed tonight. 100% fresh for Tuesday morning office.",
+        tip: "Driver sleeps in own bed; 100% fresh for Tuesday office.",
         mapQuery: "Bengaluru,+Karnataka"
       }
     ]
@@ -252,61 +235,49 @@ const ITINERARY_DATA = {
 
   day5: {
     title: "Day 5: Tuesday, 15th September",
-    route: "Bangalore Home (or 5 AM Hassan Sprint) ➔ Office",
+    route: "Bangalore Home ➔ Office",
     distance: "Local",
-    duration: "Morning routine",
     mapUrl: "https://www.google.com/maps",
-    desc: "Wake up well-rested in Bangalore, recount road trip memories over team standup, and join office like champions.",
     steps: [
       {
         time: "07:30 AM",
-        title: "Wake up Fresh & Energized",
-        desc: "If you reached Monday night: Enjoy home coffee, unpack wet trek gear, and get ready with zero travel hangover.",
-        type: ["stay"],
-        tip: "If you took Option B (Hassan stay): Leave at 5:00 AM sharp to breeze through the 160 km empty NH75 into Bangalore by 7:45 AM.",
+        title: "Wake up Well-Rested",
+        desc: "Shower, home breakfast, zero travel fatigue or body ache.",
+        type: ["drive"],
+        tip: "Unpack luggage at ease.",
         mapQuery: "Bengaluru,+Karnataka"
       },
       {
         time: "09:30 AM",
         title: "Join Office & Daily Standup",
-        desc: "Seamless transition back to coding with a mind recharged by beaches, waterfalls, rainforests, and peaks.",
+        desc: "Start work with mind completely refreshed from beaches, falls & peaks!",
         type: ["scenic"],
-        tip: "Settle Splitwise expenses with the boys while having morning office tea.",
+        tip: "Settle Splitwise expenses over morning coffee.",
         mapQuery: "Bengaluru,+Karnataka"
       }
     ]
   }
 };
 
-// CHECKLIST DATA
+// CHECKLIST DATA (Clean & Practical)
 const CHECKLIST_DATA = {
   car: [
-    "Check Engine Oil, Coolant & Brake Fluid levels",
-    "Inspect Tyre Tread & set all 4 tyres + spare to 32-33 PSI",
-    "Windshield washer fluid filled + wiper blades clean/streak-free",
-    "Headlights, high/low beam, hazard lights & fog lamps working",
-    "Fastag wallet balance recharged (minimum ₹1,500)",
-    "Puncture kit, jack, spanner & portable air inflator in boot",
-    "Aux cable / Bluetooth paired & 20+ hrs offline playlist downloaded"
+    "Engine oil, coolant & brake fluid levels OK",
+    "Set all 5 tyres (including spare) to 33 PSI",
+    "Wiper fluid topped up with shampoo",
+    "Headlights, fog lamps & hazard lights working",
+    "Fastag wallet recharged with ₹1,500+",
+    "Puncture kit, jack & air inflator in boot"
   ],
   gear: [
-    "Clean prayer mat (Janamaz) & 2L Wudu water bottle in car boot",
-    "1 pair waterproof sandals (sturdy rubber grip for Yana/falls)",
-    "1 dry pair of sneakers / driving shoes",
+    "Janamaz (prayer mat) & 2L water bottle for Wudu",
+    "Waterproof sandals (sturdy grip for Yana & falls)",
     "Light rain jacket / windcheater & mini umbrella",
-    "Light hoodie / jacket (for chilly Mullayanagiri peak)",
-    "Quick-dry synthetic t-shirts & swim shorts",
-    "2 large plastic/ziploc bags (for damp clothes after falls/beach)",
-    "Microfiber quick-dry towels"
-  ],
-  tech: [
-    "Qibla compass & prayer times offline app (e.g. Muslim Pro / Qibla Connect)",
-    "Driving License, Car RC, Insurance & PUC hard copies / Digilocker",
-    "Google Maps offline areas downloaded (Shimoga, Gokarna, Chikmagalur)",
-    "Car phone mount (essential for co-pilot navigation)",
-    "High-capacity power bank & 2 car USB charging cables",
-    "Cash backup (₹4,000 in ₹100/₹500 notes for rural lodges & tolls)",
-    "Personal toiletries, basic first aid, ORS packets & Paracetamol"
+    "Light hoodie for chilly Mullayanagiri peak",
+    "Quick-dry t-shirts, swim shorts & microfiber towel",
+    "2 plastic bags for damp clothes after beach/falls",
+    "Power bank & 2 car charging cables",
+    "₹4,000 cash backup in ₹100/₹500 notes"
   ]
 };
 
@@ -333,15 +304,13 @@ function setupThemeToggle() {
   const moonIcon = document.getElementById("theme-icon-moon");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
-  // Default is 'light'
   const savedTheme = localStorage.getItem("app-theme") || "light";
   applyTheme(savedTheme);
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       const isDark = document.body.classList.contains("dark-theme");
-      const nextTheme = isDark ? "light" : "dark";
-      applyTheme(nextTheme);
+      applyTheme(isDark ? "light" : "dark");
     });
   }
 
@@ -408,45 +377,35 @@ function setupFilterChips() {
   });
 }
 
-// TIMELINE RENDERER
+// TIMELINE RENDERER (Clean & Simple)
 function renderTimeline(dayKey) {
   const container = document.getElementById("timeline-container");
   const data = ITINERARY_DATA[dayKey];
   if (!data) return;
 
-  // Filter steps if needed
   const filteredSteps = data.steps.filter(step => {
     if (currentFilter === "all") return true;
     if (currentFilter === "halal" && (step.type.includes("halal") || step.type.includes("salah"))) return true;
     if (currentFilter === "scenic" && (step.type.includes("beach") || step.type.includes("scenic"))) return true;
     if (currentFilter === "falls" && step.type.includes("falls")) return true;
     if (currentFilter === "plateau" && step.type.includes("plateau")) return true;
-    if (currentFilter === "driver" && step.type.includes("alert")) return true;
     return false;
   });
 
   let html = `
-    <div class="day-overview-card">
-      <div class="day-overview-header">
-        <h2 class="day-overview-title">${data.title}</h2>
+    <div class="day-card-header">
+      <div>
+        <h2 class="day-heading">${data.title}</h2>
+        <span class="day-sub-route">${data.route} (${data.distance})</span>
       </div>
-      <div class="day-overview-stats">
-        <span>📍 ${data.route}</span>
-      </div>
-      <div class="day-overview-stats">
-        <span>🛣️ ${data.distance}</span>
-        <span>⏱️ ${data.duration}</span>
-      </div>
-      <p class="day-overview-desc">${data.desc}</p>
     </div>
-
-    <div class="timeline">
+    <div class="timeline-clean">
   `;
 
   if (filteredSteps.length === 0) {
     html += `
-      <div class="card" style="text-align: center; color: var(--text-muted); padding: 30px;">
-        No steps in this day match the selected filter. Try choosing "All Steps".
+      <div class="empty-state">
+        No steps match this filter for today. Tap "All" to view full plan.
       </div>
     `;
   } else {
@@ -455,48 +414,39 @@ function renderTimeline(dayKey) {
       const isChecked = localStorage.getItem(stepId) === "true";
 
       const badgesHtml = step.type.map(t => {
-        let tagClass = "tag-drive";
         let label = "🚗 DRIVE";
-        if (t === "beach") { tagClass = "tag-beach"; label = "🌊 BEACH"; }
-        if (t === "falls") { tagClass = "tag-falls"; label = "💦 WATERFALL"; }
-        if (t === "plateau") { tagClass = "tag-plateau"; label = "🏔️ PLATEAU"; }
-        if (t === "alert") { tagClass = "tag-alert"; label = "⚠️ DRIVER ALERT"; }
-        if (t === "stay") { tagClass = "tag-stay"; label = "🏨 OUTSKIRTS STAY"; }
-        if (t === "scenic") { tagClass = "tag-beach"; label = "📸 SCENIC"; }
-        if (t === "halal") { tagClass = "tag-halal"; label = "🥩 HALAL & BEEF"; }
-        if (t === "salah") { tagClass = "tag-salah"; label = "🕌 SALAH (QASR)"; }
-        return `<span class="tag-badge ${tagClass}">${label}</span>`;
+        let cssClass = "tag-drive";
+        if (t === "beach") { label = "🌊 BEACH"; cssClass = "tag-beach"; }
+        if (t === "falls") { label = "💦 FALLS"; cssClass = "tag-falls"; }
+        if (t === "plateau") { label = "🏔️ PEAK"; cssClass = "tag-plateau"; }
+        if (t === "alert") { label = "⚠️ ALERT"; cssClass = "tag-alert"; }
+        if (t === "stay") { label = "🏨 STAY"; cssClass = "tag-stay"; }
+        if (t === "halal") { label = "🥩 HALAL FOOD"; cssClass = "tag-halal"; }
+        if (t === "salah") { label = "🕌 SALAH (QASR)"; cssClass = "tag-salah"; }
+        return `<span class="badge ${cssClass}">${label}</span>`;
       }).join("");
 
       const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(step.mapQuery)}`;
 
       html += `
-        <div class="timeline-step">
-          <div class="timeline-dot ${isChecked ? "done" : ""}" id="dot-${stepId}"></div>
-          <div class="step-card">
-            <div class="step-header">
-              <div class="step-time-wrap">
-                <span class="step-time">${step.time}</span>
-              </div>
-              <button class="btn-check-step ${isChecked ? "checked" : ""}" data-step-id="${stepId}" onclick="toggleStepDone('${stepId}')">
-                ${isChecked ? "✓ Completed" : "Mark Done"}
+        <div class="step-box ${isChecked ? "is-done" : ""}">
+          <div class="step-time-col">
+            <span class="step-time-pill">${step.time}</span>
+          </div>
+          <div class="step-content-col">
+            <div class="step-top-row">
+              <h3 class="step-name">${step.title}</h3>
+              <button class="btn-check-pill ${isChecked ? "checked" : ""}" onclick="toggleStepDone('${stepId}')">
+                ${isChecked ? "✓ Done" : "Done"}
               </button>
             </div>
-            
-            <h3 class="step-title">${step.title}</h3>
-            
-            <div class="step-badges">
-              ${badgesHtml}
-            </div>
-            
-            <p class="step-desc">${step.desc}</p>
-            
-            ${step.tip ? `<div class="step-pro-tip"><strong>💡 Pro-Tip:</strong> ${step.tip}</div>` : ""}
-
-            <div class="step-actions">
-              <a href="${mapUrl}" target="_blank" class="btn-nav-map">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Navigate to Spot / Masjid
+            <div class="step-badges-wrap">${badgesHtml}</div>
+            <p class="step-quick-desc">${step.desc}</p>
+            ${step.tip ? `<p class="step-tip-line">💡 <em>${step.tip}</em></p>` : ""}
+            <div class="step-action-row">
+              <a href="${mapUrl}" target="_blank" class="btn-map-sm">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Maps
               </a>
             </div>
           </div>
@@ -512,29 +462,8 @@ function renderTimeline(dayKey) {
 // TOGGLE STEP DONE
 window.toggleStepDone = function(stepId) {
   const current = localStorage.getItem(stepId) === "true";
-  const newState = !current;
-  localStorage.setItem(stepId, newState);
-
-  const btn = document.querySelector(`[data-step-id="${stepId}"]`);
-  const dot = document.getElementById(`dot-${stepId}`);
-
-  if (btn) {
-    if (newState) {
-      btn.classList.add("checked");
-      btn.textContent = "✓ Completed";
-    } else {
-      btn.classList.remove("checked");
-      btn.textContent = "Mark Done";
-    }
-  }
-
-  if (dot) {
-    if (newState) {
-      dot.classList.add("done");
-    } else {
-      dot.classList.remove("done");
-    }
-  }
+  localStorage.setItem(stepId, !current);
+  renderTimeline(currentDay);
 };
 
 // UPDATE FOOTER STATUS
@@ -552,14 +481,10 @@ function updateFooterBar(dayKey) {
 // BUDGET CALCULATOR
 function setupBudgetCalculator() {
   const inputs = ["calc-petrol", "calc-tolls", "calc-stays", "calc-food", "calc-misc"];
-  
   inputs.forEach(id => {
     const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("input", recalculateBudget);
-    }
+    if (el) el.addEventListener("input", recalculateBudget);
   });
-
   recalculateBudget();
 }
 
@@ -584,7 +509,6 @@ function recalculateBudget() {
 function renderChecklists() {
   renderChecklistGroup("car", "car-checklist");
   renderChecklistGroup("gear", "gear-checklist");
-  renderChecklistGroup("tech", "tech-checklist");
 }
 
 function renderChecklistGroup(groupKey, elementId) {
@@ -598,9 +522,9 @@ function renderChecklistGroup(groupKey, elementId) {
     const isChecked = localStorage.getItem(key) === "true";
 
     html += `
-      <label class="check-row ${isChecked ? "checked" : ""}" id="row-${key}">
+      <label class="check-line ${isChecked ? "checked" : ""}">
         <input type="checkbox" ${isChecked ? "checked" : ""} onchange="toggleChecklistItem('${key}')">
-        <span class="check-label">${item}</span>
+        <span>${item}</span>
       </label>
     `;
   });
@@ -610,17 +534,8 @@ function renderChecklistGroup(groupKey, elementId) {
 
 window.toggleChecklistItem = function(key) {
   const current = localStorage.getItem(key) === "true";
-  const newState = !current;
-  localStorage.setItem(key, newState);
-
-  const row = document.getElementById(`row-${key}`);
-  if (row) {
-    if (newState) {
-      row.classList.add("checked");
-    } else {
-      row.classList.remove("checked");
-    }
-  }
+  localStorage.setItem(key, !current);
+  renderChecklists();
 };
 
 // OFFLINE & PWA STATUS
@@ -633,14 +548,11 @@ function setupOfflineDetection() {
       badge.classList.add("online");
       badge.innerHTML = `
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-        Online (Cached)
+        Ready
       `;
     } else {
       badge.classList.remove("online");
-      badge.innerHTML = `
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.58 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-        Offline Mode
-      `;
+      badge.innerHTML = `Offline`;
     }
   }
 
@@ -648,10 +560,7 @@ function setupOfflineDetection() {
   window.addEventListener("offline", updateStatus);
   updateStatus();
 
-  // Register service worker if supported
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {
-      // Offline fallback still works via local assets
-    });
+    navigator.serviceWorker.register("sw.js").catch(() => {});
   }
 }

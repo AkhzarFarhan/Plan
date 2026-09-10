@@ -6,14 +6,13 @@
   <meta name="theme-color" content="#f8fafc">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Karavali & Malenadu Epic Loop | Road Trip Companion</title>
+  <title>Karavali & Malenadu Loop | 4-Day Quick Plan</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- App Container -->
   <div id="app">
-    <!-- Header Banner -->
+    <!-- Compact Minimal Header -->
     <header class="app-header">
       <div class="header-top">
         <div class="brand">
@@ -21,54 +20,30 @@
           <span class="trip-tag">BENGALURU ROAD TRIP</span>
         </div>
         <div class="header-actions">
-          <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light / Dark Theme" aria-label="Toggle Theme">
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">
             <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
             <svg id="theme-icon-moon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
-          <button id="offline-badge" class="badge-status" title="Works completely offline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.58 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-            Offline Ready
+          <button id="offline-badge" class="badge-status">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+            Ready
           </button>
         </div>
       </div>
 
       <h1 class="trip-title">Karavali & Malenadu Loop</h1>
-      <p class="trip-subtitle">Sea Beaches • High Plateaus • Roaring Falls • Ghat Passes</p>
+      <p class="trip-quick-meta">Sep 11 (Fri 4 PM) – Sep 15 (Tue Morning) • 1 Petrol Car • 1 Driver • 3 Friends</p>
 
-      <!-- Key Stats Ribbon -->
-      <div class="stats-ribbon">
-        <div class="stat-pill">
-          <span class="stat-icon">🛣️</span>
-          <div>
-            <div class="stat-val">~1,320 km</div>
-            <div class="stat-lbl">Total Loop</div>
-          </div>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-icon">🚗</span>
-          <div>
-            <div class="stat-val">1 Petrol Car</div>
-            <div class="stat-lbl">1 Driver Mode</div>
-          </div>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-icon">👥</span>
-          <div>
-            <div class="stat-val">3 Techies</div>
-            <div class="stat-lbl">Split 3 Ways</div>
-          </div>
-        </div>
-        <div class="stat-pill warning-pill">
-          <span class="stat-icon">🪔</span>
-          <div>
-            <div class="stat-val">Sep 11–15</div>
-            <div class="stat-lbl">Ganesh Chaturthi</div>
-          </div>
-        </div>
+      <!-- Quick Summary Badges -->
+      <div class="summary-chips">
+        <span class="chip">🛣️ ~1,320 km</span>
+        <span class="chip">🌊 Gokarna & Maravanthe</span>
+        <span class="chip">💦 Jog & Vibhooti Falls</span>
+        <span class="chip">🏔️ Mullayanagiri Peak</span>
       </div>
     </header>
 
-    <!-- Navigation Tabs -->
+    <!-- Simple 4-Tab Navigation -->
     <nav class="main-nav">
       <button class="nav-btn active" data-tab="itinerary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -80,483 +55,287 @@
       </button>
       <button class="nav-btn" data-tab="stays">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span>Stays</span>
-      </button>
-      <button class="nav-btn" data-tab="alerts">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <span>Alerts</span>
-      </button>
-      <button class="nav-btn" data-tab="budget">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <span>Budget</span>
+        <span>Stays & Cost</span>
       </button>
       <button class="nav-btn" data-tab="checklist">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <span>Checklist</span>
+        <span>Checklist & Tips</span>
       </button>
     </nav>
 
     <!-- TAB 1: ITINERARY -->
     <main id="tab-itinerary" class="tab-pane active">
-      <!-- Quick Day Selector -->
+      <!-- Day Buttons (Horizontal Bar) -->
       <div class="day-selector-bar">
         <button class="day-btn active" data-day="day1">
-          <span class="day-num">D1</span>
+          <span class="day-num">Day 1</span>
           <span class="day-sub">Fri Sep 11</span>
         </button>
         <button class="day-btn" data-day="day2">
-          <span class="day-num">D2</span>
+          <span class="day-num">Day 2</span>
           <span class="day-sub">Sat Sep 12</span>
         </button>
         <button class="day-btn" data-day="day3">
-          <span class="day-num">D3</span>
+          <span class="day-num">Day 3</span>
           <span class="day-sub">Sun Sep 13</span>
         </button>
         <button class="day-btn" data-day="day4">
-          <span class="day-num">D4</span>
+          <span class="day-num">Day 4</span>
           <span class="day-sub">Mon Sep 14</span>
         </button>
         <button class="day-btn" data-day="day5">
-          <span class="day-num">D5</span>
+          <span class="day-num">Day 5</span>
           <span class="day-sub">Tue Sep 15</span>
         </button>
       </div>
 
-      <!-- Filter Chips -->
+      <!-- Filter Buttons -->
       <div class="filter-scroll">
-        <button class="filter-chip active" data-filter="all">All Steps</button>
+        <button class="filter-chip active" data-filter="all">All</button>
         <button class="filter-chip" data-filter="halal">🕌 Halal & Salah</button>
-        <button class="filter-chip" data-filter="scenic">🌊 Beaches & Monoliths</button>
-        <button class="filter-chip" data-filter="falls">💦 Waterfalls</button>
-        <button class="filter-chip" data-filter="plateau">🏔️ High Plateau</button>
-        <button class="filter-chip" data-filter="driver">⚠️ Driver Alerts</button>
+        <button class="filter-chip" data-filter="scenic">🌊 Beaches</button>
+        <button class="filter-chip" data-filter="falls">💦 Falls</button>
+        <button class="filter-chip" data-filter="plateau">🏔️ Peaks</button>
       </div>
 
-      <!-- Container for Dynamic Day Timeline -->
+      <!-- Dynamic Timeline Container -->
       <div id="timeline-container">
         <!-- Injected via app.js -->
       </div>
     </main>
 
-    <!-- TAB 2: HALAL DINING & SALAH COMPANION -->
+    <!-- TAB 2: HALAL & SALAH (CLEAN DIRECTORY) -->
     <section id="tab-halal" class="tab-pane">
-      <!-- Safar & Salah Rules Card -->
-      <div class="card alert-box info">
-        <div class="alert-icon">🕌</div>
-        <div>
-          <h4>Safar (Travel) Salah Guide: Qasr & Jam'</h4>
-          <p>Since your trip distance exceeds ~78 km (Shar'i Safar threshold), you are travelers (Musaafir):</p>
-          <ul style="padding-left: 18px; margin-top: 6px; font-size: 0.82rem; color: var(--text-secondary);">
-            <li><strong>Qasr (Shortened):</strong> 4-rak'ah Fardh prayers (Dhuhr, Asr, Isha) are shortened to <strong>2 Rak'ahs</strong>. Fajr (2) and Maghrib (3) are prayed as usual.</li>
-            <li><strong>Jam' (Combined):</strong> You may combine <strong>Dhuhr + Asr</strong> (either at Dhuhr time [Taqdim] or Asr time [Ta'khir]) and <strong>Maghrib + Isha</strong> (either at Maghrib or Isha time).</li>
-            <li><strong>Road Tip:</strong> Keep a 2L mineral water bottle in the car boot specifically for quick Wudu on highway scenic pull-overs.</li>
-          </ul>
+      <!-- Quick Salah Card -->
+      <div class="card mini-card highlight-box">
+        <h4>🕌 Safar Salah (Qasr & Jam')</h4>
+        <div class="salah-grid">
+          <div class="salah-item">
+            <strong>Dhuhr + Asr</strong>
+            <span>2 + 2 Rak'ahs (Combined at Lunch)</span>
+          </div>
+          <div class="salah-item">
+            <strong>Maghrib + Isha</strong>
+            <span>3 + 2 Rak'ahs (Combined at Dinner)</span>
+          </div>
+          <div class="salah-item">
+            <strong>Fajr</strong>
+            <span>2 Rak'ahs (Morning before drive)</span>
+          </div>
+          <div class="salah-item">
+            <strong>Wudu Gear</strong>
+            <span>Keep 2L water bottle & Janamaz in boot</span>
+          </div>
         </div>
       </div>
 
-      <!-- Halal Food & Beef Spots Section -->
-      <div class="section-title">
-        <h3>🥩 Top Halal & Beef Eateries (Value for Money)</h3>
-        <p>Curated spots along the route known for authentic taste, clean prep, and budget pricing</p>
-      </div>
-
-      <div class="stays-grid">
+      <!-- Halal Food & Mosques List -->
+      <h3 class="section-heading">🥩 Halal Food & Mosques on Route</h3>
+      
+      <div class="compact-list">
         <!-- Spot 1: Shimoga -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#e0f2fe; color:#0284c7;">Night 1 • Shimoga</span>
-            <span class="stay-price">₹100 – ₹180 / person</span>
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Night 1 • Shimoga</span>
+            <h4>New Taj Hotel / Al-Rehman</h4>
+            <p class="item-desc">Famous beef seekh kebabs, beef pepper fry, khushka & parotta (~₹120/head).</p>
+            <div class="item-meta">
+              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Shimoga (clean wudu, easy parking)</span>
+            </div>
           </div>
-          <h4>New Taj Hotel / Hotel Al-Rehman (Shimoga)</h4>
-          <p class="stay-desc">Shimoga has a rich Muslim food culture. Famous for hot charcoal beef seekh kebabs, beef pepper fry, tender beef biryani, and crispy parottas.</p>
-          <ul class="stay-perks">
-            <li>🥩 <strong>Specialty:</strong> Beef Seekh Kebab, Beef Fry, Khushka-Kebab combo</li>
-            <li>📍 <strong>Location:</strong> Near Tank Mohalla / Sagar Road Bypass</li>
-            <li>⭐ 100% Halal, packed with locals, fast service</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/halal+beef+restaurants+in+Shivamogga" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Find Halal Food in Shimoga
-          </a>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/New+Taj+Hotel+Shivamogga" target="_blank" class="btn-sm">📍 Food Map</a>
+            <a href="https://www.google.com/maps/search/Jamia+Masjid+Shivamogga" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
+          </div>
         </div>
 
         <!-- Spot 2: Bhatkal / Honnavar -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#dcfce7; color:#166534;">Day 2 • Bhatkal / Honnavar</span>
-            <span class="stay-price">₹140 – ₹220 / person</span>
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Day 2 • Bhatkal / Honnavar</span>
+            <h4>Kwality Hotel / City Light (Bhatkal Bypass)</h4>
+            <p class="item-desc">World-famous authentic <strong>Bhatkali Beef Dum Biryani</strong> & coastal beef sukka (~₹160/head).</p>
+            <div class="item-meta">
+              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Bhatkal or Jamia Masjid Honnavar</span>
+            </div>
           </div>
-          <h4>Kwality Hotel / City Light (Bhatkal Bypass)</h4>
-          <p class="stay-desc">Bhatkal is world-renowned for its authentic Navayathi Muslim cuisine. Their white-rice Bhatkali Dum Biryani cooked with fragrant green chillies, caramelized onions, and tender beef/mutton is legendary.</p>
-          <ul class="stay-perks">
-            <li>🥩 <strong>Specialty:</strong> Authentic Bhatkali Beef Dum Biryani, Coastal Beef Sukka</li>
-            <li>📍 <strong>Location:</strong> NH66 Highway Bypass (easy parking)</li>
-            <li>⭐ Must-visit culinary highlight of the entire trip</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/Kwality+Hotel+Bhatkal" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Navigate to Kwality Hotel Bhatkal
-          </a>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/Kwality+Hotel+Bhatkal" target="_blank" class="btn-sm">📍 Food Map</a>
+            <a href="https://www.google.com/maps/search/Jamia+Masjid+Bhatkal" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
+          </div>
         </div>
 
-        <!-- Spot 3: Kumta Outskirts -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#fef3c7; color:#b45309;">Night 2 • Kumta</span>
-            <span class="stay-price">₹90 – ₹150 / person</span>
+        <!-- Spot 3: Kumta -->
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Night 2 • Kumta (Gokarna South)</span>
+            <h4>Hotel Shalimar / Al-Madeena (Kumta NH66)</h4>
+            <p class="item-desc">Spicy beef chilli, dry beef fry, layered Kerala parottas & chicken kebabs (~₹120/head).</p>
+            <div class="item-meta">
+              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Kumta (Gibb Circle)</span>
+            </div>
           </div>
-          <h4>Hotel Shalimar / Al-Madeena (Kumta NH66)</h4>
-          <p class="stay-desc">Casual local halal diner right on NH66. Perfect after an evening at Gokarna beach. Super value for money.</p>
-          <ul class="stay-perks">
-            <li>🥩 <strong>Specialty:</strong> Beef Chilli, Beef Dry Fry, Malabar Parotta, Chicken Kebab</li>
-            <li>📍 <strong>Location:</strong> Kumta Highway Junction</li>
-            <li>⭐ Open late till 11 PM, swift takeaway or dine-in</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/halal+restaurants+in+Kumta" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Find Halal Diners in Kumta
-          </a>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/halal+restaurants+in+Kumta" target="_blank" class="btn-sm">📍 Food Map</a>
+            <a href="https://www.google.com/maps/search/Jamia+Masjid+Kumta" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
+          </div>
         </div>
 
         <!-- Spot 4: Chikmagalur -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#f3e8ff; color:#7e22ce;">Day 4 • Chikmagalur</span>
-            <span class="stay-price">₹150 – ₹240 / person</span>
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Day 4 • Chikmagalur</span>
+            <h4>New Taj Hotel / Khansama</h4>
+            <p class="item-desc">Celebrated Malnad beef chops, beef roast, mutton biryani & freshly brewed coffee (~₹180/head).</p>
+            <div class="item-meta">
+              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Chikmagalur (Market Road)</span>
+            </div>
           </div>
-          <h4>New Taj Hotel / Khansama (Chikmagalur)</h4>
-          <p class="stay-desc">Chikmagalur has a historic Muslim heritage and celebrated Malnad cuisine. Famous for flavorful spicy beef chops, beef roast with pathiri, and ghee rice.</p>
-          <ul class="stay-perks">
-            <li>🥩 <strong>Specialty:</strong> Beef Chops, Beef Sukka, Ghee Rice & Mutton Korma</li>
-            <li>📍 <strong>Location:</strong> Market Road / Indira Gandhi Road, Chikmagalur</li>
-            <li>⭐ Excellent taste, great portions for 3 hungry techies</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/New+Taj+Hotel+Chikmagalur" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Navigate to New Taj Chikmagalur
-          </a>
-        </div>
-      </div>
-
-      <!-- Highway Mosques (Masjids) Directory -->
-      <div class="section-title mt-4">
-        <h3>🕌 Strategic Highway Mosques (Masjids)</h3>
-        <p>Selected for convenient car parking, clean ablution (Wudu) areas, and quick highway access</p>
-      </div>
-
-      <div class="stays-grid">
-        <!-- Masjid 1 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#e0f2fe; color:#0284c7;">NH69 • Kadur / Shimoga</span>
-            <span class="stay-price">Maghrib & Isha (Day 1)</span>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/New+Taj+Hotel+Chikmagalur" target="_blank" class="btn-sm">📍 Food Map</a>
+            <a href="https://www.google.com/maps/search/Jamia+Masjid+Chikmagalur" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
           </div>
-          <h4>Jamia Masjid Shimoga (or Jamia Masjid Kadur)</h4>
-          <p class="stay-desc">Spacious district mosques with running tap water, clean wudu stations, and ample room for car parking.</p>
-          <a href="https://www.google.com/maps/search/Jamia+Masjid+Shivamogga" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            Navigate to Jamia Masjid Shimoga
-          </a>
         </div>
 
-        <!-- Masjid 2 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#dcfce7; color:#166534;">Coast • Honnavar & Bhatkal</span>
-            <span class="stay-price">Dhuhr & Asr (Day 2)</span>
+        <!-- Spot 5: Hassan Bypass (Return) -->
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Day 4 Night • Hassan NH75</span>
+            <h4>Masjid-e-Azam Hassan & Highway Tea</h4>
+            <p class="item-desc">Ideal spot to combine Maghrib & Isha on the way back to Bangalore. Quick chai break.</p>
           </div>
-          <h4>Jamia Masjid Bhatkal (or Jamia Masjid Honnavar)</h4>
-          <p class="stay-desc">Bhatkal's historic mosques feature grand coastal coastal architecture, large prayer halls, and excellent wudu facilities. Very peaceful atmosphere.</p>
-          <a href="https://www.google.com/maps/search/Jamia+Masjid+Bhatkal" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            Navigate to Jamia Masjid Bhatkal
-          </a>
-        </div>
-
-        <!-- Masjid 3 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#fef3c7; color:#b45309;">NH66 • Kumta & Kundapura</span>
-            <span class="stay-price">Maghrib / Isha (Day 2 / 3)</span>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/Masjid+e+Azam+Hassan" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
           </div>
-          <h4>Jamia Masjid Kumta / Jamia Masjid Kundapura</h4>
-          <p class="stay-desc">Conveniently located near the highway corridor. Quick pull-over to combine Maghrib & Isha before heading to your outskirts lodge.</p>
-          <a href="https://www.google.com/maps/search/Jamia+Masjid+Kumta" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            Navigate to Jamia Masjid Kumta
-          </a>
-        </div>
-
-        <!-- Masjid 4 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge" style="background:#f3e8ff; color:#7e22ce;">Ghats • Hebri & Chikmagalur</span>
-            <span class="stay-price">Dhuhr & Asr (Day 4)</span>
-          </div>
-          <h4>Jamia Masjid Hebri / Jamia Masjid Chikmagalur</h4>
-          <p class="stay-desc">Hebri mosque is right at the junction before ascending Agumbe Ghats. Chikmagalur Jamia Masjid on Market Road offers a serene mountain backdrop.</p>
-          <a href="https://www.google.com/maps/search/Jamia+Masjid+Chikmagalur" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            Navigate to Jamia Masjid Chikmagalur
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: OUTSKIRTS STAYS (OFFLINE STRATEGY) -->
+    <!-- TAB 3: STAYS & BUDGET -->
     <section id="tab-stays" class="tab-pane">
-      <div class="card alert-box warning">
-        <div class="alert-icon">💡</div>
-        <div>
-          <h4>Why Outskirts & Buffer Towns?</h4>
-          <p>September 11–14 is a <strong>Ganesh Chaturthi 4-day long weekend</strong>. Popular centers (Gokarna beaches, Murudeshwar temple, Chikmagalur central) will be jammed with tourists and inflated prices (₹3,500+). By staying 15–25 km out on the highway bypasses, you secure walk-in rooms for <strong>₹1,000–₹1,500 for all 3</strong>.</p>
-        </div>
-      </div>
+      <h3 class="section-heading">🏨 Outskirts Stays (Save Money on Long Weekend)</h3>
+      <p class="sub-text">Skip packed tourist hubs (₹3,500+). Pull into clean highway bypass lodges for <strong>₹1,000–₹1,400 for 3 people</strong>.</p>
 
-      <div class="section-title">
-        <h3>Target Outskirts Stay Hubs</h3>
-        <p>Specific roadside spots to pull over for cheap, guaranteed offline rooms</p>
-      </div>
-
-      <div class="stays-grid">
-        <!-- Night 1 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge">Night 1 • Fri Sep 11</span>
-            <span class="stay-price">₹900 – ₹1,300</span>
+      <div class="compact-list">
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Night 1 • Fri Sep 11</span>
+            <h4>Shimoga Sagar Bypass (NH69)</h4>
+            <p class="item-desc">Target: ₹1,000–₹1,300 • Gated car parking • Easy morning departure to Jog Falls.</p>
           </div>
-          <h4>Shimoga Sagar Road Bypass (NH69)</h4>
-          <p class="stay-desc">Positioned after passing Shimoga city center towards Sagara. Zero morning city traffic when heading to Jog Falls at 6:30 AM.</p>
-          <ul class="stay-perks">
-            <li>✅ Gated parking for petrol car</li>
-            <li>✅ Late 11:00 PM check-in welcome</li>
-            <li>✅ Target: Clean transit lodges & dhabas along Sagar bypass</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/lodges+near+Sagara+Road+Bypass+Shivamogga" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Search Lodges on Sagar Bypass
-          </a>
-        </div>
-
-        <!-- Night 2 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge">Night 2 • Sat Sep 12</span>
-            <span class="stay-price">₹1,200 – ₹1,600</span>
-          </div>
-          <h4>Kumta or Sanikatta (South of Gokarna)</h4>
-          <p class="stay-desc">Just 18 km South of Gokarna. Bypasses the ₹4,000 beachfront gouging at Kudle/Om beach. 15 mins drive to Yana & Mirjan next morning.</p>
-          <ul class="stay-perks">
-            <li>✅ Budget guest houses & highway rooms</li>
-            <li>✅ Authentic Uttara Kannada seafood messes nearby</li>
-            <li>✅ Easy NH66 parking</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/hotels+lodges+in+Kumta+Karnataka" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Search Lodges in Kumta / Sanikatta
-          </a>
-        </div>
-
-        <!-- Night 3 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge">Night 3 • Sun Sep 13</span>
-            <span class="stay-price">₹1,000 – ₹1,400</span>
-          </div>
-          <h4>Hebri or Brahmavar (Foot of Agumbe Ghats)</h4>
-          <p class="stay-desc">Completely skips the heavy Udupi Krishna Temple festival crowd while putting you 20 minutes from the Agumbe Ghat hairpin climb for Monday morning.</p>
-          <ul class="stay-perks">
-            <li>✅ Quiet countryside stays with cool night air</li>
-            <li>✅ Early 6:30 AM departure straight into the rainforest</li>
-            <li>✅ Fuel pumps & ATMs available on Hebri junction</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/lodges+hotels+in+Hebri+Karnataka" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Search Lodges in Hebri / Brahmavar
-          </a>
-        </div>
-
-        <!-- Night 4 -->
-        <div class="stay-card">
-          <div class="stay-header">
-            <span class="stay-badge">Night 4 • Mon Sep 14 (Optional)</span>
-            <span class="stay-price">₹1,100 – ₹1,500</span>
-          </div>
-          <h4>Hassan Bypass (NH75) OR Direct Bangalore Return</h4>
-          <p class="stay-desc"><strong>Option A:</strong> Push to Bangalore by 10:30 PM Monday night (best for sleeping in own bed).<br><strong>Option B:</strong> Halt at Hassan bypass (Channarayapatna) for a 2.5-hr 5:00 AM sunrise sprint into Bangalore on Tuesday.</p>
-          <ul class="stay-perks">
-            <li>✅ 4-lane expressway lodges along NH75</li>
-            <li>✅ Hassle-free check-in at 8:30 PM</li>
-          </ul>
-          <a href="https://www.google.com/maps/search/highway+hotels+near+Hassan+Bypass+NH75" target="_blank" class="maps-link-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Search Lodges on Hassan Bypass
-          </a>
-        </div>
-      </div>
-
-      <!-- Offline Bargain Script -->
-      <div class="card info-card">
-        <h4>🗣️ The Bachelor Techie Bargain Script</h4>
-        <p class="dialogue-quote">
-          "Bhaiya, hum 3 dost road trip pe hain. Sirf sone aur shower ke liye chahiye. Subah 6:30 AM check-out kar denge. 1 room mein 1 extra mattress de dijiye, ₹1,100 cash pakad lo."
-        </p>
-        <p class="script-tip">💡 <em>Hoteliers love this because your early checkout frees the room for their morning business travelers. Always ask to see the bathroom cleanliness and water pressure before handing cash.</em></p>
-      </div>
-    </section>
-
-    <!-- TAB 3: HAZARDS & DRIVER TIPS -->
-    <section id="tab-alerts" class="tab-pane">
-      <div class="section-title">
-        <h3>Critical Travel & Driver Alerts</h3>
-        <p>Proactive protocols for single driver safety and festival survival</p>
-      </div>
-
-      <div class="alerts-stack">
-        <!-- Alert 1 -->
-        <div class="card alert-card danger">
-          <div class="card-icon">🚗</div>
-          <div class="card-body">
-            <h4>Single Driver Fatigue Protocol</h4>
-            <p>You have <strong>one sole driver</strong> covering ~1,320 km over 4 days. Micro-sleep is the single biggest risk.</p>
-            <ul>
-              <li><strong>Co-Pilot Duty:</strong> The front passenger MUST stay awake. No sleeping in the co-pilot seat. Talk, watch blind turns, and manage music/GPS.</li>
-              <li><strong>2-Hour Rule:</strong> Compulsory 10-minute tea/stretch break every 120 minutes of driving.</li>
-              <li><strong>Engine Braking:</strong> On Agumbe & Gerosoppa ghat descents, use 2nd or 3rd gear. Do not ride the brakes continuously down hill slopes to prevent brake pad glaze.</li>
-            </ul>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/lodges+near+Sagara+Road+Bypass+Shivamogga" target="_blank" class="btn-sm">📍 Search Lodges</a>
           </div>
         </div>
 
-        <!-- Alert 2 -->
-        <div class="card alert-card warning">
-          <div class="card-icon">🪔</div>
-          <div class="card-body">
-            <h4>Ganesh Chaturthi & Long Weekend Caveats</h4>
-            <p>Monday (Sep 14) is a festival holiday across Coastal Karnataka.</p>
-            <ul>
-              <li><strong>Temple Town Traffic:</strong> Avoid core Udupi, Murudeshwar temple complexes, and Gokarna main market. They will be jammed with devotee queues and processions.</li>
-              <li><strong>Dry Days / Liquor Shops:</strong> Expect retail liquor stores in certain taluks/districts to be closed or restricted on Monday. Buy beverages in advance by Saturday evening if needed.</li>
-              <li><strong>Food Availability:</strong> Traditional highway dhabas on NH66 and NH75 stay open, but small family-run town messes close by Monday evening.</li>
-            </ul>
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Night 2 • Sat Sep 12</span>
+            <h4>Kumta / Sanikatta (South of Gokarna)</h4>
+            <p class="item-desc">Target: ₹1,200–₹1,500 • 18 km south of Gokarna • Near Yana route for next morning.</p>
+          </div>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/hotels+lodges+in+Kumta+Karnataka" target="_blank" class="btn-sm">📍 Search Lodges</a>
           </div>
         </div>
 
-        <!-- Alert 3 -->
-        <div class="card alert-card info">
-          <div class="card-icon">🌧️</div>
-          <div class="card-body">
-            <h4>September Post-Monsoon Weather Dynamics</h4>
-            <p>The Western Ghats are in peak lush green state with intermittent mist and passing showers.</p>
-            <ul>
-              <li><strong>Jog & Vibhooti Falls:</strong> Water volume is at 100% capacity. Great visuals, but rocks are covered in slick moss. Wear strapped rubber-grip sandals.</li>
-              <li><strong>Sea Conditions:</strong> Arabian Sea has strong post-monsoon undertows. Wading till knees is fine; <strong>do not swim deep</strong>.</li>
-              <li><strong>Dense Mist in Agumbe & Mullayanagiri:</strong> Visibility can drop to under 10 meters. Turn on low beams and hazard fog lamps; never use high beam in dense fog.</li>
-            </ul>
+        <div class="compact-item">
+          <div class="item-main">
+            <span class="badge-loc">Night 3 • Sun Sep 13</span>
+            <h4>Hebri / Brahmavar (Base of Agumbe)</h4>
+            <p class="item-desc">Target: ₹1,000–₹1,400 • Completely skips Udupi festival rush • Cool countryside air.</p>
           </div>
-        </div>
-
-        <!-- Alert 4 -->
-        <div class="card alert-card warning">
-          <div class="card-icon">⛽</div>
-          <div class="card-body">
-            <h4>Petrol Car Fuel & Network Strategy</h4>
-            <ul>
-              <li><strong>25% Rule:</strong> Refuel whenever the tank hits 1/4 mark. Fuel stations are rare between Sagar and Honnavar, and between Hebri and Chikmagalur.</li>
-              <li><strong>Download Offline Maps:</strong> Download Google Maps offline areas for <em>Shimoga, Uttara Kannada, and Udupi-Chikmagalur</em>. Cell signal drops in Yana forest and Agumbe curves.</li>
-            </ul>
+          <div class="item-actions">
+            <a href="https://www.google.com/maps/search/lodges+hotels+in+Hebri+Karnataka" target="_blank" class="btn-sm">📍 Search Lodges</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- TAB 4: BUDGET & SPLITTER -->
-    <section id="tab-budget" class="tab-pane">
-      <div class="section-title">
-        <h3>Estimated Trip Budget & Splitter</h3>
-        <p>Live calculation for 3 bachelor software engineers</p>
+      <!-- Bargain Tip -->
+      <div class="card mini-card mt-3">
+        <strong>💡 Offline Bargain Line:</strong> 
+        <em>"Bhaiya, hum 3 log hain. Sirf sone ke liye room chahiye, subah 6:30 AM nikal jayenge. ₹1,100 cash pakad lo."</em>
       </div>
 
-      <div class="calculator-card card">
+      <!-- Live Split Calculator -->
+      <h3 class="section-heading mt-4">💰 Live Expense Split (3 Friends)</h3>
+      <div class="card calc-card">
         <div class="calc-row">
-          <label>Estimated Petrol (1,320 km @ ~14 km/L, ₹102/L)</label>
+          <label>Petrol (~1,320 km)</label>
           <input type="number" id="calc-petrol" value="9800" class="calc-input">
         </div>
         <div class="calc-row">
-          <label>Fastag Tolls (NH48, NH66, NH75)</label>
+          <label>Fastag Tolls</label>
           <input type="number" id="calc-tolls" value="1050" class="calc-input">
         </div>
         <div class="calc-row">
-          <label>Stays (3 or 4 Nights in Budget Outskirts)</label>
-          <input type="number" id="calc-stays" value="4500" class="calc-input">
+          <label>Stays (3 Nights)</label>
+          <input type="number" id="calc-stays" value="4200" class="calc-input">
         </div>
         <div class="calc-row">
-          <label>Food & Snacks (4 Days for 3 People)</label>
-          <input type="number" id="calc-food" value="6500" class="calc-input">
+          <label>Food & Drinks</label>
+          <input type="number" id="calc-food" value="6000" class="calc-input">
         </div>
         <div class="calc-row">
-          <label>Tickets, Boating & Parking (Jog, Yana, Honnavar)</label>
-          <input type="number" id="calc-misc" value="1800" class="calc-input">
+          <label>Tickets & Boating</label>
+          <input type="number" id="calc-misc" value="1500" class="calc-input">
         </div>
 
-        <hr class="divider">
-
-        <div class="calc-summary">
-          <div class="total-block">
-            <span class="calc-lbl">TOTAL ESTIMATE</span>
-            <span class="calc-big-val" id="total-val">₹23,650</span>
+        <div class="calc-result">
+          <div>
+            <span class="calc-label">Total Estimate</span>
+            <span class="calc-val" id="total-val">₹22,550</span>
           </div>
-          <div class="split-block">
-            <span class="calc-lbl">PER PERSON (3 WAY SPLIT)</span>
-            <span class="calc-big-val highlight" id="per-head-val">₹7,883</span>
+          <div class="split-col">
+            <span class="calc-label">Each (3-Way)</span>
+            <span class="calc-val highlight" id="per-head-val">₹7,517</span>
           </div>
         </div>
-      </div>
-
-      <div class="card info-card mt-4">
-        <h4>💳 Pro-Tip for 3 Bachelors: Single Payer Protocol</h4>
-        <p>Nominate <strong>one guy as the trip banker</strong> who taps Google Pay / UPI for all common expenses (fuel, rooms, restaurant bills, parking). Enter expenses into a Splitwise group or write them down here to settle in one shot when you get back to Bangalore.</p>
       </div>
     </section>
 
-    <!-- TAB 5: CHECKLIST -->
+    <!-- TAB 4: CHECKLIST & TIPS -->
     <section id="tab-checklist" class="tab-pane">
-      <div class="section-title">
-        <h3>Pre-Departure & Road Checklist</h3>
-        <p>Interactive list saved directly on your phone's browser</p>
-      </div>
-
-      <div class="checklist-card card">
-        <h4>🚗 Petrol Car Pre-Trip Check</h4>
-        <div class="checklist-items" id="car-checklist">
-          <!-- Populated by JS -->
+      <!-- 3 Key Road Rules -->
+      <h3 class="section-heading">⚠️ 3 Golden Driver Rules</h3>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <strong>1. Single Driver Safety</strong>
+          <p>Front passenger stays awake at all times. Compulsory 10-min tea break every 2 hours.</p>
+        </div>
+        <div class="rule-card">
+          <strong>2. Festival Crowd Bypass</strong>
+          <p>Monday is Ganesh Chaturthi. Stick to beaches, falls, and peaks; skip crowded temple centers.</p>
+        </div>
+        <div class="rule-card">
+          <strong>3. Ghat & Sea Caution</strong>
+          <p>Use 2nd/3rd gear down Agumbe. No deep-sea swimming due to post-monsoon undertows.</p>
         </div>
       </div>
 
-      <div class="checklist-card card mt-4">
-        <h4>🎒 Essential Gear & Luggage</h4>
-        <div class="checklist-items" id="gear-checklist">
-          <!-- Populated by JS -->
-        </div>
+      <!-- Interactive Checklists -->
+      <h3 class="section-heading mt-4">✅ Pre-Trip Checklists</h3>
+      
+      <div class="card">
+        <h4 class="check-title">🚗 Car & Documents</h4>
+        <div class="check-group" id="car-checklist"></div>
       </div>
 
-      <div class="checklist-card card mt-4">
-        <h4>📄 Documents & Tech</h4>
-        <div class="checklist-items" id="tech-checklist">
-          <!-- Populated by JS -->
-        </div>
+      <div class="card mt-3">
+        <h4 class="check-title">🎒 Essentials & Salah Gear</h4>
+        <div class="check-group" id="gear-checklist"></div>
       </div>
     </section>
   </div>
 
-  <!-- Bottom Quick Status Bar for Active Day -->
+  <!-- Minimal Sticky Footer -->
   <footer class="app-footer">
-    <div class="footer-info">
-      <span class="footer-label">Current Plan Focus:</span>
-      <span id="footer-day-indicator" class="footer-val">Day 1: Bangalore ➔ Shimoga</span>
+    <div class="footer-text">
+      <span class="footer-day" id="footer-day-indicator">Day 1: Bangalore ➔ Shimoga</span>
     </div>
-    <a id="footer-maps-btn" href="https://www.google.com/maps/dir/Bengaluru/Shivamogga" target="_blank" class="footer-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-      <span>Open Day Route</span>
+    <a id="footer-maps-btn" href="https://www.google.com/maps/dir/Bengaluru/Shivamogga" target="_blank" class="footer-nav-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      <span>Open Route Map</span>
     </a>
   </footer>
 
