@@ -305,6 +305,7 @@ let currentFilter = "all";
 
 // DOM INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
+  setupThemeToggle();
   setupNavigationTabs();
   setupDaySelectors();
   setupFilterChips();
@@ -313,6 +314,42 @@ document.addEventListener("DOMContentLoaded", () => {
   renderChecklists();
   setupOfflineDetection();
 });
+
+// THEME TOGGLE (DEFAULT LIGHT)
+function setupThemeToggle() {
+  const toggleBtn = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("theme-icon-sun");
+  const moonIcon = document.getElementById("theme-icon-moon");
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  // Default is 'light'
+  const savedTheme = localStorage.getItem("app-theme") || "light";
+  applyTheme(savedTheme);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const isDark = document.body.classList.contains("dark-theme");
+      const nextTheme = isDark ? "light" : "dark";
+      applyTheme(nextTheme);
+    });
+  }
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.body.classList.add("dark-theme");
+      if (sunIcon) sunIcon.style.display = "none";
+      if (moonIcon) moonIcon.style.display = "block";
+      if (metaThemeColor) metaThemeColor.setAttribute("content", "#090d16");
+      localStorage.setItem("app-theme", "dark");
+    } else {
+      document.body.classList.remove("dark-theme");
+      if (sunIcon) sunIcon.style.display = "block";
+      if (moonIcon) moonIcon.style.display = "none";
+      if (metaThemeColor) metaThemeColor.setAttribute("content", "#f8fafc");
+      localStorage.setItem("app-theme", "light");
+    }
+  }
+}
 
 // TAB NAVIGATION
 function setupNavigationTabs() {
