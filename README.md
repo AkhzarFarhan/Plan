@@ -22,26 +22,25 @@ A lightweight, mobile-optimized, offline-first web companion built for **3 bache
    - **Highway Mosques (Masjids) Directory:** Handpicked Masjids with clean wudu facilities and easy car parking right along the highway (Jamia Masjid Kadur, Shimoga, Honnavar, Bhatkal, Kumta, Kundapura, Hebri, Chikmagalur, and Hassan).
 
 3. **Outskirts & Buffer Stays Hub (Offline Strategy):**
-   - Specific highway bypasses for cheap offline walk-in rooms (₹1,000 – ₹1,500/night for 3 people):
-     - *Night 1 (Fri):* **Shimoga Sagar Road Bypass (NH69)**
-     - *Night 2 (Sat):* **Kumta / Sanikatta (South of Gokarna)**
-     - *Night 3 (Sun):* **Hebri / Brahmavar (Base of Agumbe Ghats)**
-     - *Night 4 (Mon):* **Hassan Bypass (NH75)** or Direct Bangalore return.
+   - Specific highway bypasses for cheap offline walk-in rooms (₹1,000 – ₹1,500/night for 3 people).
    - Included **negotiation script** tailored for quick road trip check-ins.
 
-3. **Hazards & Driver Safety Protocols:**
-   - **Single-Driver Protocol:** Co-pilot shift duties, 2-hour tea/stretch alarms, and 2nd/3rd gear engine braking on steep ghat descents.
-   - **Ganesh Chaturthi Long Weekend Warnings:** Temple crowd avoidance, festival road diversions, and dry-day/store closure head-ups.
-   - **September Weather & Road Conditions:** Waterfalls at 100% capacity, sea undertow warnings, and mist/fog driving rules.
+4. **🛡️ Drive Safety & Road Info (Dedicated Tab):**
+   - **Is it dangerous? The Honest Verdict:** Realistic breakdown (80% smooth highway, 20% mountain ghats).
+   - **Road Condition & Risk Rating by Stretch:** Traffic-light table covering Bangalore-Shimoga, Jog-Honnavar, NH66 Coastal corridor, Agumbe 14 hairpins, Mullayanagiri peak, and Hassan-Bangalore return.
+   - **The 3 Real Hazards & Mitigation:**
+     - *Single-Driver Fatigue:* Co-pilot rule (passenger never sleeps), 2-hour tea/stretch alarm.
+     - *Brake Fade in Petrol Cars:* Step-by-step engine braking guide (using 2nd/3rd gear on descents, never coasting in neutral).
+     - *Monsoon Mist & Slick Turns:* Low-beam fog rules, blind-curve honking etiquette, staying off muddy shoulders.
+   - **Pre-Trip Car Checks:** Tyre PSI (32-33), wipers/shampoo, coolant/brake fluid levels.
+   - **Emergency Highway Helplines:** 112 (Police), 1033 (NHAI), 108 (Ambulance), and nearest major hospitals.
 
-4. **Live 3-Way Expense Splitter:**
+5. **Live 3-Way Expense Splitter:**
    - Real-time interactive budget calculator dividing petrol, tolls, stays, food, and tickets into an exact per-head split.
 
-5. **Local Checklists with Memory:**
+6. **Local Checklists with Memory:**
    - Pre-trip car health check (tyres, washer fluid, engine oil, Fastag).
-   - Gear & luggage (waterproof sandals, quick-dry clothes, rainwear).
-   - Documents & offline navigation maps.
-   - Saved automatically via `localStorage` (persists on reload).
+   - Gear & luggage (waterproof sandals, quick-dry clothes, rainwear, Janamaz, Wudu water).
 
 6. **100% Offline Capable & PWA:**
    - Zero external CDN dependencies; all styles, scripts, and SVG icons are bundled locally.

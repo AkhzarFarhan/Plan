@@ -160,11 +160,11 @@ body {
   border-radius: var(--radius-sm);
 }
 
-/* 4-Tab Navigation */
+/* 5-Tab Navigation */
 .main-nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -174,6 +174,23 @@ body {
   top: 8px;
   z-index: 50;
   box-shadow: var(--shadow);
+}
+
+@media (max-width: 440px) {
+  .main-nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-btn {
+    min-width: 66px;
+    flex: 0 0 auto;
+    padding: 6px 2px;
+    font-size: 0.65rem;
+  }
 }
 
 .nav-btn {
@@ -510,6 +527,27 @@ body {
   font-size: 0.78rem;
   color: var(--text-secondary);
   margin-bottom: 6px;
+}
+
+.road-stretch-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.road-stretch-header strong {
+  font-size: 0.86rem;
+  color: var(--text-primary);
+}
+
+.sub-bullets {
+  padding-left: 18px;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .item-meta {
