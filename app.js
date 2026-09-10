@@ -224,35 +224,10 @@ const ITINERARY_DATA = {
       },
       {
         time: "10:30 PM",
-        title: "Arrive in Bangalore Home",
-        desc: "Reach home before midnight truck rush. 8 hours of deep sleep!",
+        title: "Arrive Home in Bangalore • Trip Complete!",
+        desc: "Reach home on Monday night before midnight. Sleep in your own bed; 100% fresh for Tuesday morning office!",
         type: ["drive"],
-        tip: "Driver sleeps in own bed; 100% fresh for Tuesday office.",
-        mapQuery: "Bengaluru,+Karnataka"
-      }
-    ]
-  },
-
-  day5: {
-    title: "Day 5: Tuesday, 15th September",
-    route: "Bangalore Home ➔ Office",
-    distance: "Local",
-    mapUrl: "https://www.google.com/maps",
-    steps: [
-      {
-        time: "07:30 AM",
-        title: "Wake up Well-Rested",
-        desc: "Shower, home breakfast, zero travel fatigue or body ache.",
-        type: ["drive"],
-        tip: "Unpack luggage at ease.",
-        mapQuery: "Bengaluru,+Karnataka"
-      },
-      {
-        time: "09:30 AM",
-        title: "Join Office & Daily Standup",
-        desc: "Start work with mind completely refreshed from beaches, falls & peaks!",
-        type: ["scenic"],
-        tip: "Settle Splitwise expenses over morning coffee.",
+        tip: "Trip complete! Unpack, sleep deep, and join office refreshed on Tuesday.",
         mapQuery: "Bengaluru,+Karnataka"
       }
     ]

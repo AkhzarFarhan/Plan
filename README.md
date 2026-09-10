@@ -6,7 +6,7 @@ A lightweight, mobile-optimized, offline-first web companion built for **3 bache
 
 ## 📱 Features Built for "On-the-Go" Travel
 
-1. **Step-by-Step Interactive Itinerary (Day 1 to Day 5):**
+1. **Step-by-Step Interactive Itinerary (Day 1 to Day 4 • Return Mon Night):**
    - Timestamped timeline with driving hours, rest stops, scenic spots, and offline outskirts night halts.
    - One-tap **"Navigate to Spot / Masjid"** buttons opening Google Maps directly.
    - Filter chips to quickly isolate **🕌 Halal & Salah**, **Waterfalls**, **Beaches & Monoliths**, **High Plateaus**, and **Driver Alerts**.
@@ -42,7 +42,7 @@ A lightweight, mobile-optimized, offline-first web companion built for **3 bache
    - Pre-trip car health check (tyres, washer fluid, engine oil, Fastag).
    - Gear & luggage (waterproof sandals, quick-dry clothes, rainwear, Janamaz, Wudu water).
 
-6. **100% Offline Capable & PWA:**
+7. **100% Offline Capable & PWA:**
    - Zero external CDN dependencies; all styles, scripts, and SVG icons are bundled locally.
    - Full Service Worker (`sw.js`) and Web App Manifest (`manifest.json`) support. You can "Add to Home Screen" on iOS and Android.
 
