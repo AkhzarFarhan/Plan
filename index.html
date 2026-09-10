@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Karavali & Malenadu Epic Loop | Road Trip Companion</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- App Container -->
+  <div id="app">
+    <!-- Header Banner -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand">
+          <span class="pulse-dot"></span>
+          <span class="trip-tag">BENGALURU ROAD TRIP</span>
+        </div>
+        <div class="header-actions">
+          <button id="offline-badge" class="badge-status" title="Works completely offline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.58 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+            Offline Ready
+          </button>
+        </div>
+      </div>
+
+      <h1 class="trip-title">Karavali & Malenadu Loop</h1>
+      <p class="trip-subtitle">Sea Beaches • High Plateaus • Roaring Falls • Ghat Passes</p>
+
+      <!-- Key Stats Ribbon -->
+      <div class="stats-ribbon">
+        <div class="stat-pill">
+          <span class="stat-icon">🛣️</span>
+          <div>
+            <div class="stat-val">~1,320 km</div>
+            <div class="stat-lbl">Total Loop</div>
+          </div>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-icon">🚗</span>
+          <div>
+            <div class="stat-val">1 Petrol Car</div>
+            <div class="stat-lbl">1 Driver Mode</div>
+          </div>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-icon">👥</span>
+          <div>
+            <div class="stat-val">3 Techies</div>
+            <div class="stat-lbl">Split 3 Ways</div>
+          </div>
+        </div>
+        <div class="stat-pill warning-pill">
+          <span class="stat-icon">🪔</span>
+          <div>
+            <div class="stat-val">Sep 11–15</div>
+            <div class="stat-lbl">Ganesh Chaturthi</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="main-nav">
+      <button class="nav-btn active" data-tab="itinerary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>Itinerary</span>
+      </button>
+      <button class="nav-btn" data-tab="stays">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Outskirts Stays</span>
+      </button>
+      <button class="nav-btn" data-tab="alerts">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Hazards & Tips</span>
+      </button>
+      <button class="nav-btn" data-tab="budget">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>Budget Split</span>
+      </button>
+      <button class="nav-btn" data-tab="checklist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span>Checklist</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: ITINERARY -->
+    <main id="tab-itinerary" class="tab-pane active">
+      <!-- Quick Day Selector -->
+      <div class="day-selector-bar">
+        <button class="day-btn active" data-day="day1">
+          <span class="day-num">D1</span>
+          <span class="day-sub">Fri Sep 11</span>
+        </button>
+        <button class="day-btn" data-day="day2">
+          <span class="day-num">D2</span>
+          <span class="day-sub">Sat Sep 12</span>
+        </button>
+        <button class="day-btn" data-day="day3">
+          <span class="day-num">D3</span>
+          <span class="day-sub">Sun Sep 13</span>
+        </button>
+        <button class="day-btn" data-day="day4">
+          <span class="day-num">D4</span>
+          <span class="day-sub">Mon Sep 14</span>
+        </button>
+        <button class="day-btn" data-day="day5">
+          <span class="day-num">D5</span>
+          <span class="day-sub">Tue Sep 15</span>
+        </button>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-scroll">
+        <button class="filter-chip active" data-filter="all">All Steps</button>
+        <button class="filter-chip" data-filter="scenic">🌊 Beaches & Monoliths</button>
+        <button class="filter-chip" data-filter="falls">💦 Waterfalls</button>
+        <button class="filter-chip" data-filter="plateau">🏔️ High Plateau</button>
+        <button class="filter-chip" data-filter="driver">⚠️ Driver Alerts</button>
+      </div>
+
+      <!-- Container for Dynamic Day Timeline -->
+      <div id="timeline-container">
+        <!-- Injected via app.js -->
+      </div>
+    </main>
+
+    <!-- TAB 2: OUTSKIRTS STAYS (OFFLINE STRATEGY) -->
+    <section id="tab-stays" class="tab-pane">
+      <div class="card alert-box warning">
+        <div class="alert-icon">💡</div>
+        <div>
+          <h4>Why Outskirts & Buffer Towns?</h4>
+          <p>September 11–14 is a <strong>Ganesh Chaturthi 4-day long weekend</strong>. Popular centers (Gokarna beaches, Murudeshwar temple, Chikmagalur central) will be jammed with tourists and inflated prices (₹3,500+). By staying 15–25 km out on the highway bypasses, you secure walk-in rooms for <strong>₹1,000–₹1,500 for all 3</strong>.</p>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h3>Target Outskirts Stay Hubs</h3>
+        <p>Specific roadside spots to pull over for cheap, guaranteed offline rooms</p>
+      </div>
+
+      <div class="stays-grid">
+        <!-- Night 1 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge">Night 1 • Fri Sep 11</span>
+            <span class="stay-price">₹900 – ₹1,300</span>
+          </div>
+          <h4>Shimoga Sagar Road Bypass (NH69)</h4>
+          <p class="stay-desc">Positioned after passing Shimoga city center towards Sagara. Zero morning city traffic when heading to Jog Falls at 6:30 AM.</p>
+          <ul class="stay-perks">
+            <li>✅ Gated parking for petrol car</li>
+            <li>✅ Late 11:00 PM check-in welcome</li>
+            <li>✅ Target: Clean transit lodges & dhabas along Sagar bypass</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/lodges+near+Sagara+Road+Bypass+Shivamogga" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Search Lodges on Sagar Bypass
+          </a>
+        </div>
+
+        <!-- Night 2 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge">Night 2 • Sat Sep 12</span>
+            <span class="stay-price">₹1,200 – ₹1,600</span>
+          </div>
+          <h4>Kumta or Sanikatta (South of Gokarna)</h4>
+          <p class="stay-desc">Just 18 km South of Gokarna. Bypasses the ₹4,000 beachfront gouging at Kudle/Om beach. 15 mins drive to Yana & Mirjan next morning.</p>
+          <ul class="stay-perks">
+            <li>✅ Budget guest houses & highway rooms</li>
+            <li>✅ Authentic Uttara Kannada seafood messes nearby</li>
+            <li>✅ Easy NH66 parking</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/hotels+lodges+in+Kumta+Karnataka" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Search Lodges in Kumta / Sanikatta
+          </a>
+        </div>
+
+        <!-- Night 3 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge">Night 3 • Sun Sep 13</span>
+            <span class="stay-price">₹1,000 – ₹1,400</span>
+          </div>
+          <h4>Hebri or Brahmavar (Foot of Agumbe Ghats)</h4>
+          <p class="stay-desc">Completely skips the heavy Udupi Krishna Temple festival crowd while putting you 20 minutes from the Agumbe Ghat hairpin climb for Monday morning.</p>
+          <ul class="stay-perks">
+            <li>✅ Quiet countryside stays with cool night air</li>
+            <li>✅ Early 6:30 AM departure straight into the rainforest</li>
+            <li>✅ Fuel pumps & ATMs available on Hebri junction</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/lodges+hotels+in+Hebri+Karnataka" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Search Lodges in Hebri / Brahmavar
+          </a>
+        </div>
+
+        <!-- Night 4 -->
+        <div class="stay-card">
+          <div class="stay-header">
+            <span class="stay-badge">Night 4 • Mon Sep 14 (Optional)</span>
+            <span class="stay-price">₹1,100 – ₹1,500</span>
+          </div>
+          <h4>Hassan Bypass (NH75) OR Direct Bangalore Return</h4>
+          <p class="stay-desc"><strong>Option A:</strong> Push to Bangalore by 10:30 PM Monday night (best for sleeping in own bed).<br><strong>Option B:</strong> Halt at Hassan bypass (Channarayapatna) for a 2.5-hr 5:00 AM sunrise sprint into Bangalore on Tuesday.</p>
+          <ul class="stay-perks">
+            <li>✅ 4-lane expressway lodges along NH75</li>
+            <li>✅ Hassle-free check-in at 8:30 PM</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/highway+hotels+near+Hassan+Bypass+NH75" target="_blank" class="maps-link-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Search Lodges on Hassan Bypass
+          </a>
+        </div>
+      </div>
+
+      <!-- Offline Bargain Script -->
+      <div class="card info-card">
+        <h4>🗣️ The Bachelor Techie Bargain Script</h4>
+        <p class="dialogue-quote">
+          "Bhaiya, hum 3 dost road trip pe hain. Sirf sone aur shower ke liye chahiye. Subah 6:30 AM check-out kar denge. 1 room mein 1 extra mattress de dijiye, ₹1,100 cash pakad lo."
+        </p>
+        <p class="script-tip">💡 <em>Hoteliers love this because your early checkout frees the room for their morning business travelers. Always ask to see the bathroom cleanliness and water pressure before handing cash.</em></p>
+      </div>
+    </section>
+
+    <!-- TAB 3: HAZARDS & DRIVER TIPS -->
+    <section id="tab-alerts" class="tab-pane">
+      <div class="section-title">
+        <h3>Critical Travel & Driver Alerts</h3>
+        <p>Proactive protocols for single driver safety and festival survival</p>
+      </div>
+
+      <div class="alerts-stack">
+        <!-- Alert 1 -->
+        <div class="card alert-card danger">
+          <div class="card-icon">🚗</div>
+          <div class="card-body">
+            <h4>Single Driver Fatigue Protocol</h4>
+            <p>You have <strong>one sole driver</strong> covering ~1,320 km over 4 days. Micro-sleep is the single biggest risk.</p>
+            <ul>
+              <li><strong>Co-Pilot Duty:</strong> The front passenger MUST stay awake. No sleeping in the co-pilot seat. Talk, watch blind turns, and manage music/GPS.</li>
+              <li><strong>2-Hour Rule:</strong> Compulsory 10-minute tea/stretch break every 120 minutes of driving.</li>
+              <li><strong>Engine Braking:</strong> On Agumbe & Gerosoppa ghat descents, use 2nd or 3rd gear. Do not ride the brakes continuously down hill slopes to prevent brake pad glaze.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Alert 2 -->
+        <div class="card alert-card warning">
+          <div class="card-icon">🪔</div>
+          <div class="card-body">
+            <h4>Ganesh Chaturthi & Long Weekend Caveats</h4>
+            <p>Monday (Sep 14) is a festival holiday across Coastal Karnataka.</p>
+            <ul>
+              <li><strong>Temple Town Traffic:</strong> Avoid core Udupi, Murudeshwar temple complexes, and Gokarna main market. They will be jammed with devotee queues and processions.</li>
+              <li><strong>Dry Days / Liquor Shops:</strong> Expect retail liquor stores in certain taluks/districts to be closed or restricted on Monday. Buy beverages in advance by Saturday evening if needed.</li>
+              <li><strong>Food Availability:</strong> Traditional highway dhabas on NH66 and NH75 stay open, but small family-run town messes close by Monday evening.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Alert 3 -->
+        <div class="card alert-card info">
+          <div class="card-icon">🌧️</div>
+          <div class="card-body">
+            <h4>September Post-Monsoon Weather Dynamics</h4>
+            <p>The Western Ghats are in peak lush green state with intermittent mist and passing showers.</p>
+            <ul>
+              <li><strong>Jog & Vibhooti Falls:</strong> Water volume is at 100% capacity. Great visuals, but rocks are covered in slick moss. Wear strapped rubber-grip sandals.</li>
+              <li><strong>Sea Conditions:</strong> Arabian Sea has strong post-monsoon undertows. Wading till knees is fine; <strong>do not swim deep</strong>.</li>
+              <li><strong>Dense Mist in Agumbe & Mullayanagiri:</strong> Visibility can drop to under 10 meters. Turn on low beams and hazard fog lamps; never use high beam in dense fog.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Alert 4 -->
+        <div class="card alert-card warning">
+          <div class="card-icon">⛽</div>
+          <div class="card-body">
+            <h4>Petrol Car Fuel & Network Strategy</h4>
+            <ul>
+              <li><strong>25% Rule:</strong> Refuel whenever the tank hits 1/4 mark. Fuel stations are rare between Sagar and Honnavar, and between Hebri and Chikmagalur.</li>
+              <li><strong>Download Offline Maps:</strong> Download Google Maps offline areas for <em>Shimoga, Uttara Kannada, and Udupi-Chikmagalur</em>. Cell signal drops in Yana forest and Agumbe curves.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: BUDGET & SPLITTER -->
+    <section id="tab-budget" class="tab-pane">
+      <div class="section-title">
+        <h3>Estimated Trip Budget & Splitter</h3>
+        <p>Live calculation for 3 bachelor software engineers</p>
+      </div>
+
+      <div class="calculator-card card">
+        <div class="calc-row">
+          <label>Estimated Petrol (1,320 km @ ~14 km/L, ₹102/L)</label>
+          <input type="number" id="calc-petrol" value="9800" class="calc-input">
+        </div>
+        <div class="calc-row">
+          <label>Fastag Tolls (NH48, NH66, NH75)</label>
+          <input type="number" id="calc-tolls" value="1050" class="calc-input">
+        </div>
+        <div class="calc-row">
+          <label>Stays (3 or 4 Nights in Budget Outskirts)</label>
+          <input type="number" id="calc-stays" value="4500" class="calc-input">
+        </div>
+        <div class="calc-row">
+          <label>Food & Snacks (4 Days for 3 People)</label>
+          <input type="number" id="calc-food" value="6500" class="calc-input">
+        </div>
+        <div class="calc-row">
+          <label>Tickets, Boating & Parking (Jog, Yana, Honnavar)</label>
+          <input type="number" id="calc-misc" value="1800" class="calc-input">
+        </div>
+
+        <hr class="divider">
+
+        <div class="calc-summary">
+          <div class="total-block">
+            <span class="calc-lbl">TOTAL ESTIMATE</span>
+            <span class="calc-big-val" id="total-val">₹23,650</span>
+          </div>
+          <div class="split-block">
+            <span class="calc-lbl">PER PERSON (3 WAY SPLIT)</span>
+            <span class="calc-big-val highlight" id="per-head-val">₹7,883</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card info-card mt-4">
+        <h4>💳 Pro-Tip for 3 Bachelors: Single Payer Protocol</h4>
+        <p>Nominate <strong>one guy as the trip banker</strong> who taps Google Pay / UPI for all common expenses (fuel, rooms, restaurant bills, parking). Enter expenses into a Splitwise group or write them down here to settle in one shot when you get back to Bangalore.</p>
+      </div>
+    </section>
+
+    <!-- TAB 5: CHECKLIST -->
+    <section id="tab-checklist" class="tab-pane">
+      <div class="section-title">
+        <h3>Pre-Departure & Road Checklist</h3>
+        <p>Interactive list saved directly on your phone's browser</p>
+      </div>
+
+      <div class="checklist-card card">
+        <h4>🚗 Petrol Car Pre-Trip Check</h4>
+        <div class="checklist-items" id="car-checklist">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="checklist-card card mt-4">
+        <h4>🎒 Essential Gear & Luggage</h4>
+        <div class="checklist-items" id="gear-checklist">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="checklist-card card mt-4">
+        <h4>📄 Documents & Tech</h4>
+        <div class="checklist-items" id="tech-checklist">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bottom Quick Status Bar for Active Day -->
+  <footer class="app-footer">
+    <div class="footer-info">
+      <span class="footer-label">Current Plan Focus:</span>
+      <span id="footer-day-indicator" class="footer-val">Day 1: Bangalore ➔ Shimoga</span>
+    </div>
+    <a id="footer-maps-btn" href="https://www.google.com/maps/dir/Bengaluru/Shivamogga" target="_blank" class="footer-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      <span>Open Day Route</span>
+    </a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
