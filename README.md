@@ -1,75 +1,65 @@
-# 🚗 Karavali & Malenadu Epic Loop — Road Trip Companion Webapp
+# BathFit Bangalore • Showroom Tour & Spec Tracker
 
-A lightweight, mobile-optimized, offline-first web companion built for **3 bachelor software engineers** embarking on a 4-day monsoon road trip from Bangalore across Coastal Karnataka and the Western Ghats.
+A mobile-first, light-themed web application designed as your personal pocket assistant for shopping and finalizing bathroom fittings in Bangalore (starting from Mahadevapura). 
 
----
-
-## 📱 Features Built for "On-the-Go" Travel
-
-1. **Step-by-Step Interactive Itinerary (Day 1 to Day 4 • Return Mon Night):**
-   - Timestamped timeline with driving hours, rest stops, scenic spots, and offline outskirts night halts.
-   - One-tap **"Navigate to Spot / Masjid"** buttons opening Google Maps directly.
-   - Filter chips to quickly isolate **🕌 Halal & Salah**, **Waterfalls**, **Beaches & Monoliths**, **High Plateaus**, and **Driver Alerts**.
-   - Interactive **"Mark Done"** buttons to track progress as you cover each leg.
-
-2. **🕌 Halal Dining, Beef Specialties & Safar Salah Companion:**
-   - **Safar Salah Guide:** Clear breakdown of **Qasr** (shortening 4-rak'ah prayers to 2) and **Jam'** (combining Dhuhr+Asr and Maghrib+Isha) during travel.
-   - **Curated Value-for-Money Halal & Beef Spots:**
-     - *Shimoga (Night 1):* Hot charcoal beef seekh kebabs, khushka & beef fry (New Taj / Al-Rehman).
-     - *Bhatkal / Honnavar (Day 2):* World-famous authentic **Bhatkali Beef Dum Biryani** & Coastal Beef Sukka (Kwality Hotel / City Light).
-     - *Kumta (Night 2):* Kerala layered parotta, beef chilli, and beef fry (Hotel Shalimar / Al-Madeena).
-     - *Chikmagalur (Day 4):* Celebrated Malnad spicy beef chops, beef pepper roast & biryani (New Taj / Khansama).
-   - **Highway Mosques (Masjids) Directory:** Handpicked Masjids with clean wudu facilities and easy car parking right along the highway (Jamia Masjid Kadur, Shimoga, Honnavar, Bhatkal, Kumta, Kundapura, Hebri, Chikmagalur, and Hassan).
-
-3. **Outskirts & Buffer Stays Hub (Offline Strategy):**
-   - Specific highway bypasses for cheap offline walk-in rooms (₹1,000 – ₹1,500/night for 3 people).
-   - Included **negotiation script** tailored for quick road trip check-ins.
-
-4. **🛡️ Drive Safety & Road Info (Dedicated Tab):**
-   - **Is it dangerous? The Honest Verdict:** Realistic breakdown (80% smooth highway, 20% mountain ghats).
-   - **Road Condition & Risk Rating by Stretch:** Traffic-light table covering Bangalore-Shimoga, Jog-Honnavar, NH66 Coastal corridor, Agumbe 14 hairpins, Mullayanagiri peak, and Hassan-Bangalore return.
-   - **The 3 Real Hazards & Mitigation:**
-     - *Single-Driver Fatigue:* Co-pilot rule (passenger never sleeps), 2-hour tea/stretch alarm.
-     - *Brake Fade in Petrol Cars:* Step-by-step engine braking guide (using 2nd/3rd gear on descents, never coasting in neutral).
-     - *Monsoon Mist & Slick Turns:* Low-beam fog rules, blind-curve honking etiquette, staying off muddy shoulders.
-   - **Pre-Trip Car Checks:** Tyre PSI (32-33), wipers/shampoo, coolant/brake fluid levels.
-   - **Emergency Highway Helplines:** 112 (Police), 1033 (NHAI), 108 (Ambulance), and nearest major hospitals.
-
-5. **Live 3-Way Expense Splitter:**
-   - Real-time interactive budget calculator dividing petrol, tolls, stays, food, and tickets into an exact per-head split.
-
-6. **Local Checklists with Memory:**
-   - Pre-trip car health check (tyres, washer fluid, engine oil, Fastag).
-   - Gear & luggage (waterproof sandals, quick-dry clothes, rainwear, Janamaz, Wudu water).
-
-7. **100% Offline Capable & PWA:**
-   - Zero external CDN dependencies; all styles, scripts, and SVG icons are bundled locally.
-   - Full Service Worker (`sw.js`) and Web App Manifest (`manifest.json`) support. You can "Add to Home Screen" on iOS and Android.
+Designed to let you inspect physical models in Bangalore showrooms, compare live water flow and swirl flushes, record exact model SKUs and discounted prices, and save everything locally on your phone—ready to hand over directly to your hometown dealer.
 
 ---
 
-## 🚀 How to Run & Use on the Go
+## 📱 Features
 
-### Option 1: Direct File (Zero Server Needed)
-Simply double-click `index.html` on your laptop, or transfer the folder to your phone and open in Chrome / Safari.
+1. **Step-by-Step Route & Showroom Itinerary**:
+   - **Stop 1 (5–8 mins)**: *Shankara Buildpro (ORR Mahadevapura / Doddanekkundi)* — Broad survey across Jaquar, Kohler, Cera, and Hindware; calibrate dimensions and baseline prices.
+   - **Stop 2 (15–20 mins)**: *Indiranagar Hub (Kohler Experience Studio & Jaquar World - 100ft Rd / Domlur)* — Live working displays for swirl/tornado flush, rain shower pressure tests, and dual-knob wall mixer ergonomics.
+   - **Stop 3 (15 mins North)**: *Kasturi Nagar to Kalyan Nagar ORR Sanitary Belt (Cera Style Gallery / Maruthi Ceramics)* — Budget verification and confirmation of models universally stocked by tier-2/3 hometown dealers.
+   - **Stop 4 (Hometown)**: *Dealer Order Sheet* — Generates a 1-tap WhatsApp message with shortlisted SKUs, specifications, and plumber checklists.
 
-### Option 2: Local Server (To view on your phones over the same Wi-Fi)
-Inside the `C:\GitHub\Plan` directory:
-```bash
-# Using Python
-python -m http.server 8000
+2. **"What to Say" (Sales Rep Scripts)**:
+   - Word-for-word dialogue cards with **1-Tap Copy to Clipboard** for:
+     - Rimless Tornado/Swirl flush and bowl height filtering.
+     - Exposed 3-in-1 wall mixers with separate dual knobs (150 mm inlet spacing).
+     - Rectangular flat-wall wash basins with full pedestals.
+     - Dealer discount inquiries and master-carton road transit packaging.
 
-# OR using Node
-npx serve .
-```
-Find your laptop's local IP (e.g. `192.168.1.X:8000`) and open it on all 3 phones before heading out!
+3. **Offline Model Logger & Notes Tracker**:
+   - Save models under **Commode**, **3-in-1 Shower Mixer**, and **Wash Basin**.
+   - Capture: Brand, Model Name, SKU/Catalog Code, Measured Dimensions, MRP, Quoted Dealer Discount %, Net Estimated Price, and Custom Notes.
+   - Photo attachment with automatic browser-side compression (converts photos of catalog labels to compact data URLs).
+   - Star (★) items to build your final hometown shortlist.
 
-### Option 3: Free 1-Click Hosting on GitHub Pages
-1. Push this repository to GitHub:
+4. **Zero Database Needed (100% Offline & Private)**:
+   - All entries and notes are stored directly in your browser’s `localStorage`.
+   - Data persists across reloads and tab closures on your phone.
+   - 1-Tap **Download Backup (JSON)** and **Restore Backup** to easily transfer data between devices.
+
+---
+
+## 📐 Your Key Ergonomic & Plumbing Reference
+
+| Parameter | Your Site Spec | Why It Matters |
+| :--- | :--- | :--- |
+| **User Height** | **164 cm (~5 ft 4.5 in)** | Determines ideal seating ergonomics. |
+| **Commode Rim Height** | **365 mm – 380 mm** *(without lid)* | Prevents feet dangling or thigh nerve compression. Avoids the 420mm+ "Comfort/ADA" height that restricts bowel alignment. |
+| **Commode Floor Cutout** | **S-Trap 300 mm (12 inches)** | Standard Indian one-piece specification. Universally compatible. |
+| **Mixer Tap Inlets** | **150 mm (6 inches)** | Exact factory standard for Jaquar exposed 3-in-1 wall mixers (includes crutch legs for ±15mm adjustment). |
+| **Shower Head Pressure** | **Min 1.5 – 2.0 bar** | For gravity tanks without a booster pump, prioritize **Air-Injection heads** (Jaquar Airtec or Kohler Katalyst) to get full raindrops. |
+| **Basin Dimensions** | **~600 x 450 mm (24" x 18")** | Rectangular profile mounted onto a single flat wall with a matching full pedestal. |
+
+---
+
+## 🚀 How to Run on Your Phone
+
+### Option A: Via Local Wi-Fi (Instant)
+1. On your PC (in `C:\GitHub\Plan`), run a local HTTP server:
    ```bash
-   git add .
-   git commit -m "Add road trip companion webapp"
-   git push origin main
+   python -m http.server 8080
    ```
-2. In your GitHub repository settings, go to **Pages** > Select `main` branch > Click **Save**.
-3. You now have a live URL on your phones 24/7!
+2. Find your PC's local IP address (e.g. `192.168.1.15` via `ipconfig`).
+3. On your phone's browser (connected to the same Wi-Fi), open:
+   ```
+   http://192.168.1.15:8080
+   ```
+4. Tap **"Add to Home Screen"** in Safari / Chrome for a native app feel!
+
+### Option B: Push to GitHub Pages
+Push the repository to GitHub and enable GitHub Pages in your repo settings for a permanent public link you can access anywhere on mobile data without local Wi-Fi.

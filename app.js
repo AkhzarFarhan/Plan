@@ -1,541 +1,804 @@
 /**
- * Karavali & Malenadu Epic Loop - Road Trip Companion App
- * Clean, Glanceable & Action-Oriented
+ * BathFit Bangalore - Application Logic & Local Storage State
+ * Pure client-side JavaScript. Offline capable, zero database dependencies.
  */
 
-// ITINERARY DATA (Punchy & Glanceable)
-const ITINERARY_DATA = {
-  day1: {
-    title: "Day 1: Friday, 11th September",
-    route: "Bangalore ➔ Kadur ➔ Shimoga Outskirts",
-    distance: "280 km • 5.5 hrs",
-    mapUrl: "https://www.google.com/maps/dir/Bengaluru/Shivamogga",
-    steps: [
-      {
-        time: "03:45 PM",
-        title: "Assemble & Final Car Check",
-        desc: "Meet up. Tyre pressure 33 PSI, Wudu water bottle & prayer mat in boot.",
-        type: ["drive", "salah"],
-        tip: "Single driver rule: Fill up full tank in Bangalore before highway jams.",
-        mapQuery: "Bengaluru, Karnataka"
-      },
-      {
-        time: "04:00 PM",
-        title: "Highway Exit: Beat Nelamangala Toll",
-        desc: "Take NICE Road / Magadi-Solur bypass to avoid 4-day weekend getaway jam.",
-        type: ["drive", "alert"],
-        tip: "Co-pilot: Keep watch on Google Maps live traffic colors.",
-        mapQuery: "Nelamangala+Toll+Plaza"
-      },
-      {
-        time: "06:30 PM",
-        title: "Kunigal / Bellur Cross Tea Break",
-        desc: "15-min tea stop. Driver calf & neck stretch.",
-        type: ["drive"],
-        tip: "Compulsory stretch every 2 hours.",
-        mapQuery: "Kunigal,+Karnataka"
-      },
-      {
-        time: "08:30 PM",
-        title: "Kadur: Maghrib + Isha (Jam' 3+2) & Dinner",
-        desc: "Clean wudu & prayer at Jamia Masjid Kadur. Hot halal dinner at nearby dhabas.",
-        type: ["salah", "halal"],
-        tip: "Keep dinner light for the single driver.",
-        mapQuery: "Jamia+Masjid+Kadur"
-      },
-      {
-        time: "10:30 PM",
-        title: "Shimoga Sagar Bypass Check-in",
-        desc: "Check into highway lodge (~₹1,100 for 3). Optional late beef kebabs in Tank Mohalla.",
-        type: ["stay", "halal"],
-        tip: "Early checkout at 6:30 AM.",
-        mapQuery: "Sagara+Road+Shivamogga"
-      }
+// Storage Keys
+const STORAGE_KEY_MODELS = 'bathfit_models_v1';
+const STORAGE_KEY_ACTIVE_TAB = 'bathfit_active_tab';
+
+// Default Benchmark Models
+const DEFAULT_MODELS = [
+  {
+    id: 'seed-1',
+    category: 'commode',
+    brand: 'Jaquar',
+    modelName: 'Queen Rimless One-Piece (Vortex Flush)',
+    skuCode: 'QNS-WHT-77151',
+    shop: 'Shankara Buildpro (Mahadevapura)',
+    keySpec: 'Rim Height: 375mm, S-Trap: 300mm, Vortex Swirl Rimless',
+    mrp: 14800,
+    discount: 20,
+    netPrice: 11840,
+    notes: 'Excellent swirl flush. Fits 164cm height with feet flat on ground. Master carton packed.',
+    isShortlisted: true,
+    photo: '',
+    timestamp: Date.now() - 3600000
+  },
+  {
+    id: 'seed-2',
+    category: 'commode',
+    brand: 'Kohler',
+    modelName: 'Reach One-Piece Rimless',
+    skuCode: 'K-20199IN-0',
+    shop: 'Kohler Experience Studio (Indiranagar)',
+    keySpec: 'Rim Height: 370mm, S-Trap: 300mm, Class Five Flush',
+    mrp: 18500,
+    discount: 18,
+    netPrice: 15170,
+    notes: 'Flawless ceramic glaze. Live swirl demo at Indiranagar studio was quiet and powerful.',
+    isShortlisted: true,
+    photo: '',
+    timestamp: Date.now() - 3000000
+  },
+  {
+    id: 'seed-3',
+    category: 'commode',
+    brand: 'Cera',
+    modelName: 'Campbell Siphonic Rimless One-Piece',
+    skuCode: 'S1043151',
+    shop: 'Cera Style Gallery (Kalyan Nagar)',
+    keySpec: 'Rim Height: 365mm, S-Trap: 300mm, Siphonic Jet',
+    mrp: 11500,
+    discount: 22,
+    netPrice: 8970,
+    notes: 'Very comfortable low height. Widely available at tier-2/3 hometown dealers.',
+    isShortlisted: false,
+    photo: '',
+    timestamp: Date.now() - 2400000
+  },
+  {
+    id: 'seed-4',
+    category: 'shower',
+    brand: 'Jaquar',
+    modelName: 'Florentine 3-in-1 Wall Mixer System',
+    skuCode: 'FLR-CHR-5211NB',
+    shop: 'Shankara Buildpro (Mahadevapura)',
+    keySpec: 'Inlet: 150mm C-to-C, Heavy Brass Body, Rain Shower + Telephonic',
+    mrp: 9200,
+    discount: 20,
+    netPrice: 7360,
+    notes: 'Solid brass forged body. Quarter-turn knobs feel smooth. Includes crutch legs for 150mm.',
+    isShortlisted: true,
+    photo: '',
+    timestamp: Date.now() - 1800000
+  },
+  {
+    id: 'seed-5',
+    category: 'shower',
+    brand: 'Kohler',
+    modelName: 'July Exposed 3-in-1 Dual Knob System',
+    skuCode: 'K-99770IN-4-CP',
+    shop: 'Kohler Experience Studio (Indiranagar)',
+    keySpec: 'Inlet: 150mm, Katalyst Air-Injection Rainhead (low-pressure friendly)',
+    mrp: 13900,
+    discount: 18,
+    netPrice: 11398,
+    notes: 'Air-induction rain head produces full raindrops even without high pressure booster pump.',
+    isShortlisted: false,
+    photo: '',
+    timestamp: Date.now() - 1200000
+  },
+  {
+    id: 'seed-6',
+    category: 'basin',
+    brand: 'Jaquar',
+    modelName: 'Kubix Rectangular Basin with Full Pedestal',
+    skuCode: 'KBS-WHT-35801 + Pedestal',
+    shop: 'Shankara Buildpro (Mahadevapura)',
+    keySpec: 'Size: 600 x 450 mm (24" x 18"), Flat Single Wall Mount',
+    mrp: 6900,
+    discount: 20,
+    netPrice: 5520,
+    notes: 'Spacious flat bowl, deep basin prevents splashing. Anchors with 2 heavy rag bolts.',
+    isShortlisted: true,
+    photo: '',
+    timestamp: Date.now() - 600000
+  }
+];
+
+// Showroom Stops Configuration
+const STOPS_DATA = [
+  {
+    num: 'STOP 1',
+    distance: '5–8 mins from Mahadevapura',
+    title: 'Shankara Buildpro (ORR Mahadevapura / Doddanekkundi)',
+    address: 'Outer Ring Road, near Doddanekkundi Junction, Mahadevapura',
+    mapsUrl: 'https://www.google.com/maps/search/Shankara+Buildpro+Mahadevapura+Bangalore',
+    tags: ['Multi-brand', 'Jaquar', 'Kohler', 'Cera', 'Hindware', 'Fast Baseline'],
+    purpose: 'Get a comprehensive 1-stop survey across all major brands. Measure commode bowl heights with a physical measuring tape and establish baseline prices.',
+    checklist: [
+      'Measure bare ceramic rim height with tape (Target: 365–380 mm for 164 cm stature)',
+      'Confirm 300 mm S-trap availability on floor-mounted rimless one-piece toilets',
+      'Inspect 3-in-1 exposed wall mixer (check 150 mm inlet spacing and brass heft)',
+      'Check size of 600 x 450 mm rectangular pedestal wash basins in person',
+      'Ask for dealer discount % off MRP for Jaquar, Kohler, and Cera'
     ]
   },
-
-  day2: {
-    title: "Day 2: Saturday, 12th September",
-    route: "Shimoga ➔ Jog Falls ➔ Bhatkal ➔ Gokarna ➔ Kumta",
-    distance: "240 km • Full Day",
-    mapUrl: "https://www.google.com/maps/dir/Shivamogga/Jog+Falls/Bhatkal/Gokarna/Kumta",
-    steps: [
-      {
-        time: "06:15 AM",
-        title: "Fajr Prayer & Early Departure",
-        desc: "Morning drive on NH69 through green pine & teak forests.",
-        type: ["drive", "salah"],
-        tip: "Early start beats the tourist bus crowd.",
-        mapQuery: "Jog+Falls"
-      },
-      {
-        time: "08:30 AM",
-        title: "Jog Falls (Full September Roar)",
-        desc: "Mighty 830-ft plunge at peak volume. Hot breakfast at KSTDC Mayura.",
-        type: ["falls"],
-        tip: "Try local Tatte Idli & Neer Dosa.",
-        mapQuery: "Jog+Falls+Karnataka"
-      },
-      {
-        time: "11:30 AM",
-        title: "Gerosoppa Ghat Descent to Coast",
-        desc: "Winding downhill curves through dense wildlife sanctuary.",
-        type: ["drive", "alert"],
-        tip: "Driver Alert: Use 2nd & 3rd gear engine braking.",
-        mapQuery: "Gerosoppa+Ghat"
-      },
-      {
-        time: "01:30 PM",
-        title: "Bhatkal: Famous Beef Biryani & Salah",
-        desc: "Authentic Bhatkali Beef Dum Biryani at Kwality Hotel. Dhuhr+Asr (2+2) at Jamia Masjid Bhatkal.",
-        type: ["halal", "salah"],
-        tip: "World-famous white-rice dum biryani — top culinary stop.",
-        mapQuery: "Kwality+Hotel+Bhatkal"
-      },
-      {
-        time: "04:30 PM",
-        title: "Gokarna: Kudle & Om Beach Sunset",
-        desc: "Cliff walk between Kudle and Om Beach. Relax at beach cafes during sunset.",
-        type: ["beach", "scenic"],
-        tip: "No deep swimming; post-monsoon undertows are rough.",
-        mapQuery: "Om+Beach+Gokarna"
-      },
-      {
-        time: "08:30 PM",
-        title: "Kumta Outskirts: Maghrib+Isha & Dinner",
-        desc: "Maghrib+Isha (3+2) at Jamia Masjid Kumta. Beef fry & parotta at Hotel Shalimar. Lodge ~₹1,300.",
-        type: ["stay", "halal", "salah"],
-        tip: "Saves ₹2,500 compared to overcrowded Gokarna beach huts.",
-        mapQuery: "Jamia+Masjid+Kumta"
-      }
+  {
+    num: 'STOP 2',
+    distance: '15–20 mins via Old Madras / Suranjandas Rd',
+    title: 'Indiranagar Hub: Kohler Experience Studio & Jaquar World',
+    address: '100 Feet Road, Indiranagar & Old Airport Road / Domlur',
+    mapsUrl: 'https://www.google.com/maps/search/Kohler+Experience+Centre+Indiranagar+100+feet+road+Bangalore',
+    tags: ['Live Water Demos', 'Company Flagship', 'No Sales Pressure', 'Tornado Demos'],
+    purpose: 'Experience live working fixtures. See actual swirl/vortex flush demos, feel the dual-knob quarter-turn resistance, and observe rain shower water flow with different nozzle bores.',
+    checklist: [
+      'Watch live swirl/tornado flush in action (check self-cleansing vortex strength)',
+      'Test overhead rain shower heads with water pressure (check if air-injection is needed)',
+      'Feel smoothness of dual knobs on exposed 3-in-1 wall mixers',
+      'Inspect ceramic glaze smoothness (anti-bacterial / stain-resistant glazes)',
+      'Collect official brochures and exact alphanumeric SKU codes'
     ]
   },
-
-  day3: {
-    title: "Day 3: Sunday, 13th September",
-    route: "Kumta ➔ Yana Monoliths ➔ Vibhooti Falls ➔ Maravanthe ➔ Hebri",
-    distance: "210 km • Full Day",
-    mapUrl: "https://www.google.com/maps/dir/Kumta/Mirjan+Fort/Yana+Caves/Vibhooti+Falls/Maravanthe+Beach/Hebri",
-    steps: [
-      {
-        time: "07:30 AM",
-        title: "Mirjan Fort Photo Stop",
-        desc: "Moss-covered 16th-century laterite fort with circular watchtowers.",
-        type: ["scenic"],
-        tip: "Quick 30-min photo session.",
-        mapQuery: "Mirjan+Fort"
-      },
-      {
-        time: "09:30 AM",
-        title: "Yana Karst Monoliths & Plateau",
-        desc: "Jungle canopy walk to two 300-ft black limestone spires and caves.",
-        type: ["plateau", "scenic"],
-        tip: "Wear rubber-grip trekking sandals; cave path is damp.",
-        mapQuery: "Yana+Caves+Karnataka"
-      },
-      {
-        time: "12:00 PM",
-        title: "Vibhooti Falls (Jungle Plunge Pool)",
-        desc: "Hidden multi-tier cascade inside bamboo forest with clear turquoise pool.",
-        type: ["falls"],
-        tip: "Dip feet in natural pool to relax legs after Yana hike.",
-        mapQuery: "Vibhooti+Falls"
-      },
-      {
-        time: "02:00 PM",
-        title: "Kundapura: Halal Coastal Lunch & Salah",
-        desc: "Fresh seafood or beef curry meals on NH66. Dhuhr+Asr (2+2) at Jamia Masjid Kundapura.",
-        type: ["halal", "salah", "drive"],
-        tip: "Mosque is right off highway with easy parking.",
-        mapQuery: "Jamia+Masjid+Kundapura"
-      },
-      {
-        time: "04:30 PM",
-        title: "Maravanthe Ocean Highway & Sunset",
-        desc: "Drive on NH66 with Arabian Sea on the right and Souparnika River on the left.",
-        type: ["beach", "scenic"],
-        tip: "Park at promenade bay for golden hour sunset.",
-        mapQuery: "Maravanthe+Beach"
-      },
-      {
-        time: "08:00 PM",
-        title: "Hebri Outskirts: Maghrib+Isha & Stay",
-        desc: "Base of Agumbe Ghats. Maghrib+Isha (3+2) at Jamia Masjid Hebri. Malabar dinner. Lodge ~₹1,100.",
-        type: ["stay", "halal", "salah"],
-        tip: "Skips all Udupi festival rush and sets up morning ghat climb.",
-        mapQuery: "Jamia+Masjid+Hebri"
-      }
+  {
+    num: 'STOP 3',
+    distance: '15 mins North along Outer Ring Road',
+    title: 'Kasturi Nagar to Kalyan Nagar Sanitary Belt (Cera Style Gallery)',
+    address: 'Outer Ring Road, from Ramamurthy Nagar bridge to Kalyan Nagar / HRBR Layout',
+    mapsUrl: 'https://www.google.com/maps/search/Cera+Style+Gallery+Kalyan+Nagar+Bangalore',
+    tags: ['Sanitary Corridor', 'Cera Gallery', 'Maruthi Ceramics', 'Hometown Verification'],
+    purpose: 'Verify models that are most universally distributed in tier-2/3 hometowns (Cera and Hindware). Great spot to lock in realistic hometown pricing and verify master carton packaging for road transit.',
+    checklist: [
+      'Verify Cera one-piece 300 mm S-trap rimless toilets with 365–380 mm rim height',
+      'Inspect Cera & Somany rectangular full pedestal basins (compare glaze finish)',
+      'Inquire about master-carton wooden crate or foam packaging for long-distance transit',
+      'Negotiate and note down maximum possible dealer discounts (expect 20% to 25%)'
     ]
   },
-
-  day4: {
-    title: "Day 4: Monday, 14th September (Holiday)",
-    route: "Hebri ➔ Agumbe Hairpins ➔ Mullayanagiri Peak ➔ Bangalore",
-    distance: "360 km • 7 hrs drive + spots",
-    mapUrl: "https://www.google.com/maps/dir/Hebri/Agumbe+Sunset+Point/Mullayanagiri+Peak/Chikmagalur/Bengaluru",
-    steps: [
-      {
-        time: "06:15 AM",
-        title: "Fajr & Climb Agumbe 14 Hairpin Curves",
-        desc: "Drive from sea level up through rainforest into the clouds.",
-        type: ["drive", "plateau", "salah"],
-        tip: "Keep windows down for fresh mountain air and waterfall sounds.",
-        mapQuery: "Agumbe+Ghat+Viewpoint"
-      },
-      {
-        time: "07:30 AM",
-        title: "Agumbe Valley Viewpoint",
-        desc: "Cliff-edge view over the sea of white clouds. Hot tea & idli.",
-        type: ["plateau", "scenic"],
-        tip: "Known as the Cherrapunji of the South.",
-        mapQuery: "Agumbe+Sunset+Point"
-      },
-      {
-        time: "10:30 AM",
-        title: "Mullayanagiri Peak (Highest in Karnataka)",
-        desc: "1,930 m high. Cool mountain breeze (17°C) and rolling grassland plateau.",
-        type: ["plateau", "scenic"],
-        tip: "Wear light windcheater; winds are strong at the top.",
-        mapQuery: "Mullayanagiri+Peak"
-      },
-      {
-        time: "02:00 PM",
-        title: "Chikmagalur: Malnad Beef Chops & Salah",
-        desc: "Spicy beef chops & biryani at New Taj Hotel. Dhuhr+Asr (2+2) at Jamia Masjid Chikmagalur.",
-        type: ["halal", "salah"],
-        tip: "Grab fresh Chikmagalur filter coffee before hitting highway.",
-        mapQuery: "New+Taj+Hotel+Chikmagalur"
-      },
-      {
-        time: "04:30 PM",
-        title: "4-Lane NH75 Return Cruise",
-        desc: "Smooth cruising via Belur, Hassan, Kunigal & Nelamangala.",
-        type: ["drive"],
-        tip: "Steady pace on 4-lane expressway.",
-        mapQuery: "Hassan+Karnataka+to+Bengaluru"
-      },
-      {
-        time: "07:30 PM",
-        title: "Hassan Bypass: Maghrib+Isha & Tea",
-        desc: "Maghrib+Isha (3+2) at Masjid-e-Azam Hassan. Chai break for driver.",
-        type: ["salah", "drive"],
-        tip: "Final 2 hours into Bangalore.",
-        mapQuery: "Masjid+e+Azam+Hassan"
-      },
-      {
-        time: "10:30 PM",
-        title: "Arrive Home in Bangalore • Trip Complete!",
-        desc: "Reach home on Monday night before midnight. Sleep in your own bed; 100% fresh for Tuesday morning office!",
-        type: ["drive"],
-        tip: "Trip complete! Unpack, sleep deep, and join office refreshed on Tuesday.",
-        mapQuery: "Bengaluru,+Karnataka"
-      }
+  {
+    num: 'STOP 4',
+    distance: 'Action from Phone',
+    title: 'Hometown Dealer Handover & Final Order',
+    address: 'Your local sanitaryware distributor in your hometown',
+    mapsUrl: '',
+    tags: ['Ordering', 'WhatsApp Handover', 'Price Matching', 'Warranty'],
+    purpose: 'Send your shortlisted SKU list to 2–3 local dealers in your hometown for competitive price quotation and delivery scheduling.',
+    checklist: [
+      'Share the exact SKU codes copied from this app via WhatsApp',
+      'Confirm they provide 18% to 22% discount on the listed MRP',
+      'Verify company warranty card and brand authorized dealer seal',
+      'Re-confirm 300 mm S-trap with hometown plumber before unpacking ceramic carton'
     ]
   }
-};
+];
 
-// CHECKLIST DATA (Clean & Practical)
-const CHECKLIST_DATA = {
-  car: [
-    "Engine oil, coolant & brake fluid levels OK",
-    "Set all 5 tyres (including spare) to 33 PSI",
-    "Wiper fluid topped up with shampoo",
-    "Headlights, fog lamps & hazard lights working",
-    "Fastag wallet recharged with ₹1,500+",
-    "Puncture kit, jack & air inflator in boot"
-  ],
-  gear: [
-    "Janamaz (prayer mat) & 2L water bottle for Wudu",
-    "Waterproof sandals (sturdy grip for Yana & falls)",
-    "Light rain jacket / windcheater & mini umbrella",
-    "Light hoodie for chilly Mullayanagiri peak",
-    "Quick-dry t-shirts, swim shorts & microfiber towel",
-    "2 plastic bags for damp clothes after beach/falls",
-    "Power bank & 2 car charging cables",
-    "₹4,000 cash backup in ₹100/₹500 notes"
-  ]
-};
+// Sales Scripts Data
+const SCRIPTS_DATA = [
+  {
+    id: 'script-commode-1',
+    category: 'commode',
+    title: 'Commode: Height & Rimless Tornado Flush Inquiry',
+    script: '"I am looking for a floor-mounted one-piece commode with an attached cistern and a 300 mm S-trap. Most importantly, I need a low/standard ceramic height strictly between 365 mm and 380 mm without the lid, not the 420 mm tall chair-height models. Do you have rimless models with a tornado or vortex swirl flush in this height?"',
+    notes: 'Key filter: Sales reps almost always assume you want "tall chair height". For 164 cm height, this leads to poor posture. Insist on measuring with a tape.'
+  },
+  {
+    id: 'script-commode-2',
+    category: 'commode',
+    title: 'Commode: Flushing Demonstration Request',
+    script: '"Can you show me a live flush demonstration or a cut-section of this bowl? I want to see if the water swirls forcibly around the entire top cavity to clean the sides, or if it is just a standard front washdown."',
+    notes: 'Tornado/cyclone flush should have dual side jets that swirl water 360 degrees without splashing outside the rim.'
+  },
+  {
+    id: 'script-shower-1',
+    category: 'shower',
+    title: 'Shower: 3-in-1 Exposed Wall Mixer with Dual Knobs',
+    script: '"I need an exposed 3-in-1 wall mixer with separate dual knobs for hot and cold (quarter-turn), not a single-lever diverter. The center-to-center inlet spacing on my wall is standard 150 mm (6 inches). Does this set come with the L-bend overhead shower pipe, rain shower head, and telephonic hand shower?"',
+    notes: 'Make sure it is forged brass, not lightweight zinc alloy. Verify it includes eccentric crutch legs.'
+  },
+  {
+    id: 'script-shower-2',
+    category: 'shower',
+    title: 'Shower: Water Pressure & Bore Requirement',
+    script: '"What is the minimum operating water pressure required for this rain shower head? Does this head use air-injection technology (like Jaquar Airtec or Kohler Katalyst) so it gives a good rain experience under standard overhead tank gravity pressure?"',
+    notes: 'Crucial for hometown homes without booster pumps! Air-injection heads prevent water from trickling.'
+  },
+  {
+    id: 'script-basin-1',
+    category: 'basin',
+    title: 'Wash Basin: Rectangular Flat-Wall Pedestal Basin',
+    script: '"Please show me large rectangular wash basins (around 600 x 450 mm or 24 x 18 inches) that mount flat against a single wall, complete with a matching floor-standing full pedestal. Can you confirm the basin is securely held with wall rag bolts?"',
+    notes: 'Verify the pedestal fits neatly around your floor waste pipe and that the basin surface has pre-punched single tap hole.'
+  },
+  {
+    id: 'script-pricing-1',
+    category: 'pricing',
+    title: 'Pricing: MRP & Standard Dealer Discount Inquiry',
+    script: '"Could you share the exact printed MRP and your standard cash/dealer discount on this brand? Also, what is the exact alphanumeric model/SKU code so I can match it with my plumber\'s checklist?"',
+    notes: 'Showroom discounts on Jaquar, Kohler, and Cera typically range from 15% to 25% off MRP. Always record the exact SKU.'
+  },
+  {
+    id: 'script-pricing-2',
+    category: 'pricing',
+    title: 'Packaging & Transit for Hometown Transport',
+    script: '"Does this ceramic piece come in a reinforced export master carton with molded thermocol corners? If I order through a local dealer in my hometown, will the company deliver it directly from the regional warehouse?"',
+    notes: 'Prevents hairline transit cracks in ceramic basins and commodes.'
+  }
+];
 
-// STATE
-let currentDay = "day1";
-let currentFilter = "all";
+// App State
+let modelsState = [];
+let activeCategoryFilter = 'all';
+let activeShortlistFilter = 'all';
 
-// DOM INITIALIZATION
-document.addEventListener("DOMContentLoaded", () => {
-  setupThemeToggle();
-  setupNavigationTabs();
-  setupDaySelectors();
-  setupFilterChips();
-  renderTimeline(currentDay);
-  setupBudgetCalculator();
-  renderChecklists();
-  setupOfflineDetection();
+// ==========================================================================
+// INITIALIZATION & EVENT BINDINGS
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+  loadModels();
+  initNavigation();
+  renderStops();
+  renderScripts('all');
+  renderModels();
+  updateHometownSummary();
+
+  // Modal event bindings
+  document.getElementById('openAddModelModal').addEventListener('click', () => openModelModal());
+  document.getElementById('closeModalBtn').addEventListener('click', () => closeModelModal());
+  document.getElementById('cancelModalBtn').addEventListener('click', () => closeModelModal());
+  document.getElementById('modelForm').addEventListener('submit', handleModelFormSubmit);
+
+  // Filters
+  document.getElementById('filterCategorySelect').addEventListener('change', (e) => {
+    activeCategoryFilter = e.target.value;
+    renderModels();
+  });
+  document.getElementById('filterShortlistSelect').addEventListener('change', (e) => {
+    activeShortlistFilter = e.target.value;
+    renderModels();
+  });
+
+  // Script category pills
+  document.getElementById('scriptCategoryFilter').addEventListener('click', (e) => {
+    if (e.target.classList.contains('pill-btn')) {
+      document.querySelectorAll('#scriptCategoryFilter .pill-btn').forEach(btn => btn.classList.remove('active'));
+      e.target.classList.add('active');
+      renderScripts(e.target.dataset.filter);
+    }
+  });
+
+  // Photo upload input
+  const photoInput = document.getElementById('formPhotoInput');
+  photoInput.addEventListener('change', handlePhotoUpload);
+
+  // WhatsApp & Backup Actions
+  document.getElementById('quickShareBtn').addEventListener('click', shareToWhatsApp);
+  document.getElementById('copyWhatsAppBtn').addEventListener('click', shareToWhatsApp);
+  document.getElementById('exportJsonBtn').addEventListener('click', exportBackupJson);
+  document.getElementById('importJsonInput').addEventListener('change', importBackupJson);
 });
 
-// THEME TOGGLE (DEFAULT LIGHT)
-function setupThemeToggle() {
-  const toggleBtn = document.getElementById("theme-toggle");
-  const sunIcon = document.getElementById("theme-icon-sun");
-  const moonIcon = document.getElementById("theme-icon-moon");
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+// ==========================================================================
+// NAVIGATION CONTROLLER
+// ==========================================================================
+function initNavigation() {
+  const tabs = document.querySelectorAll('#mainTabs .nav-tab');
+  const views = document.querySelectorAll('.tab-view');
 
-  const savedTheme = localStorage.getItem("app-theme") || "light";
-  applyTheme(savedTheme);
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      views.forEach(v => v.classList.remove('active'));
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const isDark = document.body.classList.contains("dark-theme");
-      applyTheme(isDark ? "light" : "dark");
-    });
-  }
+      tab.classList.add('active');
+      const activeView = document.getElementById(`view-${target}`);
+      if (activeView) activeView.classList.add('active');
 
-  function applyTheme(theme) {
-    if (theme === "dark") {
-      document.body.classList.add("dark-theme");
-      if (sunIcon) sunIcon.style.display = "none";
-      if (moonIcon) moonIcon.style.display = "block";
-      if (metaThemeColor) metaThemeColor.setAttribute("content", "#090d16");
-      localStorage.setItem("app-theme", "dark");
-    } else {
-      document.body.classList.remove("dark-theme");
-      if (sunIcon) sunIcon.style.display = "block";
-      if (moonIcon) moonIcon.style.display = "none";
-      if (metaThemeColor) metaThemeColor.setAttribute("content", "#f8fafc");
-      localStorage.setItem("app-theme", "light");
-    }
-  }
-}
-
-// TAB NAVIGATION
-function setupNavigationTabs() {
-  const navBtns = document.querySelectorAll(".nav-btn");
-  const panes = document.querySelectorAll(".tab-pane");
-
-  navBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const targetTab = btn.dataset.tab;
-      navBtns.forEach(b => b.classList.remove("active"));
-      panes.forEach(p => p.classList.remove("active"));
-
-      btn.classList.add("active");
-      const targetPane = document.getElementById(`tab-${targetTab}`);
-      if (targetPane) targetPane.classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (target === 'hometown') {
+        updateHometownSummary();
+      }
     });
   });
 }
 
-// DAY SELECTORS
-function setupDaySelectors() {
-  const dayBtns = document.querySelectorAll(".day-btn");
-  dayBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      dayBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentDay = btn.dataset.day;
-      renderTimeline(currentDay);
-      updateFooterBar(currentDay);
-    });
-  });
-}
+// ==========================================================================
+// RENDER: VIEW 1 - ROUTE & STOPS
+// ==========================================================================
+function renderStops() {
+  const container = document.getElementById('stopsContainer');
+  container.innerHTML = STOPS_DATA.map((stop, idx) => `
+    <div class="stop-card ${idx === 0 ? 'stop-active' : ''}">
+      <div class="stop-header-row">
+        <span class="stop-num-badge">${stop.num}</span>
+        <span class="stop-distance">${stop.distance}</span>
+      </div>
 
-// FILTER CHIPS
-function setupFilterChips() {
-  const chips = document.querySelectorAll(".filter-chip");
-  chips.forEach(chip => {
-    chip.addEventListener("click", () => {
-      chips.forEach(c => c.classList.remove("active"));
-      chip.classList.add("active");
-      currentFilter = chip.dataset.filter;
-      renderTimeline(currentDay);
-    });
-  });
-}
+      <h3 class="stop-title">${stop.title}</h3>
+      <div class="stop-address">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>${stop.address}</span>
+      </div>
 
-// TIMELINE RENDERER (Clean & Simple)
-function renderTimeline(dayKey) {
-  const container = document.getElementById("timeline-container");
-  const data = ITINERARY_DATA[dayKey];
-  if (!data) return;
+      <div class="stop-tags">
+        ${stop.tags.map(tag => `<span class="stop-tag">${tag}</span>`).join('')}
+      </div>
 
-  const filteredSteps = data.steps.filter(step => {
-    if (currentFilter === "all") return true;
-    if (currentFilter === "halal" && (step.type.includes("halal") || step.type.includes("salah"))) return true;
-    if (currentFilter === "scenic" && (step.type.includes("beach") || step.type.includes("scenic"))) return true;
-    if (currentFilter === "falls" && step.type.includes("falls")) return true;
-    if (currentFilter === "plateau" && step.type.includes("plateau")) return true;
-    return false;
-  });
+      <div class="stop-section">
+        <div class="stop-section-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <span>What to Inspect Here:</span>
+        </div>
+        <p style="font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 8px;">${stop.purpose}</p>
+        <ul class="stop-list">
+          ${stop.checklist.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      </div>
 
-  let html = `
-    <div class="day-card-header">
-      <div>
-        <h2 class="day-heading">${data.title}</h2>
-        <span class="day-sub-route">${data.route} (${data.distance})</span>
+      <div class="stop-actions">
+        ${stop.mapsUrl ? `
+          <a href="${stop.mapsUrl}" target="_blank" rel="noopener" class="btn-secondary btn-sm" style="text-decoration:none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            <span>Open in Google Maps</span>
+          </a>
+        ` : ''}
+        <button class="btn-secondary btn-sm" onclick="openModelModalWithShop('${stop.title.replace(/'/g, "\\'")}')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <span>Log Model at this Shop</span>
+        </button>
       </div>
     </div>
-    <div class="timeline-clean">
-  `;
+  `).join('');
+}
 
-  if (filteredSteps.length === 0) {
-    html += `
-      <div class="empty-state">
-        No steps match this filter for today. Tap "All" to view full plan.
+// ==========================================================================
+// RENDER: VIEW 2 - SCRIPTS
+// ==========================================================================
+function renderScripts(filter) {
+  const container = document.getElementById('scriptsContainer');
+  const filtered = filter === 'all'
+    ? SCRIPTS_DATA
+    : SCRIPTS_DATA.filter(s => s.category === filter);
+
+  container.innerHTML = filtered.map(item => `
+    <div class="script-card">
+      <div class="script-header">
+        <span class="script-title">${item.title}</span>
+        <button class="btn-copy" onclick="copyTextToClipboard('${escapeAttr(item.script)}')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Copy Script</span>
+        </button>
+      </div>
+      <div class="script-box">
+        <p class="script-text">${item.script}</p>
+      </div>
+      <div class="script-notes">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span><strong>Pro Tip:</strong> ${item.notes}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ==========================================================================
+// RENDER: VIEW 3 - SAVED MODELS
+// ==========================================================================
+function renderModels() {
+  const grid = document.getElementById('modelsGrid');
+  const badge = document.getElementById('savedCountBadge');
+
+  badge.textContent = modelsState.length;
+
+  let filtered = [...modelsState];
+
+  if (activeCategoryFilter !== 'all') {
+    filtered = filtered.filter(m => m.category === activeCategoryFilter);
+  }
+
+  if (activeShortlistFilter === 'shortlist') {
+    filtered = filtered.filter(m => m.isShortlisted);
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <div class="empty-icon">📝</div>
+        <h3>No models logged yet</h3>
+        <p>Tap "Log Model" to record fittings you inspect in Bangalore showrooms.</p>
       </div>
     `;
-  } else {
-    filteredSteps.forEach((step, idx) => {
-      const stepId = `${dayKey}-step-${idx}`;
-      const isChecked = localStorage.getItem(stepId) === "true";
+    return;
+  }
 
-      const badgesHtml = step.type.map(t => {
-        let label = "🚗 DRIVE";
-        let cssClass = "tag-drive";
-        if (t === "beach") { label = "🌊 BEACH"; cssClass = "tag-beach"; }
-        if (t === "falls") { label = "💦 FALLS"; cssClass = "tag-falls"; }
-        if (t === "plateau") { label = "🏔️ PEAK"; cssClass = "tag-plateau"; }
-        if (t === "alert") { label = "⚠️ ALERT"; cssClass = "tag-alert"; }
-        if (t === "stay") { label = "🏨 STAY"; cssClass = "tag-stay"; }
-        if (t === "halal") { label = "🥩 HALAL FOOD"; cssClass = "tag-halal"; }
-        if (t === "salah") { label = "🕌 SALAH (QASR)"; cssClass = "tag-salah"; }
-        return `<span class="badge ${cssClass}">${label}</span>`;
-      }).join("");
-
-      const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(step.mapQuery)}`;
-
-      html += `
-        <div class="step-box ${isChecked ? "is-done" : ""}">
-          <div class="step-time-col">
-            <span class="step-time-pill">${step.time}</span>
+  grid.innerHTML = filtered.map(m => {
+    const catLabel = m.category === 'commode' ? '🚽 Commode' : (m.category === 'shower' ? '🚿 Shower' : '🪞 Basin');
+    return `
+      <div class="model-card ${m.isShortlisted ? 'is-shortlisted' : ''}">
+        <div>
+          <div class="model-top">
+            <div>
+              <div class="model-badge-row">
+                <span class="model-brand">${m.brand}</span>
+                <span class="model-cat">${catLabel}</span>
+              </div>
+              <h4 class="model-name">${escapeHtml(m.modelName)}</h4>
+              ${m.skuCode ? `<span class="model-sku">SKU: ${escapeHtml(m.skuCode)}</span>` : ''}
+            </div>
+            <button class="star-btn ${m.isShortlisted ? 'starred' : ''}" onclick="toggleShortlist('${m.id}')" title="Toggle Shortlist">
+              ★
+            </button>
           </div>
-          <div class="step-content-col">
-            <div class="step-top-row">
-              <h3 class="step-name">${step.title}</h3>
-              <button class="btn-check-pill ${isChecked ? "checked" : ""}" onclick="toggleStepDone('${stepId}')">
-                ${isChecked ? "✓ Done" : "Done"}
-              </button>
+
+          ${m.keySpec ? `<div class="model-specs mt-4"><strong>Specs:</strong> ${escapeHtml(m.keySpec)}</div>` : ''}
+
+          ${m.photo ? `<img src="${m.photo}" class="model-img-thumb mt-4" alt="Model label photo" onclick="previewImage('${m.photo}')">` : ''}
+        </div>
+
+        <div>
+          <div class="model-price-row">
+            <div>
+              <span class="net-price">₹${Math.round(m.netPrice).toLocaleString('en-IN')}</span>
+              ${m.mrp ? `<span class="mrp-info"> MRP: <strike>₹${Number(m.mrp).toLocaleString('en-IN')}</strike></span>` : ''}
             </div>
-            <div class="step-badges-wrap">${badgesHtml}</div>
-            <p class="step-quick-desc">${step.desc}</p>
-            ${step.tip ? `<p class="step-tip-line">💡 <em>${step.tip}</em></p>` : ""}
-            <div class="step-action-row">
-              <a href="${mapUrl}" target="_blank" class="btn-map-sm">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                Maps
-              </a>
-            </div>
+            ${m.discount ? `<span class="discount-tag">${m.discount}% OFF</span>` : ''}
+          </div>
+
+          <div class="model-meta mt-4">
+            <div><strong>Shop:</strong> ${escapeHtml(m.shop || 'Not specified')}</div>
+            ${m.notes ? `<div><strong>Notes:</strong> ${escapeHtml(m.notes)}</div>` : ''}
+          </div>
+
+          <div class="model-actions-row">
+            <button class="btn-secondary btn-sm flex-1" onclick="editModel('${m.id}')">Edit</button>
+            <button class="btn-secondary btn-sm btn-danger" onclick="deleteModel('${m.id}')">Delete</button>
           </div>
         </div>
-      `;
-    });
-  }
-
-  html += `</div>`;
-  container.innerHTML = html;
-}
-
-// TOGGLE STEP DONE
-window.toggleStepDone = function(stepId) {
-  const current = localStorage.getItem(stepId) === "true";
-  localStorage.setItem(stepId, !current);
-  renderTimeline(currentDay);
-};
-
-// UPDATE FOOTER STATUS
-function updateFooterBar(dayKey) {
-  const data = ITINERARY_DATA[dayKey];
-  const label = document.getElementById("footer-day-indicator");
-  const btn = document.getElementById("footer-maps-btn");
-
-  if (data && label && btn) {
-    label.textContent = `${data.title.split(":")[0]}: ${data.route}`;
-    btn.href = data.mapUrl;
-  }
-}
-
-// BUDGET CALCULATOR
-function setupBudgetCalculator() {
-  const inputs = ["calc-petrol", "calc-tolls", "calc-stays", "calc-food", "calc-misc"];
-  inputs.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener("input", recalculateBudget);
-  });
-  recalculateBudget();
-}
-
-function recalculateBudget() {
-  const petrol = parseFloat(document.getElementById("calc-petrol")?.value) || 0;
-  const tolls = parseFloat(document.getElementById("calc-tolls")?.value) || 0;
-  const stays = parseFloat(document.getElementById("calc-stays")?.value) || 0;
-  const food = parseFloat(document.getElementById("calc-food")?.value) || 0;
-  const misc = parseFloat(document.getElementById("calc-misc")?.value) || 0;
-
-  const total = petrol + tolls + stays + food + misc;
-  const perPerson = Math.round(total / 3);
-
-  const totalEl = document.getElementById("total-val");
-  const perHeadEl = document.getElementById("per-head-val");
-
-  if (totalEl) totalEl.textContent = `₹${total.toLocaleString("en-IN")}`;
-  if (perHeadEl) perHeadEl.textContent = `₹${perPerson.toLocaleString("en-IN")}`;
-}
-
-// CHECKLIST RENDERER
-function renderChecklists() {
-  renderChecklistGroup("car", "car-checklist");
-  renderChecklistGroup("gear", "gear-checklist");
-}
-
-function renderChecklistGroup(groupKey, elementId) {
-  const container = document.getElementById(elementId);
-  const items = CHECKLIST_DATA[groupKey];
-  if (!container || !items) return;
-
-  let html = "";
-  items.forEach((item, index) => {
-    const key = `check-${groupKey}-${index}`;
-    const isChecked = localStorage.getItem(key) === "true";
-
-    html += `
-      <label class="check-line ${isChecked ? "checked" : ""}">
-        <input type="checkbox" ${isChecked ? "checked" : ""} onchange="toggleChecklistItem('${key}')">
-        <span>${item}</span>
-      </label>
+      </div>
     `;
-  });
-
-  container.innerHTML = html;
+  }).join('');
 }
 
-window.toggleChecklistItem = function(key) {
-  const current = localStorage.getItem(key) === "true";
-  localStorage.setItem(key, !current);
-  renderChecklists();
-};
+// ==========================================================================
+// RENDER: VIEW 4 - HOMETOWN SUMMARY
+// ==========================================================================
+function updateHometownSummary() {
+  const summaryBox = document.getElementById('hometownShortlistSummary');
+  const shortlisted = modelsState.filter(m => m.isShortlisted);
 
-// OFFLINE & PWA STATUS
-function setupOfflineDetection() {
-  const badge = document.getElementById("offline-badge");
-  if (!badge) return;
+  if (shortlisted.length === 0) {
+    summaryBox.textContent = "No models have been shortlisted yet. Star (★) models from the 'Saved Models' tab to compile your order sheet.";
+    return;
+  }
 
-  function updateStatus() {
-    if (navigator.onLine) {
-      badge.classList.add("online");
-      badge.innerHTML = `
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-        Ready
-      `;
-    } else {
-      badge.classList.remove("online");
-      badge.innerHTML = `Offline`;
+  let text = "=========================================\n";
+  text += "BATHROOM FITTINGS SPECIFICATION & ORDER SHEET\n";
+  text += "Site Requirements: 164cm User Height | 300mm S-Trap | 150mm Tap Spacing\n";
+  text += "=========================================\n\n";
+
+  const categories = ['commode', 'shower', 'basin'];
+  const catNames = { commode: '1. COMMODE (Western, Floor-Mounted Rimless Tornado)', shower: '2. OVERHEAD SHOWER SET (Exposed 3-in-1 Dual Knob Mixer)', basin: '3. WASH BASIN (Rectangular Flat-Wall Pedestal)' };
+
+  categories.forEach(cat => {
+    const items = shortlisted.filter(m => m.category === cat);
+    if (items.length > 0) {
+      text += `[${catNames[cat]}]\n`;
+      items.forEach((item, idx) => {
+        text += `  • Pick ${idx + 1}: ${item.brand} - ${item.modelName}\n`;
+        if (item.skuCode) text += `    SKU: ${item.skuCode}\n`;
+        if (item.keySpec) text += `    Specs: ${item.keySpec}\n`;
+        text += `    MRP: ₹${item.mrp || 0} | Target Disc: ${item.discount}% | Target Net: ₹${Math.round(item.netPrice)}\n`;
+        if (item.notes) text += `    Notes: ${item.notes}\n`;
+        text += "\n";
+      });
     }
+  });
+
+  text += "QUESTIONS FOR HOMETOWN DEALER:\n";
+  text += "1. Can you confirm stock availability for these exact SKUs?\n";
+  text += "2. What is your best discount % off printed MRP?\n";
+  text += "3. For commode, please confirm the S-trap distance is strictly 300 mm (12 inches).\n";
+  text += "4. For mixer, please confirm 150 mm center-to-center inlet with crutch legs.\n";
+  text += "5. Is authorized company warranty included?";
+
+  summaryBox.textContent = text;
+}
+
+// ==========================================================================
+// MODAL & MODEL CRUD OPERATIONS
+// ==========================================================================
+function openModelModal(modelData = null) {
+  const modal = document.getElementById('modelModal');
+  const form = document.getElementById('modelForm');
+  const title = document.getElementById('modalTitle');
+  const photoPreview = document.getElementById('photoPreviewImg');
+  const noPhotoText = document.getElementById('noPhotoText');
+
+  form.reset();
+  document.getElementById('modelId').value = '';
+  photoPreview.src = '';
+  photoPreview.style.display = 'none';
+  noPhotoText.style.display = 'block';
+
+  if (modelData) {
+    title.textContent = 'Edit Showroom Model';
+    document.getElementById('modelId').value = modelData.id;
+    document.getElementById('formCategory').value = modelData.category;
+    document.getElementById('formBrand').value = modelData.brand;
+    document.getElementById('formModelName').value = modelData.modelName;
+    document.getElementById('formSkuCode').value = modelData.skuCode || '';
+    document.getElementById('formShop').value = modelData.shop || '';
+    document.getElementById('formKeySpec').value = modelData.keySpec || '';
+    document.getElementById('formMrp').value = modelData.mrp || '';
+    document.getElementById('formDiscount').value = modelData.discount || 18;
+    document.getElementById('formNotes').value = modelData.notes || '';
+    document.getElementById('formShortlist').checked = !!modelData.isShortlisted;
+
+    if (modelData.photo) {
+      photoPreview.src = modelData.photo;
+      photoPreview.style.display = 'block';
+      noPhotoText.style.display = 'none';
+    }
+  } else {
+    title.textContent = 'Log Showroom Model';
   }
 
-  window.addEventListener("online", updateStatus);
-  window.addEventListener("offline", updateStatus);
-  updateStatus();
+  modal.classList.add('open');
+}
 
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+function openModelModalWithShop(shopName) {
+  openModelModal();
+  document.getElementById('formShop').value = shopName;
+}
+
+function closeModelModal() {
+  document.getElementById('modelModal').classList.remove('open');
+}
+
+function handleModelFormSubmit(e) {
+  e.preventDefault();
+
+  const id = document.getElementById('modelId').value || 'model-' + Date.now();
+  const category = document.getElementById('formCategory').value;
+  const brand = document.getElementById('formBrand').value;
+  const modelName = document.getElementById('formModelName').value.trim();
+  const skuCode = document.getElementById('formSkuCode').value.trim();
+  const shop = document.getElementById('formShop').value;
+  const keySpec = document.getElementById('formKeySpec').value.trim();
+  const mrp = parseFloat(document.getElementById('formMrp').value) || 0;
+  const discount = parseFloat(document.getElementById('formDiscount').value) || 0;
+  const netPrice = mrp > 0 ? (mrp * (1 - discount / 100)) : 0;
+  const notes = document.getElementById('formNotes').value.trim();
+  const isShortlisted = document.getElementById('formShortlist').checked;
+  const photoPreview = document.getElementById('photoPreviewImg');
+  const photo = photoPreview.style.display !== 'none' ? photoPreview.src : '';
+
+  const newModel = {
+    id,
+    category,
+    brand,
+    modelName,
+    skuCode,
+    shop,
+    keySpec,
+    mrp,
+    discount,
+    netPrice,
+    notes,
+    isShortlisted,
+    photo,
+    timestamp: Date.now()
+  };
+
+  const existingIdx = modelsState.findIndex(m => m.id === id);
+  if (existingIdx >= 0) {
+    modelsState[existingIdx] = newModel;
+    showToast('Model updated successfully!');
+  } else {
+    modelsState.unshift(newModel);
+    showToast('New model logged to phone!');
   }
+
+  saveModels();
+  renderModels();
+  updateHometownSummary();
+  closeModelModal();
+}
+
+function editModel(id) {
+  const model = modelsState.find(m => m.id === id);
+  if (model) openModelModal(model);
+}
+
+function deleteModel(id) {
+  if (confirm('Delete this model from your list?')) {
+    modelsState = modelsState.filter(m => m.id !== id);
+    saveModels();
+    renderModels();
+    updateHometownSummary();
+    showToast('Model deleted.');
+  }
+}
+
+function toggleShortlist(id) {
+  const model = modelsState.find(m => m.id === id);
+  if (model) {
+    model.isShortlisted = !model.isShortlisted;
+    saveModels();
+    renderModels();
+    updateHometownSummary();
+    showToast(model.isShortlisted ? '⭐ Added to Hometown Shortlist' : 'Removed from shortlist');
+  }
+}
+
+// Compress and store image locally
+function handlePhotoUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    const img = new Image();
+    img.onload = () => {
+      // Scale image to max 800px to conserve localStorage space
+      const maxDim = 800;
+      let width = img.width;
+      let height = img.height;
+
+      if (width > height && width > maxDim) {
+        height = Math.round((height * maxDim) / width);
+        width = maxDim;
+      } else if (height > maxDim) {
+        width = Math.round((width * maxDim) / height);
+        height = maxDim;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+
+      const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+      const photoPreview = document.getElementById('photoPreviewImg');
+      photoPreview.src = compressedDataUrl;
+      photoPreview.style.display = 'block';
+      document.getElementById('noPhotoText').style.display = 'none';
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ==========================================================================
+// LOCAL STORAGE & EXPORT
+// ==========================================================================
+function loadModels() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_MODELS);
+    if (raw) {
+      modelsState = JSON.parse(raw);
+    } else {
+      modelsState = [...DEFAULT_MODELS];
+      saveModels();
+    }
+  } catch (err) {
+    console.error('Error loading from localStorage:', err);
+    modelsState = [...DEFAULT_MODELS];
+  }
+}
+
+function saveModels() {
+  try {
+    localStorage.setItem(STORAGE_KEY_MODELS, JSON.stringify(modelsState));
+  } catch (err) {
+    console.warn('localStorage quota exceeded; clearing image thumbnails if needed', err);
+    showToast('Storage notice: Consider fewer photos to save phone memory.');
+  }
+}
+
+function shareToWhatsApp() {
+  const text = document.getElementById('hometownShortlistSummary').textContent;
+  if (!text || text.includes('No models have been shortlisted')) {
+    showToast('Please star (★) at least one model before sharing!');
+    return;
+  }
+
+  copyTextToClipboard(text);
+  const encoded = encodeURIComponent(text);
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encoded}`;
+  window.open(whatsappUrl, '_blank');
+  showToast('Copied summary & opening WhatsApp...');
+}
+
+function exportBackupJson() {
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(modelsState, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  downloadAnchor.setAttribute("download", `BathFit_Bangalore_Shortlist_${new Date().toISOString().slice(0,10)}.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+  showToast('Backup JSON downloaded.');
+}
+
+function importBackupJson(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    try {
+      const imported = JSON.parse(event.target.result);
+      if (Array.isArray(imported)) {
+        modelsState = imported;
+        saveModels();
+        renderModels();
+        updateHometownSummary();
+        showToast(`Restored ${imported.length} models successfully!`);
+      } else {
+        alert('Invalid backup file format.');
+      }
+    } catch (err) {
+      alert('Failed to parse backup JSON file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ==========================================================================
+// UTILITY FUNCTIONS
+// ==========================================================================
+function copyTextToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('Copied to clipboard!');
+    }).catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+  showToast('Copied to clipboard!');
+}
+
+function showToast(msg) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.remove();
+  }, 2600);
+}
+
+function previewImage(src) {
+  const win = window.open();
+  win.document.write(`<img src="${src}" style="max-width:100%; height:auto; display:block; margin:20px auto; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.2);">`);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function escapeAttr(str) {
+  if (!str) return '';
+  return str.replace(/'/g, "\\'").replace(/"/g, "&quot;").replace(/\n/g, "\\n");
+}
+
+// Service Worker Registration for Offline Phone Support
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch((err) => {
+      console.log('SW registration skipped or error:', err);
+    });
+  });
 }

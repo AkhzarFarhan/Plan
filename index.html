@@ -3,473 +3,355 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#f8fafc">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Karavali & Malenadu Loop | 4-Day Quick Plan</title>
+  <title>BathFit Tour • Bangalore Shopping & Spec Tracker</title>
+  <meta name="description" content="Step-by-step showroom route, sales scripts, and model tracker for washroom fittings in Bangalore.">
+  <meta name="theme-color" content="#2563eb">
   <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <!-- Compact Minimal Header -->
-    <header class="app-header">
-      <div class="header-top">
-        <div class="brand">
-          <span class="pulse-dot"></span>
-          <span class="trip-tag">BENGALURU ROAD TRIP</span>
+  <!-- Top App Header -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-2.12 0l-.88.88a1.5 1.5 0 0 0 0 2.12L6 9"></path>
+            <path d="m14 11 7.5-7.5"></path>
+            <path d="m15 4 5 5"></path>
+            <path d="m21 15-3.08-3.08a2 2 0 0 0-2.83 0L4.5 22.5"></path>
+            <circle cx="12" cy="18" r="1"></circle>
+            <circle cx="16" cy="17" r="1"></circle>
+            <circle cx="10" cy="15" r="1"></circle>
+          </svg>
         </div>
-        <div class="header-actions">
-          <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">
-            <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg id="theme-icon-moon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
-          <button id="offline-badge" class="badge-status">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
-            Ready
-          </button>
+        <div>
+          <h1 class="brand-title">BathFit Bangalore</h1>
+          <p class="brand-subtitle">Mahadevapura Tour & Spec Tracker</p>
         </div>
       </div>
-
-      <h1 class="trip-title">Karavali & Malenadu Loop</h1>
-      <p class="trip-quick-meta">Sep 11 (Fri 4 PM) – Sep 14 (Mon Night) • 1 Petrol Car • 1 Driver • 3 Friends</p>
-
-      <!-- Quick Summary Badges -->
-      <div class="summary-chips">
-        <span class="chip">🛣️ ~1,320 km</span>
-        <span class="chip">🌊 Gokarna & Maravanthe</span>
-        <span class="chip">💦 Jog & Vibhooti Falls</span>
-        <span class="chip">🏔️ Mullayanagiri Peak</span>
+      <div class="header-actions">
+        <button id="quickShareBtn" class="btn-icon" title="Quick Share to WhatsApp" aria-label="Quick Share to WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </button>
       </div>
-    </header>
+    </div>
 
-    <!-- Simple 5-Tab Navigation -->
-    <nav class="main-nav">
-      <button class="nav-btn active" data-tab="itinerary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>Itinerary</span>
+    <!-- Quick Spec Status Bar (Your Key Ergonomics) -->
+    <div class="spec-banner">
+      <div class="spec-pill">
+        <span class="spec-dot blue"></span>
+        <span class="spec-label">Height:</span>
+        <strong>164 cm</strong>
+      </div>
+      <div class="spec-pill">
+        <span class="spec-dot green"></span>
+        <span class="spec-label">Target Rim:</span>
+        <strong>365–380 mm</strong>
+      </div>
+      <div class="spec-pill">
+        <span class="spec-dot amber"></span>
+        <span class="spec-label">S-Trap:</span>
+        <strong>300 mm</strong>
+      </div>
+      <div class="spec-pill">
+        <span class="spec-dot purple"></span>
+        <span class="spec-label">Tap Inlet:</span>
+        <strong>150 mm</strong>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="app-nav" id="mainTabs">
+      <button class="nav-tab active" data-tab="route">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+        <span>1. Route & Shops</span>
       </button>
-      <button class="nav-btn" data-tab="halal">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a9 9 0 0 0-9 9c0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11a9 9 0 0 0-9-9z"/><circle cx="12" cy="11" r="3"/></svg>
-        <span>Halal & Salah</span>
+      <button class="nav-tab" data-tab="scripts">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span>2. What to Say</span>
       </button>
-      <button class="nav-btn" data-tab="stays">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span>Stays & Cost</span>
+      <button class="nav-tab" data-tab="models">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        <span>3. Saved Models (<span id="savedCountBadge">0</span>)</span>
       </button>
-      <button class="nav-btn" data-tab="info">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <span>Drive Info</span>
-      </button>
-      <button class="nav-btn" data-tab="checklist">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        <span>Checklist</span>
+      <button class="nav-tab" data-tab="hometown">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>4. Dealer Sheet</span>
       </button>
     </nav>
+  </header>
 
-    <!-- TAB 1: ITINERARY -->
-    <main id="tab-itinerary" class="tab-pane active">
-      <!-- Day Buttons (Horizontal Bar) -->
-      <div class="day-selector-bar">
-        <button class="day-btn active" data-day="day1">
-          <span class="day-num">Day 1</span>
-          <span class="day-sub">Fri Sep 11</span>
-        </button>
-        <button class="day-btn" data-day="day2">
-          <span class="day-num">Day 2</span>
-          <span class="day-sub">Sat Sep 12</span>
-        </button>
-        <button class="day-btn" data-day="day3">
-          <span class="day-num">Day 3</span>
-          <span class="day-sub">Sun Sep 13</span>
-        </button>
-        <button class="day-btn" data-day="day4">
-          <span class="day-num">Day 4</span>
-          <span class="day-sub">Mon Sep 14</span>
+  <!-- Main App Content Container -->
+  <main class="app-main">
+
+    <!-- ==============================================
+         VIEW 1: ITINERARY & ROUTE PLANNER
+         ============================================== -->
+    <section id="view-route" class="tab-view active">
+      <div class="view-intro">
+        <h2>Bangalore Showroom Route Plan</h2>
+        <p>Optimized sequence starting from <strong>Mahadevapura</strong> to physically inspect, compare water flow, measure rim heights, and lock model SKUs.</p>
+      </div>
+
+      <div class="stops-timeline" id="stopsContainer">
+        <!-- Timeline Cards injected via JS -->
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VIEW 2: WHAT TO SAY (SALES REP SCRIPTS)
+         ============================================== -->
+    <section id="view-scripts" class="tab-view">
+      <div class="view-intro">
+        <h2>What to Say to the Sales Executive</h2>
+        <p>Use these exact dialogue scripts to cut through sales talk and filter for your specific plumbing and height criteria.</p>
+      </div>
+
+      <!-- Quick Category Filter -->
+      <div class="category-pills" id="scriptCategoryFilter">
+        <button class="pill-btn active" data-filter="all">All Scripts</button>
+        <button class="pill-btn" data-filter="commode">🚽 Commode</button>
+        <button class="pill-btn" data-filter="shower">🚿 3-in-1 Shower</button>
+        <button class="pill-btn" data-filter="basin">🪞 Wash Basin</button>
+        <button class="pill-btn" data-filter="pricing">💰 Price & Packaging</button>
+      </div>
+
+      <div class="scripts-grid" id="scriptsContainer">
+        <!-- Scripts injected via JS -->
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VIEW 3: SAVED MODELS & NOTES TRACKER
+         ============================================== -->
+    <section id="view-models" class="tab-view">
+      <div class="view-intro-row">
+        <div>
+          <h2>Model Tracker & Notes</h2>
+          <p>Stored locally in your phone's browser. Zero database needed.</p>
+        </div>
+        <button id="openAddModelModal" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <span>Log Model</span>
         </button>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="filter-scroll">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="halal">🕌 Halal & Salah</button>
-        <button class="filter-chip" data-filter="scenic">🌊 Beaches</button>
-        <button class="filter-chip" data-filter="falls">💦 Falls</button>
-        <button class="filter-chip" data-filter="plateau">🏔️ Peaks</button>
-      </div>
-
-      <!-- Dynamic Timeline Container -->
-      <div id="timeline-container">
-        <!-- Injected via app.js -->
-      </div>
-    </main>
-
-    <!-- TAB 2: HALAL & SALAH (CLEAN DIRECTORY) -->
-    <section id="tab-halal" class="tab-pane">
-      <!-- Quick Salah Card -->
-      <div class="card mini-card highlight-box">
-        <h4>🕌 Safar Salah (Qasr & Jam')</h4>
-        <div class="salah-grid">
-          <div class="salah-item">
-            <strong>Dhuhr + Asr</strong>
-            <span>2 + 2 Rak'ahs (Combined at Lunch)</span>
-          </div>
-          <div class="salah-item">
-            <strong>Maghrib + Isha</strong>
-            <span>3 + 2 Rak'ahs (Combined at Dinner)</span>
-          </div>
-          <div class="salah-item">
-            <strong>Fajr</strong>
-            <span>2 Rak'ahs (Morning before drive)</span>
-          </div>
-          <div class="salah-item">
-            <strong>Wudu Gear</strong>
-            <span>Keep 2L water bottle & Janamaz in boot</span>
-          </div>
+      <!-- Filter / Sort Bar -->
+      <div class="models-filter-bar">
+        <div class="filter-group">
+          <select id="filterCategorySelect" class="form-select">
+            <option value="all">All Categories</option>
+            <option value="commode">🚽 Commodes</option>
+            <option value="shower">🚿 3-in-1 Showers</option>
+            <option value="basin">🪞 Wash Basins</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="filterShortlistSelect" class="form-select">
+            <option value="all">All Entries</option>
+            <option value="shortlist">⭐ Starred / Shortlist Only</option>
+          </select>
         </div>
       </div>
 
-      <!-- Halal Food & Mosques List -->
-      <h3 class="section-heading">🥩 Halal Food & Mosques on Route</h3>
-      
-      <div class="compact-list">
-        <!-- Spot 1: Shimoga -->
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Night 1 • Shimoga</span>
-            <h4>New Taj Hotel / Al-Rehman</h4>
-            <p class="item-desc">Famous beef seekh kebabs, beef pepper fry, khushka & parotta (~₹120/head).</p>
-            <div class="item-meta">
-              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Shimoga (clean wudu, easy parking)</span>
-            </div>
+      <!-- Cards Container -->
+      <div class="models-grid" id="modelsGrid">
+        <!-- Cards rendered via JS -->
+      </div>
+    </section>
+
+    <!-- ==============================================
+         VIEW 4: HOMETOWN DEALER ORDER SHEET & SPECS
+         ============================================== -->
+    <section id="view-hometown" class="tab-view">
+      <div class="view-intro">
+        <h2>Hometown Dealer Handover Sheet</h2>
+        <p>Review your final shortlisted models, copy a pre-formatted WhatsApp message, or export an offline backup.</p>
+      </div>
+
+      <!-- Plumbing Checklist Card -->
+      <div class="card spec-card">
+        <div class="card-header">
+          <div class="badge-title">
+            <span class="badge blue">Plumbing Summary</span>
+            <h3>Confirmed Site Specifications</h3>
           </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/New+Taj+Hotel+Shivamogga" target="_blank" class="btn-sm">📍 Food Map</a>
-            <a href="https://www.google.com/maps/search/Jamia+Masjid+Shivamogga" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
+        </div>
+        <div class="specs-table">
+          <div class="spec-row">
+            <span class="spec-key">User Stature:</span>
+            <span class="spec-val">164 cm (~5 ft 4.5 in)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Ideal Commode Rim Height:</span>
+            <span class="spec-val highlight-green">365 mm – 380 mm (bare ceramic)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Commode Floor Cutout:</span>
+            <span class="spec-val highlight-blue">S-Trap 300 mm (12 inches)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Mixer Tap Inlets:</span>
+            <span class="spec-val">150 mm (6" center-to-center Jaquar standard)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Shower Type:</span>
+            <span class="spec-val">Exposed 3-in-1 Dual-Knob with Rain Head & Handheld</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Basin Type:</span>
+            <span class="spec-val">Rectangular (~600x450mm) Flat Wall with Full Pedestal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Shortlisted Items Summary -->
+      <div class="card mt-4">
+        <div class="card-header">
+          <div class="badge-title">
+            <span class="badge green">Ready for Order</span>
+            <h3>Shortlisted Models for Local Dealer</h3>
           </div>
         </div>
 
-        <!-- Spot 2: Bhatkal / Honnavar -->
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Day 2 • Bhatkal / Honnavar</span>
-            <h4>Kwality Hotel / City Light (Bhatkal Bypass)</h4>
-            <p class="item-desc">World-famous authentic <strong>Bhatkali Beef Dum Biryani</strong> & coastal beef sukka (~₹160/head).</p>
-            <div class="item-meta">
-              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Bhatkal or Jamia Masjid Honnavar</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/Kwality+Hotel+Bhatkal" target="_blank" class="btn-sm">📍 Food Map</a>
-            <a href="https://www.google.com/maps/search/Jamia+Masjid+Bhatkal" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
-          </div>
+        <div id="hometownShortlistSummary" class="shortlist-summary-box">
+          <!-- Dynamic shortlist or prompt -->
         </div>
 
-        <!-- Spot 3: Kumta -->
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Night 2 • Kumta (Gokarna South)</span>
-            <h4>Hotel Shalimar / Al-Madeena (Kumta NH66)</h4>
-            <p class="item-desc">Spicy beef chilli, dry beef fry, layered Kerala parottas & chicken kebabs (~₹120/head).</p>
-            <div class="item-meta">
-              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Kumta (Gibb Circle)</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/halal+restaurants+in+Kumta" target="_blank" class="btn-sm">📍 Food Map</a>
-            <a href="https://www.google.com/maps/search/Jamia+Masjid+Kumta" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
-          </div>
-        </div>
-
-        <!-- Spot 4: Chikmagalur -->
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Day 4 • Chikmagalur</span>
-            <h4>New Taj Hotel / Khansama</h4>
-            <p class="item-desc">Celebrated Malnad beef chops, beef roast, mutton biryani & freshly brewed coffee (~₹180/head).</p>
-            <div class="item-meta">
-              <span>🕌 <strong>Prayer Stop:</strong> Jamia Masjid Chikmagalur (Market Road)</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/New+Taj+Hotel+Chikmagalur" target="_blank" class="btn-sm">📍 Food Map</a>
-            <a href="https://www.google.com/maps/search/Jamia+Masjid+Chikmagalur" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
-          </div>
-        </div>
-
-        <!-- Spot 5: Hassan Bypass (Return) -->
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Day 4 Night • Hassan NH75</span>
-            <h4>Masjid-e-Azam Hassan & Highway Tea</h4>
-            <p class="item-desc">Ideal spot to combine Maghrib & Isha on the way back to Bangalore. Quick chai break.</p>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/Masjid+e+Azam+Hassan" target="_blank" class="btn-sm outline">🕌 Mosque Map</a>
-          </div>
+        <div class="action-buttons-group">
+          <button id="copyWhatsAppBtn" class="btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Copy WhatsApp Dealer Message</span>
+          </button>
+          <button id="exportJsonBtn" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download Backup (JSON)</span>
+          </button>
+          <label class="btn-secondary file-upload-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            <span>Restore Backup</span>
+            <input type="file" id="importJsonInput" accept=".json" style="display:none;">
+          </label>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: STAYS & BUDGET -->
-    <section id="tab-stays" class="tab-pane">
-      <h3 class="section-heading">🏨 Outskirts Stays (Save Money on Long Weekend)</h3>
-      <p class="sub-text">Skip packed tourist hubs (₹3,500+). Pull into clean highway bypass lodges for <strong>₹1,000–₹1,400 for 3 people</strong>.</p>
+  </main>
 
-      <div class="compact-list">
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Night 1 • Fri Sep 11</span>
-            <h4>Shimoga Sagar Bypass (NH69)</h4>
-            <p class="item-desc">Target: ₹1,000–₹1,300 • Gated car parking • Easy morning departure to Jog Falls.</p>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/lodges+near+Sagara+Road+Bypass+Shivamogga" target="_blank" class="btn-sm">📍 Search Lodges</a>
-          </div>
-        </div>
-
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Night 2 • Sat Sep 12</span>
-            <h4>Kumta / Sanikatta (South of Gokarna)</h4>
-            <p class="item-desc">Target: ₹1,200–₹1,500 • 18 km south of Gokarna • Near Yana route for next morning.</p>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/hotels+lodges+in+Kumta+Karnataka" target="_blank" class="btn-sm">📍 Search Lodges</a>
-          </div>
-        </div>
-
-        <div class="compact-item">
-          <div class="item-main">
-            <span class="badge-loc">Night 3 • Sun Sep 13</span>
-            <h4>Hebri / Brahmavar (Base of Agumbe)</h4>
-            <p class="item-desc">Target: ₹1,000–₹1,400 • Completely skips Udupi festival rush • Cool countryside air.</p>
-          </div>
-          <div class="item-actions">
-            <a href="https://www.google.com/maps/search/lodges+hotels+in+Hebri+Karnataka" target="_blank" class="btn-sm">📍 Search Lodges</a>
-          </div>
-        </div>
+  <!-- ==============================================
+       MODAL: ADD / EDIT MODEL
+       ============================================== -->
+  <div id="modelModal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h3 id="modalTitle">Log Showroom Model</h3>
+        <button id="closeModalBtn" class="btn-close" aria-label="Close modal">&times;</button>
       </div>
+      <form id="modelForm" class="modal-form">
+        <input type="hidden" id="modelId">
 
-      <!-- Bargain Tip -->
-      <div class="card mini-card mt-3">
-        <strong>💡 Offline Bargain Line:</strong> 
-        <em>"Bhaiya, hum 3 log hain. Sirf sone ke liye room chahiye, subah 6:30 AM nikal jayenge. ₹1,100 cash pakad lo."</em>
-      </div>
-
-      <!-- Live Split Calculator -->
-      <h3 class="section-heading mt-4">💰 Live Expense Split (3 Friends)</h3>
-      <div class="card calc-card">
-        <div class="calc-row">
-          <label>Petrol (~1,320 km)</label>
-          <input type="number" id="calc-petrol" value="9800" class="calc-input">
-        </div>
-        <div class="calc-row">
-          <label>Fastag Tolls</label>
-          <input type="number" id="calc-tolls" value="1050" class="calc-input">
-        </div>
-        <div class="calc-row">
-          <label>Stays (3 Nights)</label>
-          <input type="number" id="calc-stays" value="4200" class="calc-input">
-        </div>
-        <div class="calc-row">
-          <label>Food & Drinks</label>
-          <input type="number" id="calc-food" value="6000" class="calc-input">
-        </div>
-        <div class="calc-row">
-          <label>Tickets & Boating</label>
-          <input type="number" id="calc-misc" value="1500" class="calc-input">
-        </div>
-
-        <div class="calc-result">
-          <div>
-            <span class="calc-label">Total Estimate</span>
-            <span class="calc-val" id="total-val">₹22,550</span>
+        <div class="form-row">
+          <div class="form-field flex-1">
+            <label for="formCategory">Category *</label>
+            <select id="formCategory" class="form-input" required>
+              <option value="commode">🚽 Commode</option>
+              <option value="shower">🚿 3-in-1 Shower Mixer</option>
+              <option value="basin">🪞 Wash Basin</option>
+            </select>
           </div>
-          <div class="split-col">
-            <span class="calc-label">Each (3-Way)</span>
-            <span class="calc-val highlight" id="per-head-val">₹7,517</span>
+          <div class="form-field flex-1">
+            <label for="formBrand">Brand *</label>
+            <select id="formBrand" class="form-input" required>
+              <option value="Jaquar">Jaquar</option>
+              <option value="Kohler">Kohler</option>
+              <option value="Cera">Cera</option>
+              <option value="Hindware">Hindware</option>
+              <option value="TOTO">TOTO</option>
+              <option value="Grohe">Grohe</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- TAB 4: DRIVE SAFETY & ROAD INFO (NEW) -->
-    <section id="tab-info" class="tab-pane">
-      <!-- Verdict Banner -->
-      <div class="card mini-card highlight-box">
-        <h3 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 4px;">🛡️ Is It Dangerous? The Honest Verdict</h3>
-        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
-          <strong>No, it is not dangerously extreme.</strong> About <strong>80%</strong> of the route is on smooth 4-lane/wide highways, and <strong>20%</strong> is winding mountain ghats. With <strong>one driver</strong> in a <strong>petrol car</strong>, safety depends on two things: <em>managing driver fatigue</em> and <em>using engine braking on downhill slopes</em>.
-        </p>
-      </div>
-
-      <!-- Road Conditions Table -->
-      <h3 class="section-heading">🚦 Road Conditions & Danger Level by Stretch</h3>
-      
-      <div class="compact-list">
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-drive">🟢 Low Risk</span>
-            <strong>Bangalore ➔ Shimoga (NH48 / NH69)</strong>
+        <div class="form-row">
+          <div class="form-field flex-1">
+            <label for="formModelName">Model Name *</label>
+            <input type="text" id="formModelName" class="form-input" placeholder="e.g., Queen / Reach / Campbell" required>
           </div>
-          <p class="item-desc">Fast 4-lane expressway till Tumkur, followed by wide, smooth 2-lane highway. Excellent road condition, easy daytime cruising.</p>
-        </div>
-
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-stay">🟡 Medium Risk</span>
-            <strong>Jog Falls ➔ Honnavar (Gerosoppa Ghat)</strong>
-          </div>
-          <p class="item-desc">Winding downhill ghat road through forest. Good tarmac, damp in shaded patches. Safe if driven in 2nd/3rd gear at 35–45 km/h.</p>
-        </div>
-
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-drive">🟢 Low Risk</span>
-            <strong>Honnavar ➔ Gokarna ➔ Maravanthe (NH66)</strong>
-          </div>
-          <p class="item-desc">4-lane divided coastal highway with center median divider. One of the best and safest coastal driving corridors in India.</p>
-        </div>
-
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-stay">🟡 Medium Risk</span>
-            <strong>Hebri ➔ Agumbe Ghat (14 Hairpins)</strong>
-          </div>
-          <p class="item-desc">Steep mountain climb with 14 sharp hairpin bends and morning cloud mist. State buses ply daily. Completely safe if kept at 20–30 km/h in 2nd gear.</p>
-        </div>
-
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-stay">🟡 Medium Risk</span>
-            <strong>Mullayanagiri Peak Road (Final 3 km)</strong>
-          </div>
-          <p class="item-desc">Narrow single-lane with concrete paving and oncoming tourist cars. Drive slowly, do not rush, and yield at designated passing bays.</p>
-        </div>
-
-        <div class="compact-item">
-          <div class="road-stretch-header">
-            <span class="badge tag-drive">🟢 Low Risk</span>
-            <strong>Chikmagalur ➔ Hassan ➔ Bangalore (NH75)</strong>
-          </div>
-          <p class="item-desc">Smooth 4-lane highway with barricaded median all the way from Hassan into Bangalore. Easy 80–90 km/h return cruise.</p>
-        </div>
-      </div>
-
-      <!-- The 3 Real Hazards & Mitigation -->
-      <h3 class="section-heading mt-4">⚠️ The 3 Real Hazards & Exact Mitigation Rules</h3>
-      
-      <div class="rules-grid">
-        <div class="rule-card" style="border-left-color: var(--danger);">
-          <strong style="color: var(--danger);">1. Single-Driver Fatigue (Micro-Sleep) — The #1 Risk</strong>
-          <p style="margin-bottom: 6px;">Driving ~1,320 km while hiking viewpoints and beaches will cause physical fatigue. Micro-sleep on straight highways is the biggest danger.</p>
-          <ul class="sub-bullets">
-            <li><strong>Co-Pilot Rule:</strong> The front-seat passenger <strong>must not sleep</strong>. Keep conversation going, manage GPS/music, and watch for speed-breakers.</li>
-            <li><strong>2-Hour Alarm:</strong> Compulsory 10-minute tea or face-wash break every 120 minutes of driving.</li>
-            <li><strong>No Night Ghats:</strong> All winding mountain stretches are scheduled strictly in daylight.</li>
-          </ul>
-        </div>
-
-        <div class="rule-card" style="border-left-color: var(--warning);">
-          <strong style="color: var(--warning);">2. Petrol Car "Brake Fade" (Crucial for Downhill Slopes)</strong>
-          <p style="margin-bottom: 6px;">Holding your foot continuously on the brake pedal down Gerosoppa or Agumbe slopes overheats the brake pads and boils fluid, causing sudden temporary loss of braking power.</p>
-          <ul class="sub-bullets">
-            <li><strong>Use Engine Braking:</strong> Shift into <strong>2nd or 3rd gear</strong> on downhill descents and take your foot off the accelerator. Engine compression will naturally hold speed at 30–40 km/h without wearing brakes.</li>
-            <li><strong>Never Coast in Neutral:</strong> Always keep the car in gear while descending.</li>
-            <li><strong>No Blind Overtakes:</strong> Never overtake on hairpin curves; wait for clear straight vision.</li>
-          </ul>
-        </div>
-
-        <div class="rule-card" style="border-left-color: var(--primary);">
-          <strong style="color: var(--primary);">3. Mid-September Monsoon Mist & Low Visibility</strong>
-          <p style="margin-bottom: 6px;">Agumbe Ghat and Mullayanagiri peak frequently encounter drifting clouds that drop visibility below 15 meters.</p>
-          <ul class="sub-bullets">
-            <li><strong>Lighting:</strong> Turn on <strong>low-beam headlights and hazard fog lamps</strong>. <em>Never use high-beam in fog</em> (it reflects white glare right back into your eyes).</li>
-            <li><strong>Horn Etiquette:</strong> Tap two short honks before blind curves to alert oncoming buses.</li>
-            <li><strong>Road Edges:</strong> Keep all 4 wheels on tarmac. Avoid soft, muddy road shoulders.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Pre-Trip Mechanical Check -->
-      <h3 class="section-heading mt-4">🔧 Pre-Trip Mechanical Inspection (Petrol Car)</h3>
-      <div class="card mini-card">
-        <ul class="sub-bullets">
-          <li><strong>Tyres:</strong> Check tread depth; set all 4 tyres + spare tyre to <strong>32–33 PSI</strong>.</li>
-          <li><strong>Wipers:</strong> Ensure blades wipe clean without streaks; fill washer tank with shampoo.</li>
-          <li><strong>Fluids:</strong> Open bonnet and verify engine oil, coolant, and brake fluid are between MIN & MAX.</li>
-        </ul>
-      </div>
-
-      <!-- Emergency Helpline Numbers -->
-      <h3 class="section-heading mt-4">📞 Highway Emergency Helplines</h3>
-      <div class="card mini-card" style="background: var(--bg-subtle);">
-        <div class="salah-grid">
-          <div class="salah-item">
-            <strong>Highway Police / Emergency</strong>
-            <span style="font-size: 0.9rem; font-weight: 800; color: var(--primary);">Dial 112</span>
-          </div>
-          <div class="salah-item">
-            <strong>NHAI Highway Helpline</strong>
-            <span style="font-size: 0.9rem; font-weight: 800; color: var(--primary);">Dial 1033</span>
-          </div>
-          <div class="salah-item">
-            <strong>Medical / Ambulance</strong>
-            <span style="font-size: 0.9rem; font-weight: 800; color: var(--success);">Dial 108</span>
-          </div>
-          <div class="salah-item">
-            <strong>Key Hospitals on Route</strong>
-            <span>Mcgann (Shimoga) • KMC (Manipal)</span>
+          <div class="form-field flex-1">
+            <label for="formSkuCode">SKU / Catalog Code</label>
+            <input type="text" id="formSkuCode" class="form-input font-mono" placeholder="e.g., QNS-CHR-77117">
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- TAB 5: CHECKLIST -->
-    <section id="tab-checklist" class="tab-pane">
-      <!-- 3 Key Road Rules -->
-      <h3 class="section-heading">⚠️ 3 Golden Driver Rules</h3>
-      <div class="rules-grid">
-        <div class="rule-card">
-          <strong>1. Single Driver Safety</strong>
-          <p>Front passenger stays awake at all times. Compulsory 10-min tea break every 2 hours.</p>
+        <div class="form-row">
+          <div class="form-field flex-1">
+            <label for="formShop">Showroom Visited</label>
+            <select id="formShop" class="form-input">
+              <option value="Shankara Buildpro (Mahadevapura)">Shankara Buildpro (Mahadevapura)</option>
+              <option value="Kohler Experience Studio (Indiranagar)">Kohler Studio (Indiranagar)</option>
+              <option value="Jaquar World (Old Airport Rd / Domlur)">Jaquar World (Domlur)</option>
+              <option value="Cera Style Gallery (Kalyan Nagar)">Cera Gallery (Kalyan Nagar)</option>
+              <option value="Maruthi Ceramics (ORR)">Maruthi Ceramics (ORR)</option>
+              <option value="Other Showroom">Other Showroom</option>
+            </select>
+          </div>
+          <div class="form-field flex-1">
+            <label for="formKeySpec">Measured Spec / Dimension</label>
+            <input type="text" id="formKeySpec" class="form-input" placeholder="e.g., Rim: 370mm, S-300mm">
+          </div>
         </div>
-        <div class="rule-card">
-          <strong>2. Festival Crowd Bypass</strong>
-          <p>Monday is Ganesh Chaturthi. Stick to beaches, falls, and peaks; skip crowded temple centers.</p>
-        </div>
-        <div class="rule-card">
-          <strong>3. Ghat & Sea Caution</strong>
-          <p>Use 2nd/3rd gear down Agumbe. No deep-sea swimming due to post-monsoon undertows.</p>
-        </div>
-      </div>
 
-      <!-- Interactive Checklists -->
-      <h3 class="section-heading mt-4">✅ Pre-Trip Checklists</h3>
-      
-      <div class="card">
-        <h4 class="check-title">🚗 Car & Documents</h4>
-        <div class="check-group" id="car-checklist"></div>
-      </div>
+        <div class="form-row">
+          <div class="form-field flex-1">
+            <label for="formMrp">Printed MRP (₹)</label>
+            <input type="number" id="formMrp" class="form-input font-mono" placeholder="e.g., 14500" min="0">
+          </div>
+          <div class="form-field flex-1">
+            <label for="formDiscount">Quoted Discount (%)</label>
+            <input type="number" id="formDiscount" class="form-input font-mono" placeholder="e.g., 20" min="0" max="60" value="18">
+          </div>
+        </div>
 
-      <div class="card mt-3">
-        <h4 class="check-title">🎒 Essentials & Salah Gear</h4>
-        <div class="check-group" id="gear-checklist"></div>
-      </div>
-    </section>
+        <div class="form-field">
+          <label for="formNotes">Notes & Observation</label>
+          <textarea id="formNotes" class="form-input" rows="2" placeholder="Flushing swirl strength, knob feel, package quality..."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label>Photo of Label / Model (Optional)</label>
+          <div class="photo-upload-container">
+            <input type="file" id="formPhotoInput" accept="image/*" class="file-input">
+            <div id="photoPreviewContainer" class="photo-preview-box">
+              <span id="noPhotoText" class="text-muted">Tap to snap or upload photo</span>
+              <img id="photoPreviewImg" src="" alt="Preview" style="display:none;">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-checkbox">
+          <label>
+            <input type="checkbox" id="formShortlist" checked>
+            <span>⭐ Star / Shortlist this model for hometown dealer</span>
+          </label>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelModalBtn" class="btn-secondary flex-1">Cancel</button>
+          <button type="submit" class="btn-primary flex-1">Save to Phone</button>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <!-- Minimal Sticky Footer -->
-  <footer class="app-footer">
-    <div class="footer-text">
-      <span class="footer-day" id="footer-day-indicator">Day 1: Bangalore ➔ Shimoga</span>
-    </div>
-    <a id="footer-maps-btn" href="https://www.google.com/maps/dir/Bengaluru/Shivamogga" target="_blank" class="footer-nav-btn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-      <span>Open Route Map</span>
-    </a>
-  </footer>
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
 
   <script src="app.js"></script>
 </body>

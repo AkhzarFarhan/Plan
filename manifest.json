@@ -1,23 +1,22 @@
 {
-  "name": "Karavali & Malenadu Road Trip",
-  "short_name": "TripPlan",
-  "start_url": "index.html",
+  "name": "BathFit Tour Bangalore",
+  "short_name": "BathFit",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#090d16",
-  "theme_color": "#0f172a",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
   "orientation": "portrait-primary",
+  "description": "Showroom route, sales scripts, and model tracker for washroom fittings in Bangalore.",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
